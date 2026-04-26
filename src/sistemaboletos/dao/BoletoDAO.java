@@ -12,8 +12,6 @@ import sistemaboletos.modelo.Boleto;
 
 
 public class BoletoDAO {
-
-    
     
     public List<Boleto> obtenerTodosLosBoletos() throws SQLException {
         

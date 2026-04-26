@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemaboletos.modelo;
 
-/**
- *
- * @author leanddro
- */
 public class Boleto {
     private int id_boleto;
     private String nombre;

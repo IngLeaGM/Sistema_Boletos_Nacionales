@@ -20,7 +20,7 @@ public class BoletoDAO {
         List<Boleto> listaBoletos = new ArrayList<>();
         
         // Consulta SQL
-        String SELECCIONAR = "SELECT id_boleto, nombre FROM Boletos";
+        String SELECCIONAR = "SELECT id_boleto, id_viaje FROM Boletos";
         
         try (Connection con = ConexionBD.getConexion();
                 PreparedStatement ps = con.prepareStatement(SELECCIONAR);
@@ -32,10 +32,13 @@ public class BoletoDAO {
             while (rs.next()) {
                 // Se extraen los datos de MySql
                 int id_boleto = rs.getInt("id_boleto");
-                String nombre = rs.getString("nombre");
+                int id_viaje = rs.getInt("id_viaje");
+                int id_factura = rs.getInt("id_factura");
+                String nom_pasajero = rs.getString("nom_pasajero");
+                String asiento = rs.getString("asiento");
                 
                 // Se transforman los datos obtenidos en objetos
-                Boleto boletoExtraido = new Boleto(id_boleto, nombre);
+                Boleto boletoExtraido = new Boleto(id_boleto, id_viaje, id_factura, nom_pasajero, asiento);
                 
                 // Se añade el nuebvo objeto a la lista
                 listaBoletos.add(boletoExtraido);

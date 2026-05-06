@@ -42,8 +42,20 @@ public class Usuario {
         return user;
     }
     
+    public void setUser(String user) {
+        this.user = user;
+    }
+    
+    public void setPassword(String pass) {
+        this.pass = pass;
+    }
+    
     public String getEmail() {
         return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
     }
     public String getPass() {
         return pass;
@@ -53,15 +65,31 @@ public class Usuario {
         return nombre;
     }
     
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+  
     public String getApellido() {
         return apellido;
+    }
+    
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
     
     public String getCedula() {
         return cedula;
     }
+    
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
             
     public String getTelf() {
         return telf;
+    }
+    
+    public void setTelf(String telf) {
+        this.telf = telf;
     }
 }

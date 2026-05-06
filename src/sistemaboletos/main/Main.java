@@ -5,20 +5,18 @@ import java.sql.SQLException;
 import java.util.List;
 import sistemaboletos.dao.BoletoDAO;
 import sistemaboletos.modelo.Boleto;
+import sistemaboletos.modelo.Usuario;
+import sistemaboletos.dao.UsuariosDAO;
 
 public class Main {
     
     public static void main(String[] args) throws SQLException {
         
-        BoletoDAO dao = new BoletoDAO();
-        
-        List<Boleto> misBoletos = dao.obtenerTodosLosBoletos();
-        
-        for (Boleto ev : misBoletos) {
-            System.out.println("ID: "+ev.getId_Boleto()+", Nombre Completo: "+ev.getNombre());
-        }
-        
+         Usuario nuevoUsuario = new Usuario("LeaGM", "gutierrez@gmail.com", "Lean06dro.", "Leandro", "Gutierrez", "31567096", "04120706590");
      
+         UsuariosDAO uDAO = new UsuariosDAO();
+         
+         uDAO.LoginUsuario(nuevoUsuario);
     }
     
 }

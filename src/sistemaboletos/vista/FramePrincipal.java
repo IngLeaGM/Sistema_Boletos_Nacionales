@@ -5,6 +5,8 @@
  */
 package sistemaboletos.vista;
 
+import sistemaboletos.vista.imagenes.*;
+
 /**
  *
  * @author LeaGM
@@ -15,6 +17,14 @@ public class FramePrincipal extends javax.swing.JFrame {
      * Creates new form FramePrincipal
      */
     public FramePrincipal() {
+        // 1. Creamos nuestro panel enviando la ruta de la imagen
+        // ¡Asegúrate de poner la barra diagonal '/' al inicio!
+        PanelFondo fondo = new PanelFondo("/sistemaboletos/vista/imagenes/ImagenFondo.png");
+
+        // 2. Le decimos al JFrame que use este panel como contenedor principal
+        this.setContentPane(fondo);
+    
+        // 3. ¡MUY IMPORTANTE! Esto debe ir DESPUÉS de setContentPane
         initComponents();
     }
 
@@ -33,11 +43,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 996, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 509, Short.MAX_VALUE)
         );
 
         pack();

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sistemaboletos.conexion.ConexionBD;
-import sistemaboletos.modelo.Boleto;
 import sistemaboletos.modelo.Factura;
 
 public class FacturasDAO {
@@ -84,7 +83,7 @@ public class FacturasDAO {
         return listaFacturas;
     }
     
-    public void insertar_factura (Factura factura) throws SQLException {
+    public boolean insertar_factura (Factura factura) throws SQLException {
         
         String INSERT = "INSERT into FACTURAS (usuario_id, monto_total, metodo_pago) values (?, ?, ?)";
         
@@ -99,11 +98,13 @@ public class FacturasDAO {
             ps.executeUpdate();
             
             System.out.println("Se registro la factura exitosamente.");
+            
+            return true;
         
         } catch (SQLException e) {
          
-        System.err.println("Error al registrar factura: " + e.getMessage());
-        throw e; // Re-lanzar para que el Controlador pueda avisar a la Vista
+            System.err.println("Error al registrar factura: " + e.getMessage());
+            return false;
         }
     }
 }

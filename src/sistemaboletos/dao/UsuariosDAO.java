@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.modelo.Usuario;
@@ -13,7 +11,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class UsuariosDAO {
     
-    public void RegistrarUsuario(Usuario usuario) throws SQLException {
+    public boolean RegistrarUsuario(Usuario usuario) throws SQLException {
         
         String hashed_pass = BCrypt.hashpw(usuario.getPass(), BCrypt.gensalt());
         
@@ -34,11 +32,13 @@ public class UsuariosDAO {
 
             // Ejecutar la actualización
             ps.executeUpdate();
+            
+            return true;
         
         } catch (SQLException e) {
          
         System.err.println("Error al registrar usuario: " + e.getMessage());
-        throw e; // Re-lanzar para que el Controlador pueda avisar a la Vista
+        return false;
         }
     }
     

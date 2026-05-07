@@ -3,16 +3,22 @@ package sistemaboletos.modelo;
 public class Factura {
     private int id_factura;
     private int usuario_id;
-    private float monto_total;
+    private double monto_total;
     private String metodo_pago;
     private String fecha;
     
-    public Factura(int id_factura, int usuario_id, float monto_total, String metodo_pago, String fecha) {
+    public Factura(int id_factura, int usuario_id, double monto_total, String metodo_pago, String fecha) {
         this.id_factura = id_factura;
         this.usuario_id = usuario_id;
         this.monto_total = monto_total;
         this.metodo_pago  = metodo_pago;
         this.fecha = fecha;
+    }
+    
+    public Factura(int usuario_id, double monto_total, String metodo_pago) {
+        this.usuario_id = usuario_id;
+        this.monto_total = monto_total;
+        this.metodo_pago  = metodo_pago;
     }
     
     public int getId_factura() {
@@ -31,11 +37,11 @@ public class Factura {
         this.usuario_id = usuario_id;
     }
     
-    public float getMonto_total() {
+    public double getMonto_total() {
         return monto_total;
     }
     
-    public void setMonto_total(float monto_total) {
+    public void setMonto_total(double monto_total) {
         this.monto_total = monto_total;
     }
     

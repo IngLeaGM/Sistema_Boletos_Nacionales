@@ -47,6 +47,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(1024, 768));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255, 125));
         jPanel1.setForeground(new java.awt.Color(153, 204, 255));

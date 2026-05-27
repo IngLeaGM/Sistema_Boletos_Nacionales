@@ -16,7 +16,7 @@ public class FondoBus extends JPanel {
     @Override
     public void paint(Graphics g) {
         // Cambia la ruta por la ubicación de tu imagen dentro del proyecto
-        imagen = new ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/imagenbus.jpg")).getImage();
+        imagen = new ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/imagenbus.png")).getImage();
         
         // Dibuja la imagen del tamaño exacto del panel
         g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);

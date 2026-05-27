@@ -16,6 +16,13 @@ public class Boleto {
        this.asiento = asiento;
     }
     
+    public Boleto(int id_viaje, int id_factura, String nom_pasajero, String asiento) {
+       this.id_viaje = id_viaje;
+       this.id_factura = id_factura;
+       this.nom_pasajero = nom_pasajero;
+       this.asiento = asiento;
+    }
+    
     // Getters y Setters necesarios
     
     public int getId_Boleto() {

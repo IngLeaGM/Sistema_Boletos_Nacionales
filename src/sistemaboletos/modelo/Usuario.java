@@ -1,7 +1,7 @@
 package sistemaboletos.modelo;
 
 public class Usuario {
-    private int id_usuario=0;
+    private int id_usuario;
     private String user;
     private String email;
     private String pass;
@@ -36,6 +36,14 @@ public class Usuario {
         this.apellido = apellido;
         this.cedula = cedula;
         this.telf = telf;
+    }
+    
+    public int getId_usuario() {
+        return id_usuario;
+    }
+    
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
     
     public String getUser() {

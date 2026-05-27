@@ -9,10 +9,12 @@ import java.util.List;
 
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.modelo.Factura;
+import sistemaboletos.modelo.Usuario;
 
 public class FacturasDAO {
     
-    public List<Factura> obtener_facturas_usuario(Factura factura) throws SQLException {
+    // Este metodo depende del modelo usuario para funcionar.
+    public List<Factura> obtener_facturas_usuario(Connection con, int idBuscado) throws SQLException {
         
         // Creacion de lista vacia para guardar los objetos
         
@@ -21,10 +23,9 @@ public class FacturasDAO {
         // Consulta SQL
         String SELECCIONAR = "SELECT  id_factura, usuario_id, monto_total, metodo_pago, fecha FROM FACTURAS WHERE usuario_id = ?";
         
-        try (Connection con = ConexionBD.getConexion();
-                PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
+        try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
            
-                ps.setInt(1, factura.getId_usuario());
+                ps.setInt(1, idBuscado);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                 // Se extraen los datos de MySql
@@ -47,7 +48,7 @@ public class FacturasDAO {
         return listaFacturas;
     }
     
-    public List<Factura> obtener_facturas() throws SQLException {
+    public List<Factura> obtener_facturas(Connection con) throws SQLException {
         
         // Creacion de lista vacia para guardar los objetos
         
@@ -56,8 +57,7 @@ public class FacturasDAO {
         // Consulta SQL
         String SELECCIONAR = "SELECT * FROM FACTURAS";
         
-        try (Connection con = ConexionBD.getConexion();
-                PreparedStatement ps = con.prepareStatement(SELECCIONAR);
+        try (PreparedStatement ps = con.prepareStatement(SELECCIONAR);
                 ResultSet rs = ps.executeQuery()) {
             
             // Este bucle recorre toda la tabla obteniendo todos los
@@ -83,12 +83,11 @@ public class FacturasDAO {
         return listaFacturas;
     }
     
-    public boolean insertar_factura (Factura factura) throws SQLException {
+    public boolean insertar_factura (Connection con, Factura factura) throws SQLException {
         
         String INSERT = "INSERT into FACTURAS (usuario_id, monto_total, metodo_pago) values (?, ?, ?)";
         
-        try (Connection con = ConexionBD.getConexion();
-        PreparedStatement ps = con.prepareStatement(INSERT)) {
+        try (PreparedStatement ps = con.prepareStatement(INSERT)) {
         
             //Asignación segura de valores
             ps.setInt(1, factura.getId_usuario());

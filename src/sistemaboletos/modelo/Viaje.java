@@ -5,15 +5,23 @@ public class Viaje {
     private int id_salida;
     private int id_destino;
     private int transporte_id;
-    private String fecha;
-    private float precio_x_asiento;
+    private String fecha_salida;
+    private double precio_x_asiento;
     
-    public Viaje(int id_viaje, int id_salida, int id_destino, int transporte_id, String fecha, float precio_x_asiento) {
+    public Viaje(int id_viaje, int id_salida, int id_destino, int transporte_id, String fecha_salida, double precio_x_asiento) {
         this.id_viaje = id_viaje;
         this.id_salida = id_salida;
         this.id_destino = id_destino;
         this.transporte_id = transporte_id;
-        this.fecha = fecha;
+        this.fecha_salida = fecha_salida;
+        this.precio_x_asiento = precio_x_asiento;
+    }
+    
+    public Viaje(int id_salida, int id_destino, int transporte_id, String fecha_salida, double precio_x_asiento) {
+        this.id_salida = id_salida;
+        this.id_destino = id_destino;
+        this.transporte_id = transporte_id;
+        this.fecha_salida = fecha_salida;
         this.precio_x_asiento = precio_x_asiento;
     }
 
@@ -47,17 +55,17 @@ public class Viaje {
         this.transporte_id = transporte_id;
     }
     public String getFecha() {
-        return fecha;
+        return fecha_salida;
     }
     
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFecha(String fecha_salida) {
+        this.fecha_salida = fecha_salida;
     }
-    public float getPrecio_x_asiento() {
+    public double getPrecio_x_asiento() {
         return precio_x_asiento;
     }
     
-    public void setPrecio_x_asiento(float precio_x_asiento) {
+    public void setPrecio_x_asiento(double precio_x_asiento) {
         this.precio_x_asiento = precio_x_asiento;
     }
 }

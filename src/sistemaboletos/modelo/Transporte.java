@@ -9,6 +9,9 @@ public class Transporte {
         this.matricula = matricula;
     }
     
+    public Transporte(String matricula) {
+        this.matricula = matricula;
+    }
     
     public int getId_transporte() {
         return id_transporte;

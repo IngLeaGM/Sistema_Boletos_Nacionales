@@ -9,6 +9,10 @@ public class Ubicacion {
         this.nombre = nombre;
     }
     
+    public Ubicacion(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public int getId_ubicacion() {
         return id_ubicacion;
     }

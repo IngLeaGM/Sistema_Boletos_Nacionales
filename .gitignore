@@ -1,6 +1,10 @@
 /build/
-/nbproject/private/
+/nbproject/
 /test/
+/dist/
+/nbbuild/
+/.nbproject/
 
 *.log
 *.tmp
+*.class

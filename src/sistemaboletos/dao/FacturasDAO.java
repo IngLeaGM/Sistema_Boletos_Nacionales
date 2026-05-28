@@ -83,7 +83,7 @@ public class FacturasDAO {
         return listaFacturas;
     }
     
-    public boolean insertar_factura (Connection con, Factura factura) throws SQLException {
+    public int insertar_factura (Connection con, Factura factura) throws SQLException {
         
         String INSERT = "INSERT into FACTURAS (usuario_id, monto_total, metodo_pago) values (?, ?, ?)";
         
@@ -96,14 +96,20 @@ public class FacturasDAO {
             // Ejecutar la actualización
             ps.executeUpdate();
             
-            System.out.println("Se registro la factura exitosamente.");
             
-            return true;
-        
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if(rs.next()) {
+                    System.out.println("Se registro la factura exitosamente.");
+                    return rs.getInt(1);
+                }
+            }
+            
+
         } catch (SQLException e) {
          
             System.err.println("Error al registrar factura: " + e.getMessage());
-            return false;
+            return 0;
         }
+        return 0;
     }
 }

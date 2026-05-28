@@ -41,7 +41,9 @@ public class UsuariosDAO {
         }
     }
     
-    public boolean LoginUsuario(Connection con, Usuario usuario) throws SQLException {
+    public boolean LoginUsuario(Usuario usuario) throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
         
         String SELECCIONAR = "SELECT * FROM USUARIOS WHERE email = ?";
         

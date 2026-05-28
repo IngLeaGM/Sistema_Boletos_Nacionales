@@ -10,6 +10,10 @@ public class Usuario {
     private String cedula;
     private String telf;
     
+    public Usuario() {
+        
+    }
+    
     
     // Constructor para registros
     public Usuario(String user, String email, String pass,
@@ -37,6 +41,7 @@ public class Usuario {
         this.cedula = cedula;
         this.telf = telf;
     }
+    
     
     public int getId_usuario() {
         return id_usuario;
@@ -67,6 +72,10 @@ public class Usuario {
     }
     public String getPass() {
         return pass;
+    }
+    
+    public void setPass(String pass) {
+        this.pass = pass;
     }
     
     public String getNombre() {

@@ -3,20 +3,24 @@ package sistemaboletos.main;
 
 import java.sql.SQLException;
 import java.util.List;
-import sistemaboletos.dao.BoletoDAO;
+import sistemaboletos.controlador.ControladorLogin;
+import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.modelo.Boleto;
 import sistemaboletos.modelo.Usuario;
 import sistemaboletos.dao.UsuariosDAO;
+import sistemaboletos.vista.FrameLogin;
 
 public class Main {
     
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         
-         Usuario nuevoUsuario = new Usuario("LeaGM", "gutierrez@gmail.com", "Lean06dro.", "Leandro", "Gutierrez", "31567096", "04120706590");
-     
-         UsuariosDAO uDAO = new UsuariosDAO();
-         
-         uDAO.LoginUsuario(nuevoUsuario);
+       FrameLogin vistaLogin = new FrameLogin(); 
+       UsuariosDAO daoUsuarios = new UsuariosDAO();
+       
+       ControladorLogin ctrlLogin = new ControladorLogin(vistaLogin, daoUsuarios);
+       
+       vistaLogin.setLocationRelativeTo(null);
+       vistaLogin.setVisible(true);
     }
     
 }

@@ -5,9 +5,6 @@ public class Usuario {
     private String user;
     private String email;
     private String pass;
-    private String nombre;
-    private String apellido;
-    private String cedula;
     private String telf;
     
     public Usuario() {
@@ -16,29 +13,21 @@ public class Usuario {
     
     
     // Constructor para registros
-    public Usuario(String user, String email, String pass,
-                    String nombre, String apellido, String cedula, String telf) {
+    public Usuario(String user, String email, String pass, String telf) {
         
         this.user = user;
         this.email = email;
         this.pass = pass;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
         this.telf = telf;
     }
     
     // Constructor para login o consultas
-    public Usuario(int id_usuario, String user, String email, String pass,
-                    String nombre, String apellido, String cedula, String telf) {
+    public Usuario(int id_usuario, String user, String email, String pass, String telf) {
         
         this.id_usuario = id_usuario;
         this.user = user;
         this.email = email;
         this.pass = pass;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
         this.telf = telf;
     }
     
@@ -77,31 +66,7 @@ public class Usuario {
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    public String getNombre() {
-        return nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-  
-    public String getApellido() {
-        return apellido;
-    }
-    
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-    
-    public String getCedula() {
-        return cedula;
-    }
-    
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-            
+               
     public String getTelf() {
         return telf;
     }

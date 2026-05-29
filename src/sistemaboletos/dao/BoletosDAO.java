@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.modelo.Boleto;
 
 
@@ -34,10 +33,12 @@ public class BoletosDAO {
                 int id_viaje = rs.getInt("id_viaje");
                 int id_factura = rs.getInt("id_factura");
                 String nom_pasajero = rs.getString("nom_pasajero");
+                int cedula = rs.getInt("cedula");
+                int telefono = rs.getInt("telefono");
                 String asiento = rs.getString("asiento");
                 
                 // Se transforman los datos obtenidos en objetos
-                Boleto boletoExtraido = new Boleto(id_boleto, id_viaje, id_factura, nom_pasajero, asiento);
+                Boleto boletoExtraido = new Boleto(id_boleto, id_viaje, id_factura, nom_pasajero, cedula, telefono, asiento);
                 
                 // Se añade el nuevo objeto a la lista
                 listaBoletos.add(boletoExtraido);
@@ -68,10 +69,12 @@ public class BoletosDAO {
                 int id_viaje = rs.getInt("id_viaje");
                 int id_factura = rs.getInt("id_factura");
                 String nom_pasajero = rs.getString("nom_pasajero");
+                int cedula = rs.getInt("cedula");
+                int telefono = rs.getInt("telefono");
                 String asiento = rs.getString("asiento");
                 
                 // Se transforman los datos obtenidos en objetos
-                Boleto boletoExtraido = new Boleto(id_boleto, id_viaje, id_factura, nom_pasajero, asiento);
+                Boleto boletoExtraido = new Boleto(id_boleto, id_viaje, id_factura, nom_pasajero, cedula, telefono, asiento);
                 
                 // Se añade el nuevo objeto a la lista
                 listaBoletos.add(boletoExtraido);
@@ -85,7 +88,7 @@ public class BoletosDAO {
      
     // Este metodo esta diseñado tanto para insertar un solo boleto, como insertar varios al mismo tiempo.
      public boolean insertarBoletos(Connection con, List<Boleto> listaBoletos) {
-            String INSERT = "INSERT INTO BOLETOS (id_viaje, id_factura, nom_pasajero, asiento) VALUES (?, ?, ?, ?)";
+            String INSERT = "INSERT INTO BOLETOS (id_viaje, id_factura, nom_pasajero, cedula, telefono, asiento) VALUES (?, ?, ?, ?, ?, ?)";
         
         try (PreparedStatement ps = con.prepareStatement(INSERT)) {
             
@@ -98,7 +101,9 @@ public class BoletosDAO {
                 ps.setInt(1, boleto.getId_viaje());
                 ps.setInt(2, boleto.getId_factura());
                 ps.setString(3, boleto.getNom_pasajero());
-                ps.setString(4, boleto.getAsiento());
+                ps.setInt(4, boleto.getCedula());
+                ps.setInt(5, boleto.getTelefono());
+                ps.setString(6, boleto.getAsiento());
                 
                 ps.addBatch(); 
             }

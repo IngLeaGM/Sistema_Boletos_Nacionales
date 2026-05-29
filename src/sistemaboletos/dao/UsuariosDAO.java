@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.modelo.Usuario;
@@ -11,12 +12,20 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class UsuariosDAO {
     
-    public boolean RegistrarUsuario(Connection con, Usuario usuario) throws SQLException {
+    public boolean RegistrarUsuario(Usuario usuario) throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
         
         String hashed_pass = BCrypt.hashpw(usuario.getPass(), BCrypt.gensalt());
         
         // Consulta SQL
-        String INSERT = "INSERT into USUARIOS (user, email, pass, nombre, apellido, cedula, telf) values (?, ?, ?, ?, ?, ?, ?)";
+        String INSERT = "INSERT into USUARIOS (user, email, pass, telf) values (?, ?, ?, ?)";
+        
+        boolean verificacion = this.vericarDatos(con, usuario);
+        
+        if (!verificacion) {
+            return false;
+        }
         
         try (PreparedStatement ps = con.prepareStatement(INSERT)) {
         
@@ -24,10 +33,7 @@ public class UsuariosDAO {
             ps.setString(1, usuario.getUser());
             ps.setString(2, usuario.getEmail());
             ps.setString(3, hashed_pass);
-            ps.setString(4, usuario.getNombre());
-            ps.setString(5, usuario.getApellido());
-            ps.setString(6, usuario.getCedula());
-            ps.setString(7, usuario.getTelf());
+            ps.setString(4, usuario.getTelf());
 
             // Ejecutar la actualización
             ps.executeUpdate();
@@ -81,9 +87,9 @@ public class UsuariosDAO {
     
     public Usuario obtener_usuario(Connection con, int idBuscado) throws SQLException {
         
-        Usuario usuarioExtraido = new Usuario(0, "none", "none", "none", "none", "none", "none", "none");
+        Usuario usuarioExtraido = new Usuario(0, "none", "none", "none", "none");
         // Consulta SQL
-        String SELECCIONAR = "SELECT id_usuario, user, email, nombre, apellido, cedula, telf FROM USUARIOS WHERE id_usuario = ?;";
+        String SELECCIONAR = "SELECT id_usuario, user, email, telf FROM USUARIOS WHERE id_usuario = ?;";
         
         
         try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
@@ -96,12 +102,9 @@ public class UsuariosDAO {
                         int id_usuario = rs.getInt("id_usuario");
                         String user = rs.getString("user");
                         String email = rs.getString("email");
-                        String nombre = rs.getString("nombre");
-                        String apellido = rs.getString("apellido");
-                        String cedula = rs.getString("Cedula");
                         String telf = rs.getString("telf");
                         
-                         usuarioExtraido = new Usuario(id_usuario, user, "none", email, nombre, apellido, cedula, telf);
+                         usuarioExtraido = new Usuario(id_usuario, user, "none", email, telf);
                     }
 
                 }
@@ -109,6 +112,41 @@ public class UsuariosDAO {
             System.err.println("Error al selecionar tabla: "+e.getMessage());
         }
         return usuarioExtraido;
+    }
+    
+    public boolean vericarDatos(Connection con, Usuario usuario) throws SQLException {
+        String SELECT = "SELECT user, email, telf FROM USUARIOS WHERE user = ? OR email = ? OR telf = ?";
+        
+        try (PreparedStatement ps = con.prepareStatement(SELECT)) {
+            
+            ps.setString(1, usuario.getUser());
+            ps.setString(2, usuario.getEmail());
+            ps.setString(3, usuario.getTelf());
+            
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    // Si se entra aquí, es porque al menos uno de los datos ya existe.
+                    // Ahora verificamos cuál de ellos causo la coincidencia:
+                    
+                    if (usuario.getUser().equals(rs.getString("user"))) {
+                        JOptionPane.showMessageDialog(null, "Usuario ya existe");
+                        return false;
+                    }
+                    if (usuario.getEmail().equals(rs.getString("email"))) {
+                        JOptionPane.showMessageDialog(null, "Email ya existe");
+                        return false;
+                    }
+                    if (usuario.getTelf().equals(rs.getString("telf"))) {
+                        JOptionPane.showMessageDialog(null, "Telefono ya fue utilizado");
+                        return false;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al verificar duplicados: " + e.getMessage());
+            return false;
+        }
+        return true;
     }
 }
  

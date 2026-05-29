@@ -41,8 +41,7 @@ public class ControladorLogin implements ActionListener {
                 System.err.print("Ocurrio un error: " + ex);
             }
         }
-        
-        
+
     }
     
     private void ejecutarLogin() throws SQLException {
@@ -67,7 +66,7 @@ public class ControladorLogin implements ActionListener {
                 
               
                 FrameMenu menuPrincipal = new FrameMenu();
-                // ControladorMenu ctrlMenu = new ControladorMenu(FrameMenu);
+                //ControladorMenu ctrlMenu = new ControladorMenu(FrameMenu);
                 menuPrincipal.setVisible(true);
                 
             } else {
@@ -88,7 +87,7 @@ public class ControladorLogin implements ActionListener {
         
         UsuariosDAO dao = new UsuariosDAO();
         
-        // ControladorRegistrar ctrlRegistrar = new ControladorRegistro(vistaRegistro, dao); 
+        ControladorRegistrar ctrlRegistrar = new ControladorRegistrar(vistaRegistro, dao); 
         
         vistaRegistro.setLocationRelativeTo(null);
         vistaRegistro.setVisible(true);

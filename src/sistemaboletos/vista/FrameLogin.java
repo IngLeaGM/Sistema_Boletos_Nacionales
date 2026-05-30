@@ -40,7 +40,7 @@ public class FrameLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new sistemaboletos.vista.PanelRedondeado(40);
         btnIngresar = new sistemaboletos.vista.BotonRedondeado();
         jLabel2 = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();

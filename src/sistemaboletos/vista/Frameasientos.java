@@ -140,104 +140,124 @@ public class Frameasientos extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1 = new FondoBus();
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton1.setBorderPainted(false);
         jToggleButton1.setContentAreaFilled(false);
+        jToggleButton1.setDisabledIcon(null);
         jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton2.setBorderPainted(false);
         jToggleButton2.setContentAreaFilled(false);
+        jToggleButton2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton3.setBorderPainted(false);
         jToggleButton3.setContentAreaFilled(false);
+        jToggleButton3.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton4.setBorderPainted(false);
         jToggleButton4.setContentAreaFilled(false);
+        jToggleButton4.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton5.setBorderPainted(false);
         jToggleButton5.setContentAreaFilled(false);
+        jToggleButton5.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton6.setBorderPainted(false);
         jToggleButton6.setContentAreaFilled(false);
+        jToggleButton6.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton7.setBorderPainted(false);
         jToggleButton7.setContentAreaFilled(false);
+        jToggleButton7.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton8.setBorderPainted(false);
         jToggleButton8.setContentAreaFilled(false);
+        jToggleButton8.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton9.setBorderPainted(false);
         jToggleButton9.setContentAreaFilled(false);
+        jToggleButton9.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton10.setBorderPainted(false);
         jToggleButton10.setContentAreaFilled(false);
+        jToggleButton10.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton11.setBorderPainted(false);
         jToggleButton11.setContentAreaFilled(false);
+        jToggleButton11.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton12.setBorderPainted(false);
         jToggleButton12.setContentAreaFilled(false);
+        jToggleButton12.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton13.setBorderPainted(false);
         jToggleButton13.setContentAreaFilled(false);
+        jToggleButton13.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton13.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton15.setBorderPainted(false);
         jToggleButton15.setContentAreaFilled(false);
+        jToggleButton15.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton16.setBorderPainted(false);
         jToggleButton16.setContentAreaFilled(false);
+        jToggleButton16.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton16.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton17.setBorderPainted(false);
         jToggleButton17.setContentAreaFilled(false);
+        jToggleButton17.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton17.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton18.setBorderPainted(false);
         jToggleButton18.setContentAreaFilled(false);
+        jToggleButton18.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton18.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton19.setBorderPainted(false);
         jToggleButton19.setContentAreaFilled(false);
+        jToggleButton19.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton19.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton20.setBorderPainted(false);
         jToggleButton20.setContentAreaFilled(false);
+        jToggleButton20.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jToggleButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton21.setBorderPainted(false);
         jToggleButton21.setContentAreaFilled(false);
+        jToggleButton21.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
         jToggleButton21.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -321,8 +341,7 @@ public class Frameasientos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jToggleButton17)
-                            .addComponent(jToggleButton20))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jToggleButton20)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jToggleButton3)
@@ -338,16 +357,16 @@ public class Frameasientos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jToggleButton9)
-                            .addComponent(jToggleButton11))
-                        .addContainerGap(112, Short.MAX_VALUE))))
+                            .addComponent(jToggleButton11))))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Disponibles");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosagotados.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosagotados.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Ocupado");

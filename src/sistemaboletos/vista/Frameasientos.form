@@ -336,10 +336,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="0" name="null"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -348,10 +351,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -360,10 +366,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -372,10 +381,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -384,10 +396,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -396,10 +411,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -408,10 +426,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -420,10 +441,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -432,10 +456,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -444,10 +471,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton10">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -456,10 +486,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton11">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -468,10 +501,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -480,10 +516,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -492,10 +531,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton15">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -504,10 +546,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton16">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -516,10 +561,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton17">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -528,10 +576,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton18">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -540,10 +591,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton19">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -552,10 +606,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton20">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -564,10 +621,13 @@
         <Component class="javax.swing.JToggleButton" name="jToggleButton21">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
+            </Property>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientoseleccionado.png"/>
             </Property>
@@ -578,7 +638,7 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.jpg"/>
+          <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
         </Property>
       </Properties>
     </Component>
@@ -593,7 +653,7 @@
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosagotados.jpg"/>
+          <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosagotados.png"/>
         </Property>
       </Properties>
     </Component>

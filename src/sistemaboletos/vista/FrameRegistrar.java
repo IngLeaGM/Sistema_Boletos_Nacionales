@@ -43,7 +43,7 @@ public class FrameRegistrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new sistemaboletos.vista.PanelRedondeado(40);
         jLabel2 = new javax.swing.JLabel();
         tfUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();

@@ -60,6 +60,7 @@
         </Property>
       </Properties>
       <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new sistemaboletos.vista.PanelRedondeado(40)"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="FramePrincipal_jPanel1"/>
       </AuxValues>
 

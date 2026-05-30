@@ -49,7 +49,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton1 = new sistemaboletos.vista.BotonRedondeado();
-        jButton2 = new javax.swing.JButton();
+        jButton2 = new sistemaboletos.vista.BotonRedondeado();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);

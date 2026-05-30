@@ -212,6 +212,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new sistemaboletos.vista.BotonRedondeado()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>

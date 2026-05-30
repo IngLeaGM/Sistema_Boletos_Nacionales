@@ -5,6 +5,10 @@
  */
 package sistemaboletos.vista;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import javax.swing.JButton;
 import sistemaboletos.vista.imagenes.*;
 
 /**
@@ -27,7 +31,7 @@ public class FrameMenu extends javax.swing.JFrame {
         // 3. ¡MUY IMPORTANTE! Esto debe ir DESPUÉS de setContentPane
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +48,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButton1 = new sistemaboletos.vista.BotonRedondeado();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 

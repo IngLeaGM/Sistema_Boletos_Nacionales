@@ -37,7 +37,7 @@ public class Framecompletarpago extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new sistemaboletos.vista.PanelRedondeado(40);
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -49,7 +49,7 @@ public class Framecompletarpago extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new sistemaboletos.vista.PanelRedondeado(40);
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new sistemaboletos.vista.BotonRedondeado();
@@ -105,7 +105,6 @@ public class Framecompletarpago extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V", "E", "P", "J", "C", "G", "R" }));
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("Monto:");
@@ -216,7 +215,7 @@ public class Framecompletarpago extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pack();

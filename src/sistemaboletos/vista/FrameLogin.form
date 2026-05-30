@@ -136,6 +136,9 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tfEmail.addKeyListener(new java.awt.event.KeyAdapter() {&#xa;    public void keyTyped(java.awt.event.KeyEvent evt) {&#xa;        char c = evt.getKeyChar();&#xa;        // Si la tecla presionada es un espacio, se consume y no se escribe&#xa;        if (c == java.awt.event.KeyEvent.VK_SPACE) {&#xa;            evt.consume(); &#xa;        }&#xa;    }&#xa;});"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>

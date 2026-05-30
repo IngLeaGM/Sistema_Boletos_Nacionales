@@ -68,6 +68,15 @@ public class FrameLogin extends javax.swing.JFrame {
         jLabel2.setText("Email");
 
         tfEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                // Si la tecla presionada es un espacio, se consume y no se escribe
+                if (c == java.awt.event.KeyEvent.VK_SPACE) {
+                    evt.consume();
+                }
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Contraseña de Acceso");

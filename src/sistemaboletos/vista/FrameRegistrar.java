@@ -48,7 +48,7 @@ public class FrameRegistrar extends javax.swing.JFrame {
         tfUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();
-        btnRegistrar = new javax.swing.JButton();
+        btnRegistrar = new sistemaboletos.vista.BotonRedondeado();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         tfTelefono = new javax.swing.JTextField();

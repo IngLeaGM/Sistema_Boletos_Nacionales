@@ -41,11 +41,11 @@ public class FrameLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnIngresar = new javax.swing.JButton();
+        btnIngresar = new sistemaboletos.vista.BotonRedondeado();
         jLabel2 = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnRegistrarse = new javax.swing.JButton();
+        btnRegistrarse = new sistemaboletos.vista.BotonRedondeado();
         jpPass = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 

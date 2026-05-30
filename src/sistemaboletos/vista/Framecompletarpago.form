@@ -352,6 +352,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new sistemaboletos.vista.BotonRedondeado()"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

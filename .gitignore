@@ -5,6 +5,8 @@
 /nbbuild/
 /.nbproject/
 
+/build.xml
+
 *.log
 *.tmp
 *.class

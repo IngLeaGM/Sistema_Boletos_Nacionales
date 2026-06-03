@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sistemaboletos.conexion.ConexionBD;
+import sistemaboletos.modelo.Ubicacion;
 import sistemaboletos.modelo.Viaje;
 
 public class ViajesDAO {
@@ -74,4 +75,94 @@ public class ViajesDAO {
             return false;
         }
     }
+    
+    public ArrayList<Ubicacion> listaUbicacionesDisponibles(Connection con) {
+        ArrayList<Ubicacion> lista = new ArrayList<>();
+        
+        // Consulta uniendo id_ubicacion con el id_destino de viajes
+        String sql = "SELECT DISTINCT u.id_ubicacion, u.nombre " +
+                     "FROM UBICACIONES u " +
+                     "INNER JOIN VIAJES v ON u.id_ubicacion = v.id_salida";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // Creamos el objeto con los datos de la BD
+                Ubicacion ub = new Ubicacion(
+                    rs.getInt("id_ubicacion"),
+                    rs.getString("nombre")
+                );
+                lista.add(ub);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cargar ubicaciones disponibles: " + e.getMessage());
+        }
+        for ( Ubicacion ub : lista) {
+            System.out.println(ub.getNombre());
+        }
+        return lista;
+    }
+    
+    public ArrayList<Ubicacion> listaDestinos(Connection con, Ubicacion ubiSalida) {
+         ArrayList<Ubicacion> lista = new ArrayList<>();
+        
+        // Consulta uniendo id_ubicacion con el id_destino de viajes
+        String sql = "SELECT DISTINCT u.id_ubicacion, u.nombre " +
+                "FROM UBICACIONES u INNER JOIN VIAJES v " +
+                "ON u.id_ubicacion=v.id_destino AND v.id_salida = ?;";
+
+        try {
+           
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, ubiSalida.getId_ubicacion());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // Creamos el objeto con los datos de la BD
+                Ubicacion ub = new Ubicacion(
+                    rs.getInt("id_ubicacion"),
+                    rs.getString("nombre")
+                );
+                lista.add(ub);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cargar destinos: " + e.getMessage());
+        }
+        for ( Ubicacion ub : lista) {
+            System.out.println(ub.getNombre());
+        }
+        return lista;
+    }
+    
+    public ArrayList<Viaje> listaFechas(Connection con, Ubicacion ubiSalida, Ubicacion ubiDestino) {
+        ArrayList<Viaje> lista = new ArrayList<>();
+        
+        String sql = "SELECT id_viaje, DATE_FORMAT(fecha_salida, '%d/%m/%Y %h:%i %p') AS fecha_formateada " +
+                 "FROM VIAJES WHERE id_salida = ? AND id_destino = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, ubiSalida.getId_ubicacion());
+            ps.setInt(2, ubiDestino.getId_ubicacion());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // Creamos el objeto con los datos de la BD
+                Viaje viaje = new Viaje(
+                    rs.getInt("id_viaje"),
+                    rs.getString("fecha_formateada")
+                );
+                lista.add(viaje);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cargar fechas: " + e.getMessage());
+        }
+        for (Viaje viaje : lista) {
+            System.out.println(viaje.getFecha());
+        }
+        return lista;
+    }
+    
 }

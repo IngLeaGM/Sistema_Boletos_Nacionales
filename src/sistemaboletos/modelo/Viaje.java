@@ -24,6 +24,11 @@ public class Viaje {
         this.fecha_salida = fecha_salida;
         this.precio_x_asiento = precio_x_asiento;
     }
+    
+    public Viaje(int id_viaje, String fecha_salida) {
+        this.id_viaje = id_viaje;
+        this.fecha_salida = fecha_salida;
+    }
 
     public int getId_viaje() {
         return id_viaje;
@@ -67,5 +72,11 @@ public class Viaje {
     
     public void setPrecio_x_asiento(double precio_x_asiento) {
         this.precio_x_asiento = precio_x_asiento;
+    }
+    
+    // Este metodo fue creado para jcbFecha por lo tanto solo devuelve la fecha depo String
+    @Override
+    public String toString() {
+        return fecha_salida; 
     }
 }

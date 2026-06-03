@@ -64,9 +64,9 @@ public class ControladorLogin implements ActionListener {
                
                 vista.dispose(); // Cierra y destruye la ventana de Login actual
                 
-              
+                
                 FrameMenu menuPrincipal = new FrameMenu();
-                //ControladorMenu ctrlMenu = new ControladorMenu(FrameMenu);
+                ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, dao, usuarioIntento);
                 menuPrincipal.setVisible(true);
                 
             } else {

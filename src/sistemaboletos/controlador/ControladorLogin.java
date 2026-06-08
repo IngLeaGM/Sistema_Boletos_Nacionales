@@ -40,7 +40,7 @@ public class ControladorLogin implements ActionListener {
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
-        }
+        } 
 
     }
     
@@ -60,13 +60,13 @@ public class ControladorLogin implements ActionListener {
             
             boolean loginExitoso = dao.LoginUsuario(usuarioIntento);
             if (loginExitoso) {
-                JOptionPane.showMessageDialog(vista, "¡Inicio de sesión exitoso! Bienvenido.");
+                System.out.println("¡Inicio de sesión exitoso! Bienvenido.");
                
                 vista.dispose(); // Cierra y destruye la ventana de Login actual
                 
-                
                 FrameMenu menuPrincipal = new FrameMenu();
                 ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, dao, usuarioIntento);
+                menuPrincipal.setLocationRelativeTo(null);
                 menuPrincipal.setVisible(true);
                 
             } else {

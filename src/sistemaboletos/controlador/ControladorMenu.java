@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import sistemaboletos.conexion.ConexionBD;
+import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.dao.UbicacionesDAO;
 import sistemaboletos.dao.UsuariosDAO;
 import sistemaboletos.dao.ViajesDAO;
@@ -15,19 +16,21 @@ import sistemaboletos.modelo.Usuario;
 import sistemaboletos.modelo.Viaje;
 import sistemaboletos.vista.FrameComprar;
 import sistemaboletos.vista.FrameMenu;
+import sistemaboletos.vista.FrameMisBoletos;
 
 public class ControladorMenu implements ActionListener {
     
     private FrameMenu vista;
-    private UsuariosDAO dao;
+    private UsuariosDAO userDao;
     private Usuario usuarioLog;
     
-    public ControladorMenu(FrameMenu vista, UsuariosDAO dao, Usuario usuarioLog)  {
+    public ControladorMenu(FrameMenu vista, UsuariosDAO userDao, Usuario usuarioLog)  {
         this.vista = vista;
-        this.dao = dao;
+        this.userDao = userDao;
         this.usuarioLog = usuarioLog;
         
         this.vista.getBtnComprar().addActionListener((ActionListener) this);
+        this.vista.getBtnMisBoletos().addActionListener((ActionListener) this);
     }
 
     @Override
@@ -38,9 +41,14 @@ public class ControladorMenu implements ActionListener {
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
+        } else if (e.getSource() == vista.getBtnMisBoletos()) {
+            try {
+                abrirVentanaBoletos();
+            } catch (Exception ex) {
+                System.err.print("Ocurrio un error: " + ex);
+            }
         }
     }
-    
     
     
     private void abrirVentanaComprar() throws SQLException {
@@ -51,7 +59,6 @@ public class ControladorMenu implements ActionListener {
         
         FrameComprar vistaComprar = new FrameComprar();
         
-        UsuariosDAO userDao = new UsuariosDAO();
         ViajesDAO viajesDao = new ViajesDAO();
         UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
@@ -59,10 +66,34 @@ public class ControladorMenu implements ActionListener {
         List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
         
         ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, ubicacionesDao,
-                                                                listaViajes, listaUbicaciones, usuarioLog); 
-        
+                                                                listaViajes, listaUbicaciones, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);
         vistaComprar.setVisible(true);
         System.out.println("Se entro a la ventana comprar");
+    }
+    
+    private void abrirVentanaBoletos() throws SQLException {
+        Connection con = ConexionBD.getConexion();
+        
+        usuarioLog = userDao.obtenerId_usuario(con, usuarioLog);
+        System.out.println(usuarioLog.getId_usuario());
+        
+        vista.dispose();
+        
+        FrameMisBoletos vistaBoletos = new FrameMisBoletos();
+        
+        BoletosDAO boletosDao = new BoletosDAO();
+        ViajesDAO viajesDao = new ViajesDAO();
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
+        List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
+        
+        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao, ubicacionesDao,
+                                                                boletosDao, listaViajes, listaUbicaciones, usuarioLog, con); 
+        
+        vistaBoletos.setLocationRelativeTo(null);
+        vistaBoletos.setVisible(true);
+        System.out.println("Se entro a la ventana Mis Boletos");
     }
 }

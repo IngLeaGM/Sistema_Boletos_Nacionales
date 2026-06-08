@@ -20,6 +20,7 @@ public class ControladorRegistrar implements ActionListener {
         this.dao = dao;
         
         this.vista.getBtnRegistrar().addActionListener(this);
+        this.vista.getBtnLogin().addActionListener(this);
     }
 
     @Override
@@ -30,7 +31,14 @@ public class ControladorRegistrar implements ActionListener {
             } catch (SQLException ex) {
                 System.err.println("Ocurrio un error" + ex);
             }
-        } 
+        } else if (e.getSource() == vista.getBtnLogin()) {
+            vista.dispose();
+              
+                FrameLogin frameLogin = new FrameLogin();
+                ControladorLogin ctrlLogin = new ControladorLogin(frameLogin, dao);
+                frameLogin.setLocationRelativeTo(null);
+                frameLogin.setVisible(true);
+        }
     }
     
     public void ejecutarRegistro() throws SQLException {

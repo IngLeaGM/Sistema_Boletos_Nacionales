@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sistemaboletos.conexion.ConexionBD;
+import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.dao.UbicacionesDAO;
 import sistemaboletos.dao.UsuariosDAO;
 import sistemaboletos.dao.ViajesDAO;
@@ -19,11 +20,11 @@ import sistemaboletos.modelo.Usuario;
 import sistemaboletos.modelo.Viaje;
 import sistemaboletos.vista.FrameComprar;
 import sistemaboletos.vista.FrameMenu;
+import sistemaboletos.vista.FrameMisBoletos;
 
 
 public class ControladorComprar implements ActionListener {
     
-    Connection con = ConexionBD.getConexion();
     // Atributos
     private FrameComprar vista;
     private UsuariosDAO userDao;
@@ -32,12 +33,13 @@ public class ControladorComprar implements ActionListener {
     private List<Viaje> listaViajes;
     private List<Ubicacion> listaUbicaciones;
     private Usuario usuarioLog;
+    private Connection con;
     
     
     //Constructor
     public ControladorComprar(FrameComprar vista, UsuariosDAO userDao, ViajesDAO viajesDao,
                                 UbicacionesDAO ubicacionesDao, List<Viaje> listaViajes,
-                                List<Ubicacion> listaUbicaciones, Usuario usuarioLog) throws SQLException  {
+                                List<Ubicacion> listaUbicaciones, Usuario usuarioLog, Connection con) throws SQLException  {
         this.vista = vista;
         this.userDao = userDao;
         this.viajesDao = viajesDao;
@@ -45,9 +47,12 @@ public class ControladorComprar implements ActionListener {
         this.listaViajes = listaViajes;
         this.listaUbicaciones = listaUbicaciones;
         this.usuarioLog = usuarioLog;
+        this.con = con;
         
         this.vista.getBtnInicio().addActionListener(this);
         this.vista.getJcbDesde().addActionListener(this);
+        this.vista.getBtnMisBoletos().addActionListener(this);
+        
         cargarViajes(con);
     }
     
@@ -65,11 +70,12 @@ public class ControladorComprar implements ActionListener {
         } else if (e.getSource() == vista.getBtnInicio()) {
             
             try {
-                vista.dispose(); // Cierra y destruye la ventana de Login actual
+                vista.dispose();
 
 
                 FrameMenu menuPrincipal = new FrameMenu();
                 ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, userDao, usuarioLog);
+                menuPrincipal.setLocationRelativeTo(null);
                 menuPrincipal.setVisible(true);
             
             } catch (Exception ex) {
@@ -82,6 +88,12 @@ public class ControladorComprar implements ActionListener {
                 }
             }
             
+        } else if (e.getSource() == vista.getBtnMisBoletos()) {
+            try {
+                abrirVentanaBoletos();
+            } catch (Exception ex) {
+                System.err.print("Ocurrio un error: " + ex);
+            }
         }
     }
     
@@ -125,6 +137,25 @@ public class ControladorComprar implements ActionListener {
         for (Viaje viajeObtenido : viajesDisponibles) {
             vista.getJcbFecha().addItem(viajeObtenido);
         }
+    }
+    
+    private void abrirVentanaBoletos() throws SQLException {
+        
+        usuarioLog = userDao.obtenerId_usuario(con, usuarioLog);
+        System.out.println(usuarioLog.getId_usuario());
+        
+        vista.dispose();
+        
+        FrameMisBoletos vistaBoletos = new FrameMisBoletos();
+        
+        BoletosDAO boletosDao = new BoletosDAO();
+        
+        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao, ubicacionesDao,
+                                                                boletosDao, listaViajes, listaUbicaciones, usuarioLog, con); 
+        
+        vistaBoletos.setLocationRelativeTo(null);
+        vistaBoletos.setVisible(true);
+        System.out.println("Se entro a la ventana Mis Boletos");
     }
 
 }

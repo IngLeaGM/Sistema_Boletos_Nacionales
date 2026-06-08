@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.dao.UbicacionesDAO;
@@ -31,6 +32,7 @@ public class ControladorMenu implements ActionListener {
         
         this.vista.getBtnComprar().addActionListener((ActionListener) this);
         this.vista.getBtnMisBoletos().addActionListener((ActionListener) this);
+        this.vista.getBtnSalir().addActionListener((ActionListener) this);
         
         if(usuarioLog.getId_usuario() == 1) {
             vista.getBtnAdmin().setVisible(true);
@@ -53,6 +55,8 @@ public class ControladorMenu implements ActionListener {
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
+        } else if (e.getSource() == vista.getBtnSalir()) {
+            cerrarAplicacion();
         }
     }
     
@@ -98,5 +102,22 @@ public class ControladorMenu implements ActionListener {
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);
         System.out.println("Se entro a la ventana Mis Boletos");
+    }
+    
+    private void cerrarAplicacion() {
+   
+        int respuesta = JOptionPane.showConfirmDialog(
+                vista, 
+                "¿Seguro que deseas salir?", 
+                "Cerrar Aplicación", 
+                JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (respuesta == JOptionPane.YES_OPTION) {
+
+            vista.dispose(); 
+
+           System.exit(0); 
+        }
     }
 }

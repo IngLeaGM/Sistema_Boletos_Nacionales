@@ -141,7 +141,6 @@ public class ControladorComprar implements ActionListener {
     
     private void abrirVentanaBoletos() throws SQLException {
         
-        usuarioLog = userDao.obtenerId_usuario(con, usuarioLog);
         System.out.println(usuarioLog.getId_usuario());
         
         vista.dispose();

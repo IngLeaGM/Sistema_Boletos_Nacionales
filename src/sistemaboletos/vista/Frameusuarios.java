@@ -205,7 +205,7 @@ public class Frameusuarios extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Nombre y Apellido", "Correo", "Cedula"
+                "Usuario", "Correo", "Telefono"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

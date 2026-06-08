@@ -148,6 +148,124 @@ public class UsuariosDAO {
         }
         return true;
     }
+    
+    public boolean vericarDatosUPDATE(Connection con, Usuario usuario) throws SQLException {
+        String SELECT = "SELECT COUNT(*) AS total FROM USUARIOS WHERE (user = ? OR email = ? OR telf = ?) AND id_usuario != ?;";
+        
+        try (PreparedStatement ps = con.prepareStatement(SELECT)) {
+            
+            ps.setString(1, usuario.getUser());
+            ps.setString(2, usuario.getEmail());
+            ps.setString(3, usuario.getTelf());
+            ps.setInt(4, usuario.getId_usuario());
+            
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    // Si se entra aquí, es porque al menos uno de los datos ya existe.
+                    // Ahora verificamos cuál de ellos causo la coincidencia:
+                    
+                    if (usuario.getUser().equals(rs.getString("user"))) {
+                        JOptionPane.showMessageDialog(null, "Usuario ya existe");
+                        return false;
+                    }
+                    if (usuario.getEmail().equals(rs.getString("email"))) {
+                        JOptionPane.showMessageDialog(null, "Email ya existe");
+                        return false;
+                    }
+                    if (usuario.getTelf().equals(rs.getString("telf"))) {
+                        JOptionPane.showMessageDialog(null, "Telefono ya fue utilizado");
+                        return false;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al verificar duplicados: " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
+    
+    public Usuario obtenerId_usuario(Connection con, Usuario usuario) {
+        // Consulta SQL
+        String SELECCIONAR = "SELECT id_usuario FROM USUARIOS WHERE email = ?;";
+        
+        
+        try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
+            
+                ps.setString(1, usuario.getEmail());
+                
+                try (ResultSet rs = ps.executeQuery()) {
+                    
+                    if (rs.next()) {
+                        int id_usuario = rs.getInt("id_usuario");
+                        
+                        usuario.setId_usuario(id_usuario);
+                    }
+
+                }
+        } catch (SQLException e) {
+            System.err.println("Error al selecionar tabla: "+e.getMessage());
+        }
+        return usuario;
+    }
+    
+    public boolean actualizarDatos(Connection con, Usuario usuario) throws SQLException {
+        
+        String hashed_pass = BCrypt.hashpw(usuario.getPass(), BCrypt.gensalt());
+        
+        // Consulta SQL
+        String ACTUALIZAR = "UPDATE USUARIOS SET user = ?, email = ?, telf = ? WHERE id_usuario = ?;";
+        
+        boolean verificacion = this.vericarDatosUPDATE(con, usuario);
+        
+        if (!verificacion) {
+            return false;
+        }
+        
+        try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
+        
+            //Asignación segura de valores
+            ps.setString(1, usuario.getUser());
+            ps.setString(2, usuario.getEmail());
+            ps.setString(3, usuario.getTelf());
+            ps.setInt(4, usuario.getId_usuario());
+
+            // Ejecutar la actualización
+            ps.executeUpdate();
+            
+            return true;
+        
+        } catch (SQLException e) {
+         
+        System.err.println("Error al actulizar datos de usuario: " + e.getMessage());
+        return false;
+        }
+    }
+    
+    public boolean actualizarContraseña(Connection con, Usuario usuario) throws SQLException {
+        
+        String hashed_pass = BCrypt.hashpw(usuario.getPass(), BCrypt.gensalt());
+        
+        // Consulta SQL
+        String ACTUALIZAR = "UPDATE USUARIOS SET pass = ? WHERE id_usuario = ?;";
+          
+        try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
+        
+            //Asignación segura de valores
+            ps.setString(1, hashed_pass);
+            ps.setInt(2, usuario.getId_usuario());
+
+            // Ejecutar la actualización
+            ps.executeUpdate();
+            
+            return true;
+        
+        } catch (SQLException e) {
+         
+        System.err.println("Error al actulizar datos de usuario: " + e.getMessage());
+        return false;
+        }
+    }
 }
  
 

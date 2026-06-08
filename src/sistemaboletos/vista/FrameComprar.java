@@ -43,7 +43,7 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnInicio = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnMisBoletos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -78,15 +78,15 @@ public class FrameComprar extends javax.swing.JFrame {
         jButton5.setContentAreaFilled(false);
         jButton5.setFocusPainted(false);
 
-        jButton6.setBackground(new java.awt.Color(153, 204, 255, 125));
-        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton6.setText("Mis Boletos");
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setFocusPainted(false);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnMisBoletos.setBackground(new java.awt.Color(153, 204, 255, 125));
+        btnMisBoletos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnMisBoletos.setText("Mis Boletos");
+        btnMisBoletos.setBorderPainted(false);
+        btnMisBoletos.setContentAreaFilled(false);
+        btnMisBoletos.setFocusPainted(false);
+        btnMisBoletos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnMisBoletosActionPerformed(evt);
             }
         });
 
@@ -104,7 +104,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(btnMisBoletos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 564, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
@@ -118,7 +118,7 @@ public class FrameComprar extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnInicio)
                         .addComponent(jButton5)
-                        .addComponent(jButton6)))
+                        .addComponent(btnMisBoletos)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -230,9 +230,9 @@ public class FrameComprar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnMisBoletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMisBoletosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnMisBoletosActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
@@ -294,8 +294,8 @@ public class FrameComprar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicio;
+    private javax.swing.JButton btnMisBoletos;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -323,5 +323,9 @@ public class FrameComprar extends javax.swing.JFrame {
     
     public JButton getBtnInicio() {
         return btnInicio;
+    }
+    
+    public JButton getBtnMisBoletos() {
+        return btnMisBoletos;
     }
 }

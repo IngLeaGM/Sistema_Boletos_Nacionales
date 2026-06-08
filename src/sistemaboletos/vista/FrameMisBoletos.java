@@ -158,6 +158,7 @@ public class FrameMisBoletos extends javax.swing.JFrame {
             }
         });
         tbBoletos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tbBoletos.setIntercellSpacing(new java.awt.Dimension(2, 2));
         jScrollPane1.setViewportView(tbBoletos);
         if (tbBoletos.getColumnModel().getColumnCount() > 0) {
             tbBoletos.getColumnModel().getColumn(0).setResizable(false);
@@ -230,10 +231,10 @@ public class FrameMisBoletos extends javax.swing.JFrame {
         jLabel5.setText("Desde:");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Hasta:");
+        jLabel6.setText("Destino:");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Datos de transaccion:");
+        jLabel7.setText("Precio:");
 
         tfNombre.setEditable(false);
         tfNombre.setText(" ");

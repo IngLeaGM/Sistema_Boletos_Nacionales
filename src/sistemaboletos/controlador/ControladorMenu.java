@@ -31,6 +31,12 @@ public class ControladorMenu implements ActionListener {
         
         this.vista.getBtnComprar().addActionListener((ActionListener) this);
         this.vista.getBtnMisBoletos().addActionListener((ActionListener) this);
+        
+        if(usuarioLog.getId_usuario() == 1) {
+            vista.getBtnAdmin().setVisible(true);
+        } else {
+            vista.getBtnAdmin().setVisible(false);
+        }
     }
 
     @Override
@@ -74,10 +80,7 @@ public class ControladorMenu implements ActionListener {
     
     private void abrirVentanaBoletos() throws SQLException {
         Connection con = ConexionBD.getConexion();
-        
-        usuarioLog = userDao.obtenerId_usuario(con, usuarioLog);
-        System.out.println(usuarioLog.getId_usuario());
-        
+              
         vista.dispose();
         
         FrameMisBoletos vistaBoletos = new FrameMisBoletos();

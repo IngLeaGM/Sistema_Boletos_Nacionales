@@ -185,10 +185,12 @@ public class UsuariosDAO {
         return true;
     }
     
-    public Usuario obtenerId_usuario(Connection con, Usuario usuario) {
+    public Usuario obtenerId_usuario(Usuario usuario) throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
+        
         // Consulta SQL
         String SELECCIONAR = "SELECT id_usuario FROM USUARIOS WHERE email = ?;";
-        
         
         try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
             
@@ -266,6 +268,10 @@ public class UsuariosDAO {
         return false;
         }
     }
+    
+    //public boolean eliminaUsuario(Connection con, Usuario usuario) throws SQLException {
+        
+    //}
 }
  
 

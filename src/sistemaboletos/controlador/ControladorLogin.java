@@ -59,7 +59,9 @@ public class ControladorLogin implements ActionListener {
         try {
             
             boolean loginExitoso = dao.LoginUsuario(usuarioIntento);
+            
             if (loginExitoso) {
+                usuarioIntento = dao.obtenerId_usuario(usuarioIntento);
                 System.out.println("¡Inicio de sesión exitoso! Bienvenido.");
                
                 vista.dispose(); // Cierra y destruye la ventana de Login actual

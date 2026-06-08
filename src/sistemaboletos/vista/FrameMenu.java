@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import sistemaboletos.vista.imagenes.*;
 
 /**
@@ -30,6 +31,8 @@ public class FrameMenu extends javax.swing.JFrame {
     
         // 3. ¡MUY IMPORTANTE! Esto debe ir DESPUÉS de setContentPane
         initComponents();
+        
+        this.getBtnAdmin().setVisible(false);
     }
     
     /**
@@ -44,6 +47,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         labelUser = new javax.swing.JLabel();
+        btnAdmin = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -72,6 +76,18 @@ public class FrameMenu extends javax.swing.JFrame {
         labelUser.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         labelUser.setText("Usuario");
 
+        btnAdmin.setBackground(new java.awt.Color(153, 204, 255, 125));
+        btnAdmin.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnAdmin.setText("Administrar");
+        btnAdmin.setBorderPainted(false);
+        btnAdmin.setContentAreaFilled(false);
+        btnAdmin.setFocusPainted(false);
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -80,6 +96,8 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAdmin)
+                .addGap(30, 30, 30)
                 .addComponent(labelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
@@ -88,7 +106,9 @@ public class FrameMenu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(labelUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdmin))
                     .addComponent(jButton4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -214,6 +234,10 @@ public class FrameMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdminActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -251,6 +275,7 @@ public class FrameMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnMisBoletos;
     private javax.swing.JButton jButton3;
@@ -269,5 +294,13 @@ public class FrameMenu extends javax.swing.JFrame {
     
     public JButton getBtnMisBoletos() {
         return btnMisBoletos;
+    }
+
+    public JButton getBtnAdmin() {
+        return btnAdmin;
+    }
+
+    public JLabel getLabelUser() {
+        return labelUser;
     }
 }

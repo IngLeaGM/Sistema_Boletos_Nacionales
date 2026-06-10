@@ -128,7 +128,7 @@ public class ControladorMenu implements ActionListener {
         List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
         List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
         
-        ControladorAdmin ctrladmin = new ControladorAdmin(vistaAdmin , userDao, usuarioLog); 
+        ControladorAdmin ctrladmin = new ControladorAdmin(vistaAdmin); 
         vistaAdmin.setLocationRelativeTo(null);
         vistaAdmin.setVisible(true);
         System.out.println("Se entro a la ventana comprar");

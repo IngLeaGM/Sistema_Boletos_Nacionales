@@ -1,12 +1,17 @@
 
 package sistemaboletos.controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.dao.UbicacionesDAO;
 import sistemaboletos.dao.UsuariosDAO;
@@ -16,11 +21,14 @@ import sistemaboletos.modelo.Ubicacion;
 import sistemaboletos.modelo.Usuario;
 import sistemaboletos.modelo.Viaje;
 import sistemaboletos.modelo.ViajeInformacion;
+import sistemaboletos.vista.FrameFacturas;
+import sistemaboletos.vista.FrameMenu;
 import sistemaboletos.vista.FrameMisBoletos;
+import sistemaboletos.vista.FrameUsuarios;
 import sistemaboletos.vista.FrameViajesProgramados;
 
 
-public class ControladorViajes {
+public class ControladorViajes implements ActionListener {
     private FrameViajesProgramados vista;
     private ViajesDAO viajesDao;
     private UbicacionesDAO ubicacionesDao;
@@ -32,6 +40,8 @@ public class ControladorViajes {
         this.ubicacionesDao = ubicacionesDao;
         this.con = con;
         
+        this.vista.getTbtnUsuarios().addActionListener((ActionListener) this);
+        this.vista.getTbtnFacturas().addActionListener((ActionListener) this);
         this.vista.getTbViajes().addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -62,6 +72,23 @@ public class ControladorViajes {
         this.vista.getTbViajes().removeColumn(this.vista.getTbViajes().getColumnModel().getColumn(0));
         llenarTablaViajes();
         cargarCombos(this.con);
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+         if (e.getSource() == vista.getTbtnUsuarios()) {
+            try {
+                abrirVentanaUsuarios();
+            } catch (Exception ex) {
+                System.err.print("Ocurrio un error: " + ex);
+            }
+        } else if (e.getSource() == vista.getTbtnFacturas()) {
+            try {
+                abrirVentanaFacturas();
+            } catch (Exception ex) {
+                System.out.println("Ocurrio un error: " + ex);
+            } 
+        }
     }
     
     private void llenarTablaViajes() throws SQLException {
@@ -105,7 +132,7 @@ public class ControladorViajes {
 
     }
     
-    public void cargarCombos(Connection con) throws SQLException {
+    private void cargarCombos(Connection con) throws SQLException {
         vista.getJcbDesde().removeAllItems(); // Limpiamos el combo por si hay items basura
         vista.getJcbHasta().removeAllItems();
         ArrayList<Ubicacion> ubicacionesDisponibles = this.ubicacionesDao.obtener_ubicaciones(this.con);
@@ -116,5 +143,39 @@ public class ControladorViajes {
             vista.getJcbHasta().addItem(ubObtenida);
         }
 
+    }
+    
+    private void abrirVentanaUsuarios() throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
+        
+        vista.dispose();
+        
+        FrameUsuarios vistaUsuarios = new FrameUsuarios();
+        
+        ViajesDAO viajesDao = new ViajesDAO();
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios); 
+        vistaUsuarios.setLocationRelativeTo(null);
+        vistaUsuarios.setVisible(true);
+        System.out.println("Se entro a la ventana Usuarios");
+    }
+    
+    private void abrirVentanaFacturas() throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
+        
+        vista.dispose();
+        
+        FrameFacturas vistaFacturas = new FrameFacturas();
+        
+        ViajesDAO viajesDao = new ViajesDAO();
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas); 
+        vistaFacturas.setLocationRelativeTo(null);
+        vistaFacturas.setVisible(true);
+        System.out.println("Se entro a la ventana Facturas");
     }
 }

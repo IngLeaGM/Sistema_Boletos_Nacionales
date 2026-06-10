@@ -23,18 +23,13 @@ import sistemaboletos.vista.FrameFacturas;
 import sistemaboletos.vista.FrameUsuarios;
 import sistemaboletos.vista.FrameViajesProgramados;
 
-public class ControladorAdmin implements ActionListener {
+public class ControladorUsuarios implements ActionListener {
     
-    private FrameAdmin vista;
-    private UsuariosDAO userDao;
-    private Usuario usuarioLog;
+    private FrameUsuarios vista;
     
-    public ControladorAdmin(FrameAdmin vista)  {
+    public ControladorUsuarios(FrameUsuarios vista)  {
         this.vista = vista;
-        this.userDao = userDao;
-        this.usuarioLog = usuarioLog;
         
-        this.vista.getTbtnUsuarios().addActionListener((ActionListener) this);
         this.vista.getTbtnFacturas().addActionListener((ActionListener) this);
         this.vista.getTbtnViajes().addActionListener((ActionListener) this);
         
@@ -42,18 +37,12 @@ public class ControladorAdmin implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.getTbtnUsuarios()) {
-            try {
-                abrirVentanaUsuarios();
-            } catch (Exception ex) {
-                System.err.print("Ocurrio un error: " + ex);
-            }
-        } else if (e.getSource() == vista.getTbtnFacturas()) {
+        if (e.getSource() == vista.getTbtnFacturas()) {
             try {
                 abrirVentanaFacturas();
             } catch (Exception ex) {
-                System.out.println("Ocurrio un error: " + ex);
-            } 
+                System.err.print("Ocurrio un error: " + ex);
+            }
         } else if (e.getSource() == vista.getTbtnViajes()) {
             try {
                 abrirVentanaViajes();
@@ -61,22 +50,6 @@ public class ControladorAdmin implements ActionListener {
                 System.out.println("Ocurrio un error: " + ex);
             } 
         }
-    }
-    
-    private void abrirVentanaUsuarios() throws SQLException {
-         Connection con = ConexionBD.getConexion();
-        
-        vista.dispose();
-        
-        FrameUsuarios vistaUsuarios = new FrameUsuarios();
-        
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
-        
-        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios); 
-        vistaUsuarios.setLocationRelativeTo(null);
-        vistaUsuarios.setVisible(true);
-        System.out.println("Se entro a la ventana Usuarios");
     }
     
     private void abrirVentanaFacturas() throws SQLException {

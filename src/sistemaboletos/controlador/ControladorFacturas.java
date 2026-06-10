@@ -23,19 +23,14 @@ import sistemaboletos.vista.FrameFacturas;
 import sistemaboletos.vista.FrameUsuarios;
 import sistemaboletos.vista.FrameViajesProgramados;
 
-public class ControladorAdmin implements ActionListener {
+public class ControladorFacturas implements ActionListener {
     
-    private FrameAdmin vista;
-    private UsuariosDAO userDao;
-    private Usuario usuarioLog;
+    private FrameFacturas vista;
     
-    public ControladorAdmin(FrameAdmin vista)  {
+    public ControladorFacturas(FrameFacturas vista)  {
         this.vista = vista;
-        this.userDao = userDao;
-        this.usuarioLog = usuarioLog;
         
         this.vista.getTbtnUsuarios().addActionListener((ActionListener) this);
-        this.vista.getTbtnFacturas().addActionListener((ActionListener) this);
         this.vista.getTbtnViajes().addActionListener((ActionListener) this);
         
     }
@@ -48,12 +43,6 @@ public class ControladorAdmin implements ActionListener {
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
-        } else if (e.getSource() == vista.getTbtnFacturas()) {
-            try {
-                abrirVentanaFacturas();
-            } catch (Exception ex) {
-                System.out.println("Ocurrio un error: " + ex);
-            } 
         } else if (e.getSource() == vista.getTbtnViajes()) {
             try {
                 abrirVentanaViajes();
@@ -77,23 +66,6 @@ public class ControladorAdmin implements ActionListener {
         vistaUsuarios.setLocationRelativeTo(null);
         vistaUsuarios.setVisible(true);
         System.out.println("Se entro a la ventana Usuarios");
-    }
-    
-    private void abrirVentanaFacturas() throws SQLException {
-        
-        Connection con = ConexionBD.getConexion();
-        
-        vista.dispose();
-        
-        FrameFacturas vistaFacturas = new FrameFacturas();
-        
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
-        
-        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas); 
-        vistaFacturas.setLocationRelativeTo(null);
-        vistaFacturas.setVisible(true);
-        System.out.println("Se entro a la ventana Facturas");
     }
     
    private void abrirVentanaViajes() throws SQLException {

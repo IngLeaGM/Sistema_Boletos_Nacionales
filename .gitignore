@@ -10,3 +10,4 @@
 *.log
 *.tmp
 *.class
+/Sistema_Boletos/build/

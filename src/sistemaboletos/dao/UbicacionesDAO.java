@@ -12,10 +12,10 @@ import sistemaboletos.modelo.Ubicacion;
 
 public class UbicacionesDAO {
     
-    public List<Ubicacion> obtener_ubicaciones(Connection con) throws SQLException {
+    public ArrayList<Ubicacion> obtener_ubicaciones(Connection con) throws SQLException {
         // Creacion de lista vacia para guardar los objetos
         
-        List<Ubicacion> listaUbicaciones = new ArrayList<>();
+        ArrayList<Ubicacion> listaUbicaciones = new ArrayList<>();
         
         // Consulta SQL
         String SELECCIONAR = "SELECT id_ubicacion, nombre FROM UBICACIONES;";

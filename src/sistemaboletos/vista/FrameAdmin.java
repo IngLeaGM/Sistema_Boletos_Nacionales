@@ -9,18 +9,19 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JButton;
+import javax.swing.JToggleButton;
 import sistemaboletos.vista.imagenes.*;
 
 /**
  *
  * @author LeaGM
  */
-public class Frameadmin extends javax.swing.JFrame {
+public class FrameAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form FramePrincipal
      */
-    public Frameadmin() {
+    public FrameAdmin() {
         // 1. Creamos nuestro panel enviando la ruta de la imagen
         // ¡Asegúrate de poner la barra diagonal '/' al inicio!
         PanelFondo fondo = new PanelFondo("/sistemaboletos/vista/imagenes/imagendelmenu.png");
@@ -49,11 +50,11 @@ public class Frameadmin extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jPanel1 = new sistemaboletos.vista.PanelRedondeado(40);
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tbtnUsuarios = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        tbtnViajes = new javax.swing.JToggleButton();
+        tbtnFacturas = new javax.swing.JToggleButton();
         jPanel3 = new javax.swing.JPanel();
 
         menu1.setLabel("File");
@@ -83,8 +84,8 @@ public class Frameadmin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
-        jToggleButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jToggleButton1.setText("Usuarios");
+        tbtnUsuarios.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        tbtnUsuarios.setText("Usuarios");
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -109,11 +110,11 @@ public class Frameadmin extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jToggleButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jToggleButton2.setText("Viajes Programados");
+        tbtnViajes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        tbtnViajes.setText("Viajes Programados");
 
-        jToggleButton3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jToggleButton3.setText("Facturas");
+        tbtnFacturas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        tbtnFacturas.setText("Facturas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -123,9 +124,9 @@ public class Frameadmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2))
+                    .addComponent(tbtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtnFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbtnViajes))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -133,11 +134,11 @@ public class Frameadmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tbtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tbtnFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tbtnViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(198, Short.MAX_VALUE))
         );
 
@@ -194,14 +195,18 @@ public class Frameadmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frameadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frameadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frameadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frameadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -210,7 +215,7 @@ public class Frameadmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frameadmin().setVisible(true);
+                new FrameAdmin().setVisible(true);
             }
         });
     }
@@ -224,11 +229,23 @@ public class Frameadmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
+    private javax.swing.JToggleButton tbtnFacturas;
+    private javax.swing.JToggleButton tbtnUsuarios;
+    private javax.swing.JToggleButton tbtnViajes;
     // End of variables declaration//GEN-END:variables
+
+    public JToggleButton getTbtnFacturas() {
+        return tbtnFacturas;
+    }
+
+    public JToggleButton getTbtnUsuarios() {
+        return tbtnUsuarios;
+    }
+
+    public JToggleButton getTbtnViajes() {
+        return tbtnViajes;
+    }
 }

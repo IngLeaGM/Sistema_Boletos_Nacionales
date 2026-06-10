@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sistemaboletos.conexion.ConexionBD;
+import sistemaboletos.modelo.BoletoDetalle;
 import sistemaboletos.modelo.Ubicacion;
 import sistemaboletos.modelo.Viaje;
+import sistemaboletos.modelo.ViajeInformacion;
 
 public class ViajesDAO {
     
@@ -165,4 +167,41 @@ public class ViajesDAO {
         return lista;
     }
     
+    public List<ViajeInformacion> ObtenerViajesInformacion(Connection con) {
+    // Creacion de lista vacia para guardar los objetos
+        
+        List<ViajeInformacion> listaViajes = new ArrayList<>();
+        
+        // Consulta SQL
+        String SELECCIONAR = "SELECT v.id_viaje, u_salida.nombre AS ciudad_salida, u_destino.nombre AS ciudad_destino, v.fecha_salida, v.precio_x_asiento, ve.matricula " +
+                                "FROM VIAJES v " +
+                                "INNER JOIN UBICACIONES u_salida ON v.id_salida = u_salida.id_ubicacion " +
+                                "INNER JOIN UBICACIONES u_destino ON v.id_destino = u_destino.id_ubicacion " +
+                                "INNER JOIN TRANSPORTES ve ON v.transporte_id = ve.id_transporte;";
+        
+        try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
+           
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    // Se extraen los datos de MySql
+                    int id_viaje = rs.getInt("id_viaje");
+                    String ciudad_salida = rs.getString("ciudad_salida");
+                    String ciudad_destino = rs.getString("ciudad_destino");
+                    String fecha_salida = rs.getString("fecha_salida");
+                    double precio_x_asiento = rs.getDouble("precio_x_asiento");
+                    String matricula = rs.getString("matricula");
+                    
+
+                    // Se transforman los datos obtenidos en objetos
+                    ViajeInformacion viajeInformacion = new ViajeInformacion(id_viaje, ciudad_salida, ciudad_destino, fecha_salida, precio_x_asiento, matricula);
+
+                    // Se añade el nuevo objeto a la lista
+                    listaViajes.add(viajeInformacion);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al selecionar tabla: "+e.getMessage());
+        }
+        return listaViajes;
+    }
 }

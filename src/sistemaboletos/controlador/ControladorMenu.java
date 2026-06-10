@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
@@ -18,6 +20,7 @@ import sistemaboletos.modelo.Viaje;
 import sistemaboletos.vista.FrameComprar;
 import sistemaboletos.vista.FrameMenu;
 import sistemaboletos.vista.FrameMisBoletos;
+import sistemaboletos.vista.FrameAdmin;
 
 public class ControladorMenu implements ActionListener {
     
@@ -33,6 +36,7 @@ public class ControladorMenu implements ActionListener {
         this.vista.getBtnComprar().addActionListener((ActionListener) this);
         this.vista.getBtnMisBoletos().addActionListener((ActionListener) this);
         this.vista.getBtnSalir().addActionListener((ActionListener) this);
+        this.vista.getBtnAdmin().addActionListener((ActionListener) this);
         
         if(usuarioLog.getId_usuario() == 1) {
             vista.getBtnAdmin().setVisible(true);
@@ -54,6 +58,12 @@ public class ControladorMenu implements ActionListener {
                 abrirVentanaBoletos();
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
+            }
+        } else if (e.getSource() == vista.getBtnAdmin()) {
+            try {
+                abrirVentanaAdmin();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorMenu.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (e.getSource() == vista.getBtnSalir()) {
             cerrarAplicacion();
@@ -102,6 +112,26 @@ public class ControladorMenu implements ActionListener {
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);
         System.out.println("Se entro a la ventana Mis Boletos");
+    }
+    
+    private void abrirVentanaAdmin() throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
+        
+        vista.dispose();
+        
+        FrameAdmin vistaAdmin = new FrameAdmin();
+        
+        ViajesDAO viajesDao = new ViajesDAO();
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
+        List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
+        
+        ControladorAdmin ctrladmin = new ControladorAdmin(vistaAdmin , userDao, usuarioLog); 
+        vistaAdmin.setLocationRelativeTo(null);
+        vistaAdmin.setVisible(true);
+        System.out.println("Se entro a la ventana comprar");
     }
     
     private void cerrarAplicacion() {

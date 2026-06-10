@@ -19,7 +19,7 @@ public class TransportesDAO {
         List<Transporte> listaTransportes = new ArrayList<>();
         
         // Consulta SQL
-        String SELECCIONAR = "SELECT id_transporte, matricula FROM TRANSPORTES;";
+        String SELECCIONAR = "SELECT id_transporte, modelo, anio_vehiculo, matricula, tipo_combustible FROM TRANSPORTES;";
         
         try (PreparedStatement ps = con.prepareStatement(SELECCIONAR);
                 ResultSet rs = ps.executeQuery()) {
@@ -30,10 +30,13 @@ public class TransportesDAO {
             while (rs.next()) {
                 // Se extraen los datos de MySql
                 int id_transporte = rs.getInt("id_transporte");
+                String modelo = rs.getString("modelo");
                 String matricula = rs.getString("matricula");
+                int anio_vehiculo = rs.getInt("anio_vehiculo");
+                String tipo_combustible = rs.getString("tipo_combustible");
                 
                 // Se transforman los datos obtenidos en objetos
-                Transporte transporteExtraido = new Transporte(id_transporte, matricula);
+                Transporte transporteExtraido = new Transporte(id_transporte, modelo, anio_vehiculo, matricula, tipo_combustible);
                 
                 // Se añade el nuebvo objeto a la lista
                 listaTransportes.add(transporteExtraido);
@@ -47,12 +50,15 @@ public class TransportesDAO {
     
     public boolean insertar_Transporte(Connection con, Transporte transporte) throws SQLException {
 
-        String INSERT = "INSERT into TRANSPORTES (matricula) values (?)";
+        String INSERT = "INSERT into TRANSPORTES (modelo, anio_vehiculo, matricula, tipo_combustible) values (?, ?, ?, ?)";
 
         try (PreparedStatement ps = con.prepareStatement(INSERT)) {
 
             //Asignación segura de valores
-            ps.setString(1, transporte.getMatricula());
+            ps.setString(1, transporte.getModelo());
+            ps.setInt(2, transporte.getAnio_vehiculo());
+            ps.setString(3, transporte.getMatricula());
+            ps.setString(4, transporte.getTipo_combustible());
             // Ejecutar la actualización
             ps.executeUpdate();
 

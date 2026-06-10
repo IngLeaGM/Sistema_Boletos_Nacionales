@@ -72,7 +72,7 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         jComboBox3 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jCalendar1 = new org.netbeans.modules.form.InvalidComponent();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -222,7 +222,7 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                        .addGap(0, 35, Short.MAX_VALUE)
+                                        .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel8Layout.createSequentialGroup()
@@ -477,7 +477,7 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private com.toedter.calendar.JCalendar jCalendar1;
+    private org.netbeans.modules.form.InvalidComponent jCalendar1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JFrame jFrame1;

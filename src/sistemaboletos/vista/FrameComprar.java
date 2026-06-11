@@ -9,6 +9,7 @@ import sistemaboletos.vista.imagenes.*;
 import sistemaboletos.vista.FondoBus.*;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -56,28 +57,28 @@ public class FrameComprar extends javax.swing.JFrame {
         jcbHasta = new javax.swing.JComboBox();
         btnRegistrarse = new sistemaboletos.vista.BotonRedondeado();
         jPanel3 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
-        jToggleButton12 = new javax.swing.JToggleButton();
-        jToggleButton13 = new javax.swing.JToggleButton();
-        jToggleButton14 = new javax.swing.JToggleButton();
-        jToggleButton15 = new javax.swing.JToggleButton();
-        jToggleButton16 = new javax.swing.JToggleButton();
-        jToggleButton17 = new javax.swing.JToggleButton();
-        jToggleButton18 = new javax.swing.JToggleButton();
-        jToggleButton19 = new javax.swing.JToggleButton();
-        jToggleButton20 = new javax.swing.JToggleButton();
-        jToggleButton21 = new javax.swing.JToggleButton();
-        jToggleButton22 = new javax.swing.JToggleButton();
+        btnV03 = new javax.swing.JToggleButton();
+        btnV21 = new javax.swing.JToggleButton();
+        btnV19 = new javax.swing.JToggleButton();
+        btnV05 = new javax.swing.JToggleButton();
+        btnV04 = new javax.swing.JToggleButton();
+        btnV17 = new javax.swing.JToggleButton();
+        btnV01 = new javax.swing.JToggleButton();
+        btnV09 = new javax.swing.JToggleButton();
+        btnV02 = new javax.swing.JToggleButton();
+        btnV06 = new javax.swing.JToggleButton();
+        btnV12 = new javax.swing.JToggleButton();
+        btnV15 = new javax.swing.JToggleButton();
+        btnV10 = new javax.swing.JToggleButton();
+        btnV13 = new javax.swing.JToggleButton();
+        btnV11 = new javax.swing.JToggleButton();
+        btnV08 = new javax.swing.JToggleButton();
+        btnV07 = new javax.swing.JToggleButton();
+        btnV18 = new javax.swing.JToggleButton();
+        btnV16 = new javax.swing.JToggleButton();
+        btnV22 = new javax.swing.JToggleButton();
+        btnV20 = new javax.swing.JToggleButton();
+        btnV14 = new javax.swing.JToggleButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -255,137 +256,159 @@ public class FrameComprar extends javax.swing.JFrame {
 
         jPanel3 = new FondoBus();
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton1.setBorderPainted(false);
-        jToggleButton1.setContentAreaFilled(false);
-        jToggleButton1.setDisabledIcon(null);
-        jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV03.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV03.setText("V03");
+        btnV03.setBorderPainted(false);
+        btnV03.setContentAreaFilled(false);
+        btnV03.setDisabledIcon(null);
+        btnV03.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton2.setBorderPainted(false);
-        jToggleButton2.setContentAreaFilled(false);
-        jToggleButton2.setDisabledIcon(null);
-        jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV21.setText("V21");
+        btnV21.setBorderPainted(false);
+        btnV21.setContentAreaFilled(false);
+        btnV21.setDisabledIcon(null);
+        btnV21.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton3.setBorderPainted(false);
-        jToggleButton3.setContentAreaFilled(false);
-        jToggleButton3.setDisabledIcon(null);
-        jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV19.setText("V19");
+        btnV19.setBorderPainted(false);
+        btnV19.setContentAreaFilled(false);
+        btnV19.setDisabledIcon(null);
+        btnV19.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton4.setBorderPainted(false);
-        jToggleButton4.setContentAreaFilled(false);
-        jToggleButton4.setDisabledIcon(null);
-        jToggleButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV05.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV05.setText("V05");
+        btnV05.setBorderPainted(false);
+        btnV05.setContentAreaFilled(false);
+        btnV05.setDisabledIcon(null);
+        btnV05.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton5.setBorderPainted(false);
-        jToggleButton5.setContentAreaFilled(false);
-        jToggleButton5.setDisabledIcon(null);
-        jToggleButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV04.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV04.setText("V04");
+        btnV04.setBorderPainted(false);
+        btnV04.setContentAreaFilled(false);
+        btnV04.setDisabledIcon(null);
+        btnV04.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton6.setBorderPainted(false);
-        jToggleButton6.setContentAreaFilled(false);
-        jToggleButton6.setDisabledIcon(null);
-        jToggleButton6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV17.setText("V17");
+        btnV17.setBorderPainted(false);
+        btnV17.setContentAreaFilled(false);
+        btnV17.setDisabledIcon(null);
+        btnV17.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton7.setBorderPainted(false);
-        jToggleButton7.setContentAreaFilled(false);
-        jToggleButton7.setDisabledIcon(null);
-        jToggleButton7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV01.setText("V1");
+        btnV01.setBorderPainted(false);
+        btnV01.setContentAreaFilled(false);
+        btnV01.setDisabledIcon(null);
+        btnV01.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton8.setBorderPainted(false);
-        jToggleButton8.setContentAreaFilled(false);
-        jToggleButton8.setDisabledIcon(null);
-        jToggleButton8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV09.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV09.setText("V09");
+        btnV09.setBorderPainted(false);
+        btnV09.setContentAreaFilled(false);
+        btnV09.setDisabledIcon(null);
+        btnV09.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton9.setBorderPainted(false);
-        jToggleButton9.setContentAreaFilled(false);
-        jToggleButton9.setDisabledIcon(null);
-        jToggleButton9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV02.setText("V02");
+        btnV02.setBorderPainted(false);
+        btnV02.setContentAreaFilled(false);
+        btnV02.setDisabledIcon(null);
+        btnV02.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton10.setBorderPainted(false);
-        jToggleButton10.setContentAreaFilled(false);
-        jToggleButton10.setDisabledIcon(null);
-        jToggleButton10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV06.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV06.setText("V06");
+        btnV06.setBorderPainted(false);
+        btnV06.setContentAreaFilled(false);
+        btnV06.setDisabledIcon(null);
+        btnV06.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton11.setBorderPainted(false);
-        jToggleButton11.setContentAreaFilled(false);
-        jToggleButton11.setDisabledIcon(null);
-        jToggleButton11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV12.setText("V12");
+        btnV12.setBorderPainted(false);
+        btnV12.setContentAreaFilled(false);
+        btnV12.setDisabledIcon(null);
+        btnV12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton12.setBorderPainted(false);
-        jToggleButton12.setContentAreaFilled(false);
-        jToggleButton12.setDisabledIcon(null);
-        jToggleButton12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV15.setText("V15");
+        btnV15.setBorderPainted(false);
+        btnV15.setContentAreaFilled(false);
+        btnV15.setDisabledIcon(null);
+        btnV15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton13.setBorderPainted(false);
-        jToggleButton13.setContentAreaFilled(false);
-        jToggleButton13.setDisabledIcon(null);
-        jToggleButton13.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV10.setText("V10");
+        btnV10.setBorderPainted(false);
+        btnV10.setContentAreaFilled(false);
+        btnV10.setDisabledIcon(null);
+        btnV10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton14.setBorderPainted(false);
-        jToggleButton14.setContentAreaFilled(false);
-        jToggleButton14.setDisabledIcon(null);
-        jToggleButton14.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV13.setText("V13");
+        btnV13.setBorderPainted(false);
+        btnV13.setContentAreaFilled(false);
+        btnV13.setDisabledIcon(null);
+        btnV13.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton15.setBorderPainted(false);
-        jToggleButton15.setContentAreaFilled(false);
-        jToggleButton15.setDisabledIcon(null);
-        jToggleButton15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV11.setText("V11");
+        btnV11.setBorderPainted(false);
+        btnV11.setContentAreaFilled(false);
+        btnV11.setDisabledIcon(null);
+        btnV11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton16.setBorderPainted(false);
-        jToggleButton16.setContentAreaFilled(false);
-        jToggleButton16.setDisabledIcon(null);
-        jToggleButton16.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV08.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV08.setText("V08");
+        btnV08.setBorderPainted(false);
+        btnV08.setContentAreaFilled(false);
+        btnV08.setDisabledIcon(null);
+        btnV08.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton17.setBorderPainted(false);
-        jToggleButton17.setContentAreaFilled(false);
-        jToggleButton17.setDisabledIcon(null);
-        jToggleButton17.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV07.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV07.setText("V07");
+        btnV07.setBorderPainted(false);
+        btnV07.setContentAreaFilled(false);
+        btnV07.setDisabledIcon(null);
+        btnV07.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton18.setBorderPainted(false);
-        jToggleButton18.setContentAreaFilled(false);
-        jToggleButton18.setDisabledIcon(null);
-        jToggleButton18.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV18.setText("V18");
+        btnV18.setBorderPainted(false);
+        btnV18.setContentAreaFilled(false);
+        btnV18.setDisabledIcon(null);
+        btnV18.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton19.setBorderPainted(false);
-        jToggleButton19.setContentAreaFilled(false);
-        jToggleButton19.setDisabledIcon(null);
-        jToggleButton19.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV16.setText("V16");
+        btnV16.setBorderPainted(false);
+        btnV16.setContentAreaFilled(false);
+        btnV16.setDisabledIcon(null);
+        btnV16.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton20.setBorderPainted(false);
-        jToggleButton20.setContentAreaFilled(false);
-        jToggleButton20.setDisabledIcon(null);
-        jToggleButton20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV22.setText("V22");
+        btnV22.setBorderPainted(false);
+        btnV22.setContentAreaFilled(false);
+        btnV22.setDisabledIcon(null);
+        btnV22.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton21.setBorderPainted(false);
-        jToggleButton21.setContentAreaFilled(false);
-        jToggleButton21.setDisabledIcon(null);
-        jToggleButton21.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV20.setText("V20");
+        btnV20.setBorderPainted(false);
+        btnV20.setContentAreaFilled(false);
+        btnV20.setDisabledIcon(null);
+        btnV20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
-        jToggleButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        jToggleButton22.setBorderPainted(false);
-        jToggleButton22.setContentAreaFilled(false);
-        jToggleButton22.setDisabledIcon(null);
-        jToggleButton22.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
+        btnV14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
+        btnV14.setText("V14");
+        btnV14.setBorderPainted(false);
+        btnV14.setContentAreaFilled(false);
+        btnV14.setDisabledIcon(null);
+        btnV14.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -394,44 +417,44 @@ public class FrameComprar extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnV11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV09, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV07, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV01, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV03, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV05, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV02, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnV12, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV08, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV06, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV04, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnV16, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV13, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnV14, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV17, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnV18, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV19, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnV20, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV21, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnV22, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -441,50 +464,50 @@ public class FrameComprar extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jToggleButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnV01, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV02, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnV03, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV04, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnV05, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnV06, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnV07, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(144, 144, 144)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jToggleButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnV16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnV13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnV15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btnV08, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnV17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnV18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnV20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV09, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnV11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnV22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -646,6 +669,28 @@ public class FrameComprar extends javax.swing.JFrame {
     private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnMisBoletos;
     private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JToggleButton btnV01;
+    private javax.swing.JToggleButton btnV02;
+    private javax.swing.JToggleButton btnV03;
+    private javax.swing.JToggleButton btnV04;
+    private javax.swing.JToggleButton btnV05;
+    private javax.swing.JToggleButton btnV06;
+    private javax.swing.JToggleButton btnV07;
+    private javax.swing.JToggleButton btnV08;
+    private javax.swing.JToggleButton btnV09;
+    private javax.swing.JToggleButton btnV10;
+    private javax.swing.JToggleButton btnV11;
+    private javax.swing.JToggleButton btnV12;
+    private javax.swing.JToggleButton btnV13;
+    private javax.swing.JToggleButton btnV14;
+    private javax.swing.JToggleButton btnV15;
+    private javax.swing.JToggleButton btnV16;
+    private javax.swing.JToggleButton btnV17;
+    private javax.swing.JToggleButton btnV18;
+    private javax.swing.JToggleButton btnV19;
+    private javax.swing.JToggleButton btnV20;
+    private javax.swing.JToggleButton btnV21;
+    private javax.swing.JToggleButton btnV22;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -663,28 +708,6 @@ public class FrameComprar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton12;
-    private javax.swing.JToggleButton jToggleButton13;
-    private javax.swing.JToggleButton jToggleButton14;
-    private javax.swing.JToggleButton jToggleButton15;
-    private javax.swing.JToggleButton jToggleButton16;
-    private javax.swing.JToggleButton jToggleButton17;
-    private javax.swing.JToggleButton jToggleButton18;
-    private javax.swing.JToggleButton jToggleButton19;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton20;
-    private javax.swing.JToggleButton jToggleButton21;
-    private javax.swing.JToggleButton jToggleButton22;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     private javax.swing.JComboBox jcbDesde;
     private javax.swing.JComboBox jcbFecha;
     private javax.swing.JComboBox jcbHasta;
@@ -709,4 +732,97 @@ public class FrameComprar extends javax.swing.JFrame {
     public JButton getBtnMisBoletos() {
         return btnMisBoletos;
     }
+
+    public JButton getBtnRegistrarse() {
+        return btnRegistrarse;
+    }
+
+    public JToggleButton getBtnV01() {
+        return btnV01;
+    }
+
+    public JToggleButton getBtnV02() {
+        return btnV02;
+    }
+
+    public JToggleButton getBtnV03() {
+        return btnV03;
+    }
+
+    public JToggleButton getBtnV04() {
+        return btnV04;
+    }
+
+    public JToggleButton getBtnV05() {
+        return btnV05;
+    }
+
+    public JToggleButton getBtnV06() {
+        return btnV06;
+    }
+
+    public JToggleButton getBtnV07() {
+        return btnV07;
+    }
+
+    public JToggleButton getBtnV08() {
+        return btnV08;
+    }
+
+    public JToggleButton getBtnV09() {
+        return btnV09;
+    }
+
+    public JToggleButton getBtnV10() {
+        return btnV10;
+    }
+
+    public JToggleButton getBtnV11() {
+        return btnV11;
+    }
+
+    public JToggleButton getBtnV12() {
+        return btnV12;
+    }
+
+    public JToggleButton getBtnV13() {
+        return btnV13;
+    }
+
+    public JToggleButton getBtnV14() {
+        return btnV14;
+    }
+
+    public JToggleButton getBtnV15() {
+        return btnV15;
+    }
+
+    public JToggleButton getBtnV16() {
+        return btnV16;
+    }
+
+    public JToggleButton getBtnV17() {
+        return btnV17;
+    }
+
+    public JToggleButton getBtnV18() {
+        return btnV18;
+    }
+
+    public JToggleButton getBtnV19() {
+        return btnV19;
+    }
+
+    public JToggleButton getBtnV20() {
+        return btnV20;
+    }
+
+    public JToggleButton getBtnV21() {
+        return btnV21;
+    }
+
+    public JToggleButton getBtnV22() {
+        return btnV22;
+    }
+    
 }

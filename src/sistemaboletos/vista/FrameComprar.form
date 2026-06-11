@@ -337,50 +337,50 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jToggleButton15" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jToggleButton8" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jToggleButton17" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jToggleButton7" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jToggleButton1" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jToggleButton4" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV11" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV09" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV07" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV01" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV03" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV05" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jToggleButton9" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnV02" min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton11" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jToggleButton13" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jToggleButton16" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jToggleButton10" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jToggleButton5" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnV12" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnV10" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnV08" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnV06" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnV04" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jToggleButton12" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV15" min="-2" pref="33" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton19" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV16" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jToggleButton14" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV13" min="-2" pref="33" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton22" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV14" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton6" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV17" min="-2" pref="33" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton18" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV18" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV19" min="-2" pref="33" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton21" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV20" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jToggleButton2" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV21" min="-2" pref="33" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton20" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnV22" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -396,64 +396,64 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jToggleButton7" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="jToggleButton9" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnV01" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnV02" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton1" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="jToggleButton5" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnV03" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnV04" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton4" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="jToggleButton10" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnV05" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnV06" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jToggleButton17" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnV07" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jToggleButton22" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnV14" min="-2" pref="40" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jToggleButton19" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnV16" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jToggleButton14" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnV13" min="-2" pref="40" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton12" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnV15" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jToggleButton16" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Component id="jToggleButton6" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="btnV08" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="btnV17" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton18" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnV18" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jToggleButton21" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jToggleButton3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jToggleButton8" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jToggleButton13" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV20" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV19" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV09" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV10" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jToggleButton15" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jToggleButton11" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jToggleButton2" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jToggleButton20" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV11" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV12" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV21" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnV22" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="59" max="32767" attributes="0"/>
               </Group>
@@ -461,11 +461,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="btnV03">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V03"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -476,11 +477,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+        <Component class="javax.swing.JToggleButton" name="btnV21">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V21"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -491,11 +493,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+        <Component class="javax.swing.JToggleButton" name="btnV19">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V19"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -506,11 +509,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton4">
+        <Component class="javax.swing.JToggleButton" name="btnV05">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V05"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -521,11 +525,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+        <Component class="javax.swing.JToggleButton" name="btnV04">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V04"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -536,11 +541,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton6">
+        <Component class="javax.swing.JToggleButton" name="btnV17">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V17"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -551,11 +557,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton7">
+        <Component class="javax.swing.JToggleButton" name="btnV01">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V1"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -566,11 +573,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton8">
+        <Component class="javax.swing.JToggleButton" name="btnV09">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V09"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -581,11 +589,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton9">
+        <Component class="javax.swing.JToggleButton" name="btnV02">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V02"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -596,11 +605,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton10">
+        <Component class="javax.swing.JToggleButton" name="btnV06">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V06"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -611,11 +621,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton11">
+        <Component class="javax.swing.JToggleButton" name="btnV12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V12"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -626,11 +637,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton12">
+        <Component class="javax.swing.JToggleButton" name="btnV15">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V15"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -641,11 +653,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton13">
+        <Component class="javax.swing.JToggleButton" name="btnV10">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V10"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -656,11 +669,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton14">
+        <Component class="javax.swing.JToggleButton" name="btnV13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V13"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -671,11 +685,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton15">
+        <Component class="javax.swing.JToggleButton" name="btnV11">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V11"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -686,11 +701,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton16">
+        <Component class="javax.swing.JToggleButton" name="btnV08">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V08"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -701,11 +717,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton17">
+        <Component class="javax.swing.JToggleButton" name="btnV07">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V07"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -716,11 +733,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton18">
+        <Component class="javax.swing.JToggleButton" name="btnV18">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V18"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -731,11 +749,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton19">
+        <Component class="javax.swing.JToggleButton" name="btnV16">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V16"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -746,11 +765,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton20">
+        <Component class="javax.swing.JToggleButton" name="btnV22">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V22"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -761,11 +781,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton21">
+        <Component class="javax.swing.JToggleButton" name="btnV20">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V20"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -776,11 +797,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton22">
+        <Component class="javax.swing.JToggleButton" name="btnV14">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="V14"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">

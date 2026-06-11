@@ -133,7 +133,7 @@ public class BoletosDAO {
         BoletoInformacion informacion = new BoletoInformacion();
         
         // Consulta SQL
-        String SELECCIONAR = "SELECT b.nom_pasajero, b.cedula, salida.nombre AS salida, destino.nombre AS destino, v.precio_x_asiento " +
+        String SELECCIONAR = "SELECT b.nom_pasajero, b.cedula, salida.nombre AS salida, destino.nombre AS destino, b.asiento, v.precio_x_asiento " +
                                 "FROM BOLETOS b INNER JOIN FACTURAS f ON b.id_factura = f.id_factura INNER JOIN VIAJES v ON b.id_viaje = v.id_viaje " +
                                 "INNER JOIN UBICACIONES salida ON v.id_salida = salida.id_ubicacion " +
                                 "INNER JOIN UBICACIONES destino ON destino.id_ubicacion = v.id_destino WHERE b.id_boleto = ?;";
@@ -149,11 +149,12 @@ public class BoletosDAO {
                     String cedula = rs.getString("cedula");
                     String salida = rs.getString("salida");
                     String destino = rs.getString("destino");
+                    String asiento = rs.getString("asiento");
                     String precio_x_asiento = rs.getString("precio_x_asiento");
                         System.out.println("nom_pasajero");
 
                     // Se transforman los datos obtenidos en objetos
-                    informacion = new BoletoInformacion(id_boleto, nom_pasajero, cedula, salida, destino, precio_x_asiento);
+                    informacion = new BoletoInformacion(id_boleto, nom_pasajero, cedula, salida, destino, asiento, precio_x_asiento);
                 }
             }
         } catch (SQLException e) {

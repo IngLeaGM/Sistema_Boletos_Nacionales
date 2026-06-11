@@ -106,7 +106,7 @@ public class ControladorViajes implements ActionListener {
             fila[0] = viaje.getId_viaje();
             System.out.println("Id: " + fila[0]);
             fila[1] = viaje.getCiudad_salida();
-            fila[2] = viaje.getCiudad_salida();
+            fila[2] = viaje.getCiudad_destino();
             fila[3] = viaje.getFecha();
             fila[4] = viaje.getPrecio_x_asiento();
             fila[5] = viaje.getMatricula();

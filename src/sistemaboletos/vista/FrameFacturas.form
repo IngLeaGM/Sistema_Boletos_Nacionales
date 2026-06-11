@@ -61,6 +61,10 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1000, 720]"/>
+    </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -334,7 +338,7 @@
                         <Component class="javax.swing.JTable" name="jTable1">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="4" rowCount="30">
+                              <Table columnCount="4" rowCount="40">
                                 <Column editable="true" title="Nombre De Usuario" type="java.lang.Object"/>
                                 <Column editable="true" title="Monto" type="java.lang.Object"/>
                                 <Column editable="true" title="Metodo De Pago" type="java.lang.Object"/>

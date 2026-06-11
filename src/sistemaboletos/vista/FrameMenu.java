@@ -57,6 +57,8 @@ public class FrameMenu extends javax.swing.JFrame {
         btnSalir = new sistemaboletos.vista.BotonRedondeado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 720));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 

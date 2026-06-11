@@ -37,7 +37,7 @@ public class FrameMisBoletos extends javax.swing.JFrame {
         tbBoletos = new javax.swing.JTable();
         jPanel3 = new sistemaboletos.vista.PanelRedondeado(40);
         jButton8 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        jPanel5 = new sistemaboletos.vista.PanelRedondeado(40);
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -52,6 +52,8 @@ public class FrameMisBoletos extends javax.swing.JFrame {
         tfHasta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 720));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -124,6 +126,12 @@ public class FrameMisBoletos extends javax.swing.JFrame {
         tbBoletos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tbBoletos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -223,18 +231,23 @@ public class FrameMisBoletos extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Nombre del pasajero:");
+        jLabel3.setOpaque(true);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Cedula de identidad:");
+        jLabel4.setOpaque(true);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Desde:");
+        jLabel5.setOpaque(true);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Destino:");
+        jLabel6.setOpaque(true);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Precio:");
+        jLabel7.setOpaque(true);
 
         tfNombre.setEditable(false);
         tfNombre.setText(" ");
@@ -257,7 +270,7 @@ public class FrameMisBoletos extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)

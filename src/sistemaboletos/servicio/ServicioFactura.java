@@ -6,7 +6,6 @@ import com.itextpdf.text.pdf.*;
 import java.io.FileOutputStream;
 import java.io.File;
 import java.util.List;
-import sistemaboletos.modelo.Boleto; // Tu clase Modelo de Boleto
 import sistemaboletos.modelo.BoletoInformacion;
 
 public class ServicioFactura {
@@ -40,31 +39,33 @@ public class ServicioFactura {
             );
             documento.add(datosFactura);
 
-            // 3. Detalle de Boletos Comprados (Tabla iText)
-            PdfPTable tabla = new PdfPTable(3); // 3 columnas: Pasajero, Asiento, Precio
+            // Detalle de Boletos Comprados (Tabla iText)
+            PdfPTable tabla = new PdfPTable(4);
             tabla.setWidthPercentage(100);
             
             // Cabeceras de la tabla
             tabla.addCell(new Phrase("Pasajero", fontBold));
+            tabla.addCell(new Phrase("Cedula", fontBold));
             tabla.addCell(new Phrase("Asiento", fontBold));
             tabla.addCell(new Phrase("Precio", fontBold));
 
             // Agregar cada boleto comprado de la lista
             for (BoletoInformacion b : listaBoletos) {
                 tabla.addCell(new Phrase(b.getNom_pasajero(), fontCuerpo));
+                tabla.addCell(new Phrase(b.getCedula(), fontCuerpo));
                 tabla.addCell(new Phrase(b.getAsiento(), fontCuerpo));
                 tabla.addCell(new Phrase(String.valueOf(b.getDatos_transaccion()), fontCuerpo));
             }
             documento.add(tabla);
 
-            // 4. Monto Total
+            // Monto Total
             Paragraph total = new Paragraph("\nTOTAL PAGADO: $" + montoTotal, fontTitulo);
             total.setAlignment(Element.ALIGN_RIGHT);
             documento.add(total);
             
             documento.add(new Paragraph("--------------------------------------------------\n", fontSubtitulo));
 
-            // 5. CÓDIGO QR EN EL CIERRE
+            // CÓDIGO QR EN EL CIERRE
             // Texto oculto que leerá cualquier teléfono celular al escanear el QR:
             String datosParaQR = "Factura:" + idFactura + " | Ruta:" + salida + "-" + destino + " | Total:$" + montoTotal + " | Boletos:" + listaBoletos.size();
             String rutaQrImg = GeneradorQR.generarCodigoQR(datosParaQR, "QR_" + idFactura);

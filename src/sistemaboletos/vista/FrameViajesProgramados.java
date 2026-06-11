@@ -332,6 +332,7 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                 "id_viaje", "Ciudad salida", "Ciudad destino", "Fecha de salida", "Precio de asiento", "Matricula"
             }
         ));
+        tbViajes.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbViajes);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);

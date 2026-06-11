@@ -52,7 +52,6 @@ public class FrameMisBoletos extends javax.swing.JFrame {
         tfHasta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
@@ -167,6 +166,7 @@ public class FrameMisBoletos extends javax.swing.JFrame {
         });
         tbBoletos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tbBoletos.setIntercellSpacing(new java.awt.Dimension(2, 2));
+        tbBoletos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbBoletos);
         if (tbBoletos.getColumnModel().getColumnCount() > 0) {
             tbBoletos.getColumnModel().getColumn(0).setResizable(false);

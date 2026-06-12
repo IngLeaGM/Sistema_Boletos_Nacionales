@@ -79,7 +79,9 @@ public class ControladorComprar implements ActionListener {
 
                     //  Aquí iría el controlador de esa mini-ventana (que escucha el botón guardar)
                     // Cuando le den "Guardar", ese controlador hace: vistaDialog.setDatosGuardados(true); vistaDialog.dispose();
-
+                    
+                    ControladorDatosBoletos ctclDatos = new ControladorDatosBoletos(vistaDialog);
+                    
                     vistaDialog.setVisible(true); 
 
                     // Cuando el JDialog se cierra, el código continúa aquí. Evaluamos qué pasó:
@@ -92,6 +94,10 @@ public class ControladorComprar implements ActionListener {
 
                         // Guardamos en nuestro HashMap temporal
                         asientosSeleccionados.put(numeroAsiento, nuevoBoleto);
+                        System.out.println(nuevoBoleto.getNom_pasajero());
+                        btn.removeItemListener(this); 
+                        btn.setSelected(true);
+                        btn.addItemListener(this);
 
                     } else {
                         // El usuario cerró la ventana con la "X" o le dio a Cancelar.
@@ -114,21 +120,26 @@ public class ControladorComprar implements ActionListener {
         vista.getBtnV02().addItemListener(new java.awt.event.ItemListener() {
             @Override
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-
+                // Obtenemos el botón que disparó el evento y su texto
                 javax.swing.JToggleButton btn = (javax.swing.JToggleButton) evt.getSource();
                 String numeroAsiento = btn.getText(); 
 
-
+                //  El usuario selecciona el asiento
                 if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
 
-
+                    // Instanciamos el JDialog (pasando la vista principal como padre y 'true' para hacerlo Modal)
                     FrameDatosBoletos vistaDialog = new FrameDatosBoletos(vista, true);
 
                     vistaDialog.setLocationRelativeTo(vista);
 
+                    //  Aquí iría el controlador de esa mini-ventana (que escucha el botón guardar)
+                    // Cuando le den "Guardar", ese controlador hace: vistaDialog.setDatosGuardados(true); vistaDialog.dispose();
+                    
+                    ControladorDatosBoletos ctclDatos = new ControladorDatosBoletos(vistaDialog);
+                    
                     vistaDialog.setVisible(true); 
 
-
+                    // Cuando el JDialog se cierra, el código continúa aquí. Evaluamos qué pasó:
                     if (vistaDialog.isDatosGuardados()) {
                         // El usuario llenó los datos y le dio a guardar
                         Boleto nuevoBoleto = new Boleto();
@@ -136,10 +147,12 @@ public class ControladorComprar implements ActionListener {
                         nuevoBoleto.setNom_pasajero(vistaDialog.getTfNombre().getText());
                         nuevoBoleto.setCedula(Integer.parseInt(vistaDialog.getTfCedula().getText()));
 
-
-
                         // Guardamos en nuestro HashMap temporal
                         asientosSeleccionados.put(numeroAsiento, nuevoBoleto);
+                        System.out.println(nuevoBoleto.getNom_pasajero());
+                        btn.removeItemListener(this); 
+                        btn.setSelected(true);
+                        btn.addItemListener(this);
 
                     } else {
                         // El usuario cerró la ventana con la "X" o le dio a Cancelar.
@@ -151,13 +164,17 @@ public class ControladorComprar implements ActionListener {
                         btn.addItemListener(this);
                     }
 
-
+                 // Si el usuario deselecciona un asiento
                 } else if (evt.getStateChange() == java.awt.event.ItemEvent.DESELECTED) {
-                    
+                    // Simplemente lo borramos de nuestro HashMap de almacenamiento temporal
                     asientosSeleccionados.remove(numeroAsiento);
                 }
             }
         });
+        
+        
+        actionListener(this.vista.getBtnV04());
+        
     }
     
     @Override
@@ -259,6 +276,63 @@ public class ControladorComprar implements ActionListener {
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);
         System.out.println("Se entro a la ventana Mis Boletos");
+    }
+    
+    public void actionListener(javax.swing.JToggleButton botonAsiento) {
+        botonAsiento.addItemListener(new java.awt.event.ItemListener() {
+            @Override
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                // Obtenemos el botón que disparó el evento y su texto
+                javax.swing.JToggleButton btn = (javax.swing.JToggleButton) evt.getSource();
+                String numeroAsiento = btn.getText(); 
+
+                //  El usuario selecciona el asiento
+                if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+
+                    // Instanciamos el JDialog (pasando la vista principal como padre y 'true' para hacerlo Modal)
+                    FrameDatosBoletos vistaDialog = new FrameDatosBoletos(vista, true);
+
+                    vistaDialog.setLocationRelativeTo(vista);
+
+                    //  Aquí iría el controlador de esa mini-ventana (que escucha el botón guardar)
+                    // Cuando le den "Guardar", ese controlador hace: vistaDialog.setDatosGuardados(true); vistaDialog.dispose();
+                    
+                    ControladorDatosBoletos ctclDatos = new ControladorDatosBoletos(vistaDialog);
+                    
+                    vistaDialog.setVisible(true); 
+
+                    // Cuando el JDialog se cierra, el código continúa aquí. Evaluamos qué pasó:
+                    if (vistaDialog.isDatosGuardados()) {
+                        // El usuario llenó los datos y le dio a guardar
+                        Boleto nuevoBoleto = new Boleto();
+                        nuevoBoleto.setAsiento(numeroAsiento);
+                        nuevoBoleto.setNom_pasajero(vistaDialog.getTfNombre().getText());
+                        nuevoBoleto.setCedula(Integer.parseInt(vistaDialog.getTfCedula().getText()));
+
+                        // Guardamos en nuestro HashMap temporal
+                        asientosSeleccionados.put(numeroAsiento, nuevoBoleto);
+                        System.out.println(nuevoBoleto.getNom_pasajero());
+                        btn.removeItemListener(this); 
+                        btn.setSelected(true);
+                        btn.addItemListener(this);
+
+                    } else {
+                        // El usuario cerró la ventana con la "X" o le dio a Cancelar.
+                        // Como no guardó, revertimos el botón para que no quede marcado.
+
+                        // Removemos el listener temporalmente para que este 'setSelected(false)' no vuelva a disparar el evento
+                        btn.removeItemListener(this); 
+                        btn.setSelected(false);
+                        btn.addItemListener(this);
+                    }
+
+                 // Si el usuario deselecciona un asiento
+                } else if (evt.getStateChange() == java.awt.event.ItemEvent.DESELECTED) {
+                    // Simplemente lo borramos de nuestro HashMap de almacenamiento temporal
+                    asientosSeleccionados.remove(numeroAsiento);
+                }
+            }
+        });
     }
 
 }

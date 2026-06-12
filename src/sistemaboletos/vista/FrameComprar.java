@@ -737,15 +737,63 @@ public class FrameComprar extends javax.swing.JFrame {
         return btnRegistrarse;
     }
 
-    public JToggleButton getBtnV01() {
-        return btnV01;
+    public JToggleButton getBtnV(int numero) {
+        if (numero == 01) {
+             return btnV01;
+        } else if (numero == 02) {
+            return btnV02;
+            
+        } else if (numero == 03) {
+            return btnV03;
+        } else if (numero == 04) {
+            return btnV04;
+        } else if (numero == 05) {
+            return btnV05;
+        } else if (numero == 06) {
+            return btnV06;
+        } else if (numero == 07) {
+            return btnV07;
+        } else if (numero == 8) {
+            return btnV08;
+        } else if (numero == 9) {
+            return btnV02;
+        } else if (numero == 10) {
+            return btnV10;
+        } else if (numero == 11) {
+            return btnV11;
+        } else if (numero == 12) {
+            return btnV12;
+        } else if (numero == 13) {
+            return btnV13;
+        } else if (numero == 14) {
+            return btnV14;
+        } else if (numero == 15) {
+            return btnV15;
+        } else if (numero == 16) {
+            return btnV16;
+        } else if (numero == 17) {
+            return btnV17;
+        } else if (numero == 18) {
+            return btnV18;
+        } else if (numero == 19) {
+            return btnV19;
+        } else if (numero == 20) {
+            return btnV20;
+        } else if (numero == 21) {
+            return btnV21;
+        } else if (numero == 22) {
+            return btnV22;
+        } else {
+            return btnV01;
+        }
+       
     }
 
-    public JToggleButton getBtnV02() {
+    public JToggleButton getBtnV01() {
         return btnV02;
     }
 
-    public JToggleButton getBtnV03() {
+    public JToggleButton getBtnV02() {
         return btnV03;
     }
 

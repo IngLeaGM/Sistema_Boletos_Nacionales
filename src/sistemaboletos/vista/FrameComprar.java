@@ -740,20 +740,20 @@ public class FrameComprar extends javax.swing.JFrame {
     }
 
     public JToggleButton getBtnV(int numero) {
-        if (numero == 01) {
+        if (numero == 1) {
              return btnV01;
-        } else if (numero == 02) {
+        } else if (numero == 2) {
             return btnV02;
             
-        } else if (numero == 03) {
+        } else if (numero == 3) {
             return btnV03;
-        } else if (numero == 04) {
+        } else if (numero == 4) {
             return btnV04;
-        } else if (numero == 05) {
+        } else if (numero == 5) {
             return btnV05;
-        } else if (numero == 06) {
+        } else if (numero == 6) {
             return btnV06;
-        } else if (numero == 07) {
+        } else if (numero == 7) {
             return btnV07;
         } else if (numero == 8) {
             return btnV08;
@@ -792,10 +792,14 @@ public class FrameComprar extends javax.swing.JFrame {
     }
 
     public JToggleButton getBtnV01() {
-        return btnV02;
+        return btnV01;
     }
 
     public JToggleButton getBtnV02() {
+        return btnV02;
+    }
+    
+    public JToggleButton getBtnV03() {
         return btnV03;
     }
 

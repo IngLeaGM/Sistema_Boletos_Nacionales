@@ -172,8 +172,11 @@ public class ControladorComprar implements ActionListener {
             }
         });
         
+        for(int i = 3; i <= 22; i++) {
+            actionListener(this.vista.getBtnV(i));
+       
+        }
         
-        actionListener(this.vista.getBtnV04());
         
     }
     
@@ -278,7 +281,7 @@ public class ControladorComprar implements ActionListener {
         System.out.println("Se entro a la ventana Mis Boletos");
     }
     
-    public void actionListener(javax.swing.JToggleButton botonAsiento) {
+    private void actionListener(javax.swing.JToggleButton botonAsiento) {
         botonAsiento.addItemListener(new java.awt.event.ItemListener() {
             @Override
             public void itemStateChanged(java.awt.event.ItemEvent evt) {

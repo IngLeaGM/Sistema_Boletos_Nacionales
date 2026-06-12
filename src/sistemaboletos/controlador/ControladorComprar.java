@@ -190,7 +190,7 @@ public class ControladorComprar implements ActionListener {
             vista.dispose();
 
             FrameCompletarPago vistaPago = new FrameCompletarPago();
-            ControladorPago ctrlPago = new ControladorPago(vistaPago, usuarioLog, viaje, listaBoletos, this.con);
+            ControladorPago ctrlPago = new ControladorPago(vistaPago, usuarioLog, userDao, viaje, listaBoletos, this.con);
             vistaPago.setLocationRelativeTo(null);
             vistaPago.setVisible(true);
             

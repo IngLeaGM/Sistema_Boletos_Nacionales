@@ -134,7 +134,7 @@ public class ControladorMisBoletos implements ActionListener {
         vista.getTfCedula().setText(informacion.getCedula());
         vista.getTfSalida().setText(informacion.getCiudad_salida());
         vista.getTfHasta().setText(informacion.getCiudad_destino());
-        vista.getTfDatos().setText(informacion.getDatos_transaccion());
+        vista.getTfDatos().setText(String.valueOf(informacion.getDatos_transaccion()));
     }
 
     @Override

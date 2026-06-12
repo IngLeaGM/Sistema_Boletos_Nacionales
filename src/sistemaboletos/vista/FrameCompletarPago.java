@@ -5,18 +5,22 @@
  */
 package sistemaboletos.vista;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import sistemaboletos.vista.imagenes.*;
 
 /**
  *
  * @author LeaGM
  */
-public class Framecompletarpago extends javax.swing.JFrame {
+public class FrameCompletarPago extends javax.swing.JFrame {
 
     /**
      * Creates new form FramePrincipal
      */
-    public Framecompletarpago() {
+    public FrameCompletarPago() {
         // 1. Creamos nuestro panel enviando la ruta de la imagen
         // ¡Asegúrate de poner la barra diagonal '/' al inicio!
         PanelFondo fondo = new PanelFondo("/sistemaboletos/vista/imagenes/imagendecompra.png");
@@ -40,19 +44,21 @@ public class Framecompletarpago extends javax.swing.JFrame {
         jPanel1 = new sistemaboletos.vista.PanelRedondeado(40);
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        tfCedula = new javax.swing.JTextField();
+        tfTelf = new javax.swing.JTextField();
+        tfClave = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jcbBanco = new javax.swing.JComboBox<>();
+        jcbCedula = new javax.swing.JComboBox<>();
         jPanel3 = new sistemaboletos.vista.PanelRedondeado(40);
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new sistemaboletos.vista.BotonRedondeado();
+        lbDolares = new javax.swing.JLabel();
+        lbBolivares = new javax.swing.JLabel();
+        btnCompletar = new sistemaboletos.vista.BotonRedondeado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,11 +86,11 @@ public class Framecompletarpago extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfTelf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfClave.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Cedula de identidad");
@@ -98,11 +104,11 @@ public class Framecompletarpago extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Seleccione banco");
 
-        jComboBox1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0102 Banco de Venezuela S.A.", "0104 Venezolano de Crédito", "0105 Mercantil Banco", "0108 BBVA Provincial", "0114 Bancaribe", "0115 Banco Exterior", "0128 Banco Caroní", "0134 Banesco", "0137 Banco Sofitasa", "0138 Banco Plaza", "0146 Bangente", "0151 BFC Banco Fondo Común", "0156 100% Banco", "0157 DelSur Banco Universal", "0163 Banco del Tesoro", "0166 Banco Agrícola de Venezuela", "0168 Bancrecer", "0169 Mi Banco (R4)", "0171 Banco Activo", "0172 Bancamiga", "0173 Banco Internacional de Desarrollo", "0174 Banplus", "0175 Banco Digital de los Trabajadores", "0177 BANFANB", "0178 N58 Banco Digital", "0191 Banco Nacional de Crédito", "0601 Instituto Municipal de Crédito Popular (IMCP)" }));
+        jcbBanco.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jcbBanco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0102 Banco de Venezuela S.A.", "0104 Venezolano de Crédito", "0105 Mercantil Banco", "0108 BBVA Provincial", "0114 Bancaribe", "0115 Banco Exterior", "0128 Banco Caroní", "0134 Banesco", "0137 Banco Sofitasa", "0138 Banco Plaza", "0146 Bangente", "0151 BFC Banco Fondo Común", "0156 100% Banco", "0157 DelSur Banco Universal", "0163 Banco del Tesoro", "0166 Banco Agrícola de Venezuela", "0168 Bancrecer", "0169 Mi Banco (R4)", "0171 Banco Activo", "0172 Bancamiga", "0173 Banco Internacional de Desarrollo", "0174 Banplus", "0175 Banco Digital de los Trabajadores", "0177 BANFANB", "0178 N58 Banco Digital", "0191 Banco Nacional de Crédito", "0601 Instituto Municipal de Crédito Popular (IMCP)" }));
 
-        jComboBox2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V", "E", "P", "J", "C", "G", "R" }));
+        jcbCedula.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jcbCedula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V", "E", "P", "J", "C", "G", "R" }));
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -112,6 +118,12 @@ public class Framecompletarpago extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Monto en Bs:");
 
+        lbDolares.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lbDolares.setText(" ");
+
+        lbBolivares.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lbBolivares.setText(" ");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -119,24 +131,32 @@ public class Framecompletarpago extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbDolares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbBolivares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lbDolares))
                 .addGap(37, 37, 37)
-                .addComponent(jLabel7)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(lbBolivares))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setText("COMPLETAR PAGO");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCompletar.setBackground(new java.awt.Color(0, 153, 255));
+        btnCompletar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnCompletar.setText("COMPLETAR PAGO");
+        btnCompletar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,22 +173,22 @@ public class Framecompletarpago extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField4)
+                                .addComponent(tfTelf, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jcbBanco, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfClave)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jcbCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(tfCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                            .addComponent(btnCompletar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                         .addGap(54, 54, 54))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -179,25 +199,25 @@ public class Framecompletarpago extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfTelf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jcbBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(tfClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCompletar))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -208,7 +228,7 @@ public class Framecompletarpago extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,14 +258,62 @@ public class Framecompletarpago extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Framecompletarpago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCompletarPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Framecompletarpago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCompletarPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Framecompletarpago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCompletarPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Framecompletarpago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCompletarPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -266,15 +334,13 @@ public class Framecompletarpago extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Framecompletarpago().setVisible(true);
+                new FrameCompletarPago().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btnCompletar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -285,8 +351,40 @@ public class Framecompletarpago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JComboBox<String> jcbBanco;
+    private javax.swing.JComboBox<String> jcbCedula;
+    private javax.swing.JLabel lbBolivares;
+    private javax.swing.JLabel lbDolares;
+    private javax.swing.JTextField tfCedula;
+    private javax.swing.JTextField tfClave;
+    private javax.swing.JTextField tfTelf;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCompletar() {
+        return btnCompletar;
+    }
+
+    public JComboBox<String> getJcbBanco() {
+        return jcbBanco;
+    }
+
+    public JLabel getLbBolivares() {
+        return lbBolivares;
+    }
+
+    public JLabel getLbDolares() {
+        return lbDolares;
+    }
+
+    public JTextField getTfCedula() {
+        return tfCedula;
+    }
+
+    public JTextField getTfClave() {
+        return tfClave;
+    }
+
+    public JTextField getTfTelf() {
+        return tfTelf;
+    }
 }

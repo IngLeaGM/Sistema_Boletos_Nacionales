@@ -30,6 +30,9 @@ public class Viaje {
         this.fecha_salida = fecha_salida;
     }
 
+    public Viaje() {
+    }
+
     public int getId_viaje() {
         return id_viaje;
     }

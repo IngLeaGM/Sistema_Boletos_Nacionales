@@ -9,9 +9,9 @@ public class BoletoInformacion {
     private String ciudad_salida;
     private String ciudad_destino;
     private String asiento;
-    private String datos_transaccion;
+    private double datos_transaccion;
 
-    public BoletoInformacion(int id_boleto, String nom_pasajero, String cedula, String ciudad_salida, String ciudad_destino, String asiento, String datos_transaccion) {
+    public BoletoInformacion(int id_boleto, String nom_pasajero, String cedula, String ciudad_salida, String ciudad_destino, String asiento, double datos_transaccion) {
         this.id_boleto = id_boleto;
         this.nom_pasajero = nom_pasajero;
         this.cedula = cedula;
@@ -72,11 +72,11 @@ public class BoletoInformacion {
         this.asiento = asiento;
     }
 
-    public String getDatos_transaccion() {
+    public double getDatos_transaccion() {
         return datos_transaccion;
     }
 
-    public void setDatos_transaccion(String datos_transaccion) {
+    public void setDatos_transaccion(double datos_transaccion) {
         this.datos_transaccion = datos_transaccion;
     }
     

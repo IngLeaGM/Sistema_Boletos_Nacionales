@@ -36,7 +36,7 @@ public class BoletosDAO {
                 int id_factura = rs.getInt("id_factura");
                 String nom_pasajero = rs.getString("nom_pasajero");
                 int cedula = rs.getInt("cedula");
-                int telefono = rs.getInt("telefono");
+                String telefono = rs.getString("telefono");
                 String asiento = rs.getString("asiento");
                 
                 // Se transforman los datos obtenidos en objetos
@@ -72,7 +72,7 @@ public class BoletosDAO {
                 int id_factura = rs.getInt("id_factura");
                 String nom_pasajero = rs.getString("nom_pasajero");
                 int cedula = rs.getInt("cedula");
-                int telefono = rs.getInt("telefono");
+                String telefono = rs.getString("telefono");
                 String asiento = rs.getString("asiento");
                 
                 // Se transforman los datos obtenidos en objetos
@@ -150,7 +150,7 @@ public class BoletosDAO {
                     String salida = rs.getString("salida");
                     String destino = rs.getString("destino");
                     String asiento = rs.getString("asiento");
-                    String precio_x_asiento = rs.getString("precio_x_asiento");
+                    double precio_x_asiento = rs.getDouble("precio_x_asiento");
                         System.out.println("nom_pasajero");
 
                     // Se transforman los datos obtenidos en objetos
@@ -178,7 +178,7 @@ public class BoletosDAO {
                 ps.setInt(2, boleto.getId_factura());
                 ps.setString(3, boleto.getNom_pasajero());
                 ps.setInt(4, boleto.getCedula());
-                ps.setInt(5, boleto.getTelefono());
+                ps.setString(5, boleto.getTelefono());
                 ps.setString(6, boleto.getAsiento());
                 
                 ps.addBatch(); 

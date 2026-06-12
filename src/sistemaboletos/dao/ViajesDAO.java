@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -165,6 +166,39 @@ public class ViajesDAO {
             System.out.println(viaje.getFecha());
         }
         return lista;
+    }
+    
+    public Viaje obtener_viajeCompra(Connection con, Viaje viaje) throws SQLException, ParseException {
+        
+        // java.text.SimpleDateFormat formatoEntrada = new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm a");
+        
+        String sql = "SELECT * FROM VIAJES WHERE id_viaje=?";
+
+        try {
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, viaje.getId_viaje());
+            System.out.println("Id salida:" + viaje.getId_viaje());
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    int id_viaje = rs.getInt("id_viaje");
+                    int id_salida = rs.getInt("id_salida");
+                    int id_destino = rs.getInt("id_destino");
+                    int transporte_id = rs.getInt("transporte_id");
+                    String fecha_salida = rs.getString("fecha_salida");
+                    Double precio_x_asiento = rs.getDouble("precio_x_asiento");
+                    
+                    viaje = new Viaje(id_viaje, id_salida, id_destino, transporte_id, fecha_salida, precio_x_asiento);
+                }
+                
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cargar viaje: " + e.getMessage());
+        }
+     
+        return viaje;
     }
     
     public List<ViajeInformacion> ObtenerViajesInformacion(Connection con) {

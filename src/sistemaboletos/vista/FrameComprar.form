@@ -181,7 +181,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnRegistrarse" min="-2" pref="154" max="-2" attributes="0"/>
+                  <Component id="btnPagar" min="-2" pref="154" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -203,7 +203,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jcbFecha" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="btnRegistrarse" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="btnPagar" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -311,7 +311,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRegistrarse">
+        <Component class="javax.swing.JButton" name="btnPagar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>
@@ -319,7 +319,7 @@
             <Property name="text" type="java.lang.String" value="Pagar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarseActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPagarActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new sistemaboletos.vista.BotonRedondeado()"/>

@@ -55,7 +55,7 @@ public class FrameComprar extends javax.swing.JFrame {
         jcbDesde = new javax.swing.JComboBox();
         jcbFecha = new javax.swing.JComboBox();
         jcbHasta = new javax.swing.JComboBox();
-        btnRegistrarse = new sistemaboletos.vista.BotonRedondeado();
+        btnPagar = new sistemaboletos.vista.BotonRedondeado();
         jPanel3 = new javax.swing.JPanel();
         btnV03 = new javax.swing.JToggleButton();
         btnV21 = new javax.swing.JToggleButton();
@@ -88,7 +88,6 @@ public class FrameComprar extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
@@ -207,11 +206,11 @@ public class FrameComprar extends javax.swing.JFrame {
             }
         });
 
-        btnRegistrarse.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnRegistrarse.setText("Pagar");
-        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+        btnPagar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnPagar.setText("Pagar");
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarseActionPerformed(evt);
+                btnPagarActionPerformed(evt);
             }
         });
 
@@ -232,7 +231,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
         );
         jPanel1Layout.setVerticalGroup(
@@ -252,7 +251,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jcbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
-                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -621,9 +620,9 @@ public class FrameComprar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbHastaActionPerformed
 
-    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
 
-    }//GEN-LAST:event_btnRegistrarseActionPerformed
+    }//GEN-LAST:event_btnPagarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -670,7 +669,7 @@ public class FrameComprar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnMisBoletos;
-    private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JButton btnPagar;
     private javax.swing.JToggleButton btnV01;
     private javax.swing.JToggleButton btnV02;
     private javax.swing.JToggleButton btnV03;
@@ -736,15 +735,18 @@ public class FrameComprar extends javax.swing.JFrame {
     }
 
     public JButton getBtnRegistrarse() {
-        return btnRegistrarse;
+        return btnPagar;
+    }
+
+    public JButton getBtnPagar() {
+        return btnPagar;
     }
 
     public JToggleButton getBtnV(int numero) {
         if (numero == 1) {
-             return btnV01;
+            return btnV01;
         } else if (numero == 2) {
             return btnV02;
-            
         } else if (numero == 3) {
             return btnV03;
         } else if (numero == 4) {
@@ -758,7 +760,7 @@ public class FrameComprar extends javax.swing.JFrame {
         } else if (numero == 8) {
             return btnV08;
         } else if (numero == 9) {
-            return btnV02;
+            return btnV09;
         } else if (numero == 10) {
             return btnV10;
         } else if (numero == 11) {

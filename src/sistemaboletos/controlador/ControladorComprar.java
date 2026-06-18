@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JToggleButton;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.dao.UbicacionesDAO;
@@ -58,6 +59,8 @@ public class ControladorComprar implements ActionListener {
         
         this.vista.getBtnInicio().addActionListener(this);
         this.vista.getJcbDesde().addActionListener(this);
+        this.vista.getJcbHasta().addActionListener(this);
+        this.vista.getJcbFecha().addActionListener(this);
         this.vista.getBtnMisBoletos().addActionListener(this);
         this.vista.getBtnPagar().addActionListener(this);
         
@@ -65,7 +68,7 @@ public class ControladorComprar implements ActionListener {
         
         // Logica de selecion de asientos
         for(int i = 1; i <= 22; i++) {
-            actionListener(this.vista.getBtnV(i));
+            addActionListener(this.vista.getBtnV(i));
         }
         
         
@@ -82,7 +85,25 @@ public class ControladorComprar implements ActionListener {
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
-        } else if (e.getSource() == vista.getBtnInicio()) {
+        } else if (e.getSource() == vista.getJcbHasta()) {
+            try {
+                Object item = vista.getJcbHasta().getSelectedItem();
+                if (item == null) return;
+
+                cargarFechas(con);
+            } catch (Exception ex) {
+                System.err.print("Ocurrio un error: " + ex);
+            }
+        } else if (e.getSource() == vista.getJcbFecha()) {
+            try {
+                Object item = vista.getJcbFecha().getSelectedItem();
+                if (item == null) return;
+                
+                estadoAsientos(con);
+            } catch (Exception ex) {
+                System.err.print("Ocurrio un error: " + ex);
+            }
+        }else if (e.getSource() == vista.getBtnInicio()) {
             
             try {
                 vista.dispose();
@@ -158,6 +179,9 @@ public class ControladorComprar implements ActionListener {
         for (Viaje viajeObtenido : viajesDisponibles) {
             vista.getJcbFecha().addItem(viajeObtenido);
         }
+        
+        estadoAsientos(con);
+        
     }
     
     private void abrirVentanaBoletos() throws SQLException {
@@ -205,7 +229,7 @@ public class ControladorComprar implements ActionListener {
         }
     }
     
-    private void actionListener(javax.swing.JToggleButton botonAsiento) {
+    private void addActionListener(javax.swing.JToggleButton botonAsiento) {
         botonAsiento.addItemListener(new java.awt.event.ItemListener() {
             @Override
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -235,6 +259,7 @@ public class ControladorComprar implements ActionListener {
                         nuevoBoleto.setAsiento(numeroAsiento);
                         nuevoBoleto.setNom_pasajero(vistaDialog.getTfNombre().getText());
                         nuevoBoleto.setCedula(Integer.parseInt(vistaDialog.getTfCedula().getText()));
+                        nuevoBoleto.setTelefono(vistaDialog.getTfTelefono().getText());
 
                         // Guardamos en nuestro HashMap temporal
                         asientosSeleccionados.put(numeroAsiento, nuevoBoleto);
@@ -260,6 +285,49 @@ public class ControladorComprar implements ActionListener {
                 }
             }
         });
+    }
+    
+    private void estadoAsientos(Connection con) {
+        
+        Viaje viaje = (Viaje) this.vista.getJcbFecha().getSelectedItem();
+        
+        if (viaje == null) return;
+        
+        javax.swing.ImageIcon iconoOcupado = new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosagotados.png"));
+        javax.swing.ImageIcon iconoDisponible = new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"));
+        
+        try {
+            BoletosDAO boletosDao = new BoletosDAO();
+            
+            List<String> ocupados = boletosDao.obtenerAsientosOcupados(con, viaje.getId_viaje());
+            
+            List<JToggleButton> asientos = new ArrayList<>();
+            
+            for (int i = 0; i<=22; i++) {
+                asientos.add(vista.getBtnV(i));
+            }
+            
+            for (JToggleButton btn : asientos) {
+                if (btn == null) continue; // Evita NullPointerException si falta listar algún getter
+                
+                String numeroAsiento = btn.getText().trim();
+                
+                if (ocupados.contains(numeroAsiento)) {
+                    btn.setDisabledIcon(iconoOcupado);
+                    btn.setIcon(iconoOcupado);               // Cambia la imagen
+                    btn.setEnabled(false);                   // Deshabilita por completo el clic
+                    btn.setSelected(false);                  // Aseguramos que no se quede hundido
+                    btn.setIcon(iconoOcupado);               // Cambia la imagen
+                    btn.setBackground(java.awt.Color.RED);
+                } else {
+                    btn.setEnabled(true);                     // Permite que el usuario lo seleccione
+                    btn.setSelected(false);                   // Comienza deseleccionado)
+                    btn.setIcon(iconoDisponible);             // Asegura que su icono disponible
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error al actualizar el mapa de asientos: " + e.getMessage());
+        }
     }
 
 }

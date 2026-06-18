@@ -20,6 +20,10 @@ public class Factura {
         this.monto_total = monto_total;
         this.metodo_pago  = metodo_pago;
     }
+
+    public Factura() {
+     
+    }
     
     public int getId_factura() {
         return id_factura;
@@ -60,4 +64,5 @@ public class Factura {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+    
 }

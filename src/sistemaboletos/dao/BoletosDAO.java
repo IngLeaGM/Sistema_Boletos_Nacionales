@@ -195,8 +195,28 @@ public class BoletosDAO {
             System.err.println("Error al insertar lote de boletos: " + e.getMessage());
      
             return false;
-        }
-            
+        }         
     }
+     
+     public List<String> obtenerAsientosOcupados(Connection con, int id_viaje) {
+        List<String> ocupados = new ArrayList<>();
+        String SELECT = "SELECT asiento FROM BOLETOS WHERE id_viaje = ?";
+        
+        
+        try (PreparedStatement ps = con.prepareStatement(SELECT)) {
            
+                ps.setInt(1, id_viaje);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                // Se extraen los datos de MySql
+                String asiento = rs.getString("asiento");
+                ocupados.add(asiento);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al selecionar tabla: "+e.getMessage());
+        }
+        return ocupados;
+     }
+         
 }

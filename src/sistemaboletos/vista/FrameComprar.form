@@ -563,7 +563,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/sistemaboletos/vista/imagenes/asientosdisponibles.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="V1"/>
+            <Property name="text" type="java.lang.String" value="V01"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">

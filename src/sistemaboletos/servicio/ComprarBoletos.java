@@ -3,12 +3,15 @@ package sistemaboletos.servicio;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
 import sistemaboletos.dao.FacturasDAO;
 import sistemaboletos.modelo.Boleto;
+import sistemaboletos.modelo.BoletoInformacion;
 import sistemaboletos.modelo.Factura;
+import sistemaboletos.modelo.Viaje;
 
 public class ComprarBoletos {
     
@@ -63,5 +66,5 @@ public class ComprarBoletos {
                 }
             }
         }
-    } 
+    }
 }

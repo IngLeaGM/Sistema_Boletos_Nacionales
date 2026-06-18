@@ -170,8 +170,6 @@ public class ViajesDAO {
     
     public Viaje obtener_viajeCompra(Connection con, Viaje viaje) throws SQLException, ParseException {
         
-        // java.text.SimpleDateFormat formatoEntrada = new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm a");
-        
         String sql = "SELECT * FROM VIAJES WHERE id_viaje=?";
 
         try {
@@ -237,5 +235,43 @@ public class ViajesDAO {
             System.err.println("Error al selecionar tabla: "+e.getMessage());
         }
         return listaViajes;
+    }
+    
+    public ViajeInformacion obtenerViajeInformacion (Connection con , Viaje viaje) {
+        
+        ViajeInformacion viajeInformacion = new ViajeInformacion();
+        
+        String sql = "SELECT u_salida.nombre AS ciudad_salida, u_destino.nombre AS ciudad_destino, v.fecha_salida, v.precio_x_asiento, ve.matricula " +
+                                "FROM VIAJES v " +
+                                "INNER JOIN UBICACIONES u_salida ON v.id_salida = u_salida.id_ubicacion " +
+                                "INNER JOIN UBICACIONES u_destino ON v.id_destino = u_destino.id_ubicacion " +
+                                "INNER JOIN TRANSPORTES ve ON v.transporte_id = ve.id_transporte WHERE v.id_viaje = ?";
+
+        try {
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, viaje.getId_viaje());
+            System.out.println("Id viaje:" + viaje.getId_viaje());
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    int id_viaje = viaje.getId_viaje();
+                    String ciudad_salida = rs.getString("ciudad_salida");
+                    String ciudad_destino = rs.getString("ciudad_destino");
+                    String fecha_salida = rs.getString("fecha_salida");
+                    double precio_x_asiento = rs.getDouble("precio_x_asiento");
+                    String matricula = rs.getString("matricula");
+                    
+                     viajeInformacion = new ViajeInformacion(id_viaje, ciudad_salida, ciudad_destino, fecha_salida, precio_x_asiento, matricula);
+                     
+                }
+                
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cargar viaje: " + e.getMessage());
+        }
+     
+        return viajeInformacion;
     }
 }

@@ -300,7 +300,7 @@ public class FrameComprar extends javax.swing.JFrame {
         btnV17.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientoseleccionado.png"))); // NOI18N
 
         btnV01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemaboletos/vista/imagenes/asientosdisponibles.png"))); // NOI18N
-        btnV01.setText("V1");
+        btnV01.setText("V01");
         btnV01.setBorderPainted(false);
         btnV01.setContentAreaFilled(false);
         btnV01.setDisabledIcon(null);

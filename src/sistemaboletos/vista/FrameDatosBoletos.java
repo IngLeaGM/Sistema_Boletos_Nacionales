@@ -7,6 +7,9 @@ package sistemaboletos.vista;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 import sistemaboletos.vista.imagenes.*;
 import sistemaboletos.vista.FondoBus.*;
 /**
@@ -22,6 +25,24 @@ public class FrameDatosBoletos extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(parent);
+    }
+    
+    public class JTextFieldLimitador extends PlainDocument {
+        private int limit;
+
+        public JTextFieldLimitador(int limit) {
+            super();
+            this.limit = limit;
+        }
+
+        public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
+            if (str == null) return;
+
+            // Solo permite insertar si la longitud total no supera el límite
+            if ((getLength() + str.length()) <= limit) {
+                super.insertString(offset, str, attr);
+            }
+        }
     }
 
     /**
@@ -45,6 +66,30 @@ public class FrameDatosBoletos extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255, 125));
+
+        tfCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfCedula.setDocument(new JTextFieldLimitador(10));
+
+        tfCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    evt.consume(); // Ignora si no es un número
+                }
+            }
+        });
+
+        tfTelefono.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfTelefono.setDocument(new JTextFieldLimitador(10));
+
+        tfTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    evt.consume(); // Ignora si no es un número
+                }
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("Cedula");
@@ -155,6 +200,7 @@ public class FrameDatosBoletos extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

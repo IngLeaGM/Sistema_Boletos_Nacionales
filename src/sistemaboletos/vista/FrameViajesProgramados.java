@@ -5,13 +5,20 @@
  */
 package sistemaboletos.vista;
 
+import com.toedter.calendar.JCalendar;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.SpinnerDateModel;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 import sistemaboletos.vista.imagenes.*;
 
 /**
@@ -35,6 +42,23 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         initComponents();
     }
     
+    public class JTextFieldLimitador extends PlainDocument {
+        private int limit;
+
+        public JTextFieldLimitador(int limit) {
+            super();
+            this.limit = limit;
+        }
+
+        public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
+            if (str == null) return;
+
+            // Solo permite insertar si la longitud total no supera el límite
+            if ((getLength() + str.length()) <= limit) {
+                super.insertString(offset, str, attr);
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,13 +93,15 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnInsertar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jcbHasta = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jCalendar2 = new com.toedter.calendar.JCalendar();
+        tfPrecio = new javax.swing.JTextField();
+        jCalendar = new com.toedter.calendar.JCalendar();
+        jcbMatricula = new javax.swing.JComboBox<>();
+        SpinnerDateModel modeloHora = new SpinnerDateModel();
+        jspHora = new javax.swing.JSpinner(modeloHora);
         jScrollPane1 = new javax.swing.JScrollPane();
         tbViajes = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -165,7 +191,7 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                 .addComponent(tbtnFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(tbtnViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 204, 255, 125));
@@ -178,13 +204,13 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setText("Ciudad Salida");
+        jLabel2.setText("Salida");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setText("Programar Nuevo Viaje");
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setText("Ciudad Destino");
+        jLabel4.setText("Destino");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Matricula Del Vehiculo");
@@ -195,19 +221,35 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Precio de Los Asiento");
 
-        jButton7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton7.setText("Insertar viaje");
+        btnInsertar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnInsertar.setText("Insertar viaje");
 
-        jButton8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton8.setText("Eliminar viaje");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnEliminar.setText("Eliminar viaje");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton9.setText("Modificar Viaje");
+        btnModificar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnModificar.setText("Modificar Viaje");
+
+        tfPrecio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfPrecio.setDocument(new JTextFieldLimitador(7));
+
+        tfPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    evt.consume(); // Ignora si no es un número
+                }
+            }
+        });
+
+        JSpinner.DateEditor editorHora = new JSpinner.DateEditor(jspHora, "HH:mm");
+        jspHora.setEditor(editorHora);
+        jspHora.setFocusable(false);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -217,39 +259,42 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jButton7)
+                        .addComponent(btnInsertar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8))
+                        .addComponent(btnEliminar))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5)
                                     .addGroup(jPanel8Layout.createSequentialGroup()
                                         .addGap(34, 34, 34)
                                         .addComponent(jLabel3))
-                                    .addComponent(jLabel7)))
+                                    .addComponent(jLabel7)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jspHora, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(10, 10, 10))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
                     .addComponent(jcbHasta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jcbDesde, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3))
-                .addContainerGap())
+                    .addComponent(tfPrecio)
+                    .addComponent(jcbMatricula, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(66, 66, 66))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,24 +312,27 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
+                .addComponent(jcbMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jspHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(btnInsertar)
+                    .addComponent(btnEliminar))
                 .addGap(18, 18, 18)
-                .addComponent(jButton9)
+                .addComponent(btnModificar)
                 .addGap(21, 21, 21))
         );
 
+        tbViajes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tbViajes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -331,18 +379,43 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
             new String [] {
                 "id_viaje", "Ciudad salida", "Ciudad destino", "Fecha de salida", "Precio de asiento", "Matricula"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbViajes.setRowHeight(20);
+        tbViajes.setRowMargin(2);
         tbViajes.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbViajes);
+        if (tbViajes.getColumnModel().getColumnCount() > 0) {
+            tbViajes.getColumnModel().getColumn(0).setMinWidth(0);
+            tbViajes.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tbViajes.getColumnModel().getColumn(0).setMaxWidth(0);
+            tbViajes.getColumnModel().getColumn(1).setMinWidth(100);
+            tbViajes.getColumnModel().getColumn(1).setMaxWidth(100);
+            tbViajes.getColumnModel().getColumn(2).setMinWidth(100);
+            tbViajes.getColumnModel().getColumn(2).setMaxWidth(100);
+            tbViajes.getColumnModel().getColumn(3).setMinWidth(150);
+            tbViajes.getColumnModel().getColumn(3).setMaxWidth(150);
+            tbViajes.getColumnModel().getColumn(4).setMinWidth(100);
+            tbViajes.getColumnModel().getColumn(4).setMaxWidth(100);
+            tbViajes.getColumnModel().getColumn(5).setMinWidth(100);
+            tbViajes.getColumnModel().getColumn(5).setMaxWidth(100);
+        }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,9 +505,9 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -487,13 +560,13 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnInsertar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private com.toedter.calendar.JCalendar jCalendar2;
+    private com.toedter.calendar.JCalendar jCalendar;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -513,10 +586,10 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JComboBox<String> jcbDesde;
     private javax.swing.JComboBox<String> jcbHasta;
+    private javax.swing.JComboBox<String> jcbMatricula;
+    private javax.swing.JSpinner jspHora;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
@@ -524,6 +597,7 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     private javax.swing.JToggleButton tbtnFacturas;
     private javax.swing.JToggleButton tbtnUsuarios;
     private javax.swing.JToggleButton tbtnViajes;
+    private javax.swing.JTextField tfPrecio;
     // End of variables declaration//GEN-END:variables
 
     public JTable getTbViajes() {
@@ -545,4 +619,33 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     public JToggleButton getTbtnUsuarios() {
         return tbtnUsuarios;
     }
+
+    public JComboBox getJcbMatricula() {
+        return jcbMatricula;
+    }
+
+    public JCalendar getjCalendar() {
+        return jCalendar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public JButton getBtnInsertar() {
+        return btnInsertar;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public JSpinner getJspHora() {
+        return jspHora;
+    }
+
+    public JTextField getTfPrecio() {
+        return tfPrecio;
+    }
+    
 }

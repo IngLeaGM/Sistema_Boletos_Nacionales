@@ -109,6 +109,7 @@ public class ControladorComprar implements ActionListener {
                 vista.dispose();
 
 
+                con.close();
                 FrameMenu menuPrincipal = new FrameMenu();
                 ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, userDao, usuarioLog);
                 menuPrincipal.setLocationRelativeTo(null);

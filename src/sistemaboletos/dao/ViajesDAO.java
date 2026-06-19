@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.modelo.BoletoDetalle;
@@ -273,5 +274,59 @@ public class ViajesDAO {
         }
      
         return viajeInformacion;
+    }
+    
+    public boolean actualizarDatos(Connection con, Viaje viaje) throws SQLException {
+        
+        // Consulta SQL
+        String ACTUALIZAR = "UPDATE VIAJES SET id_salida = ?, id_destino = ?, transporte_id = ?, fecha_salida = ?, precio_x_asiento = ? WHERE id_viaje = ?;";
+        
+        try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
+        
+            //Asignación segura de valores
+            ps.setInt(1, viaje.getId_salida());
+            ps.setInt(2, viaje.getId_destino());
+            ps.setInt(3, viaje.getTransporte_id());
+            ps.setString(4, viaje.getFecha());
+            ps.setDouble(5, viaje.getPrecio_x_asiento());
+            ps.setInt(6, viaje.getId_viaje());
+
+            // Ejecutar la actualización
+            ps.executeUpdate();
+            
+            return true;
+        
+        } catch (SQLException e) {
+         
+        System.err.println("Error al actulizar datos de de viaje: " + e.getMessage());
+        return false;
+        }
+    }
+    
+    public boolean eliminarViaje(Connection con, int id_viaje) {
+        
+        String DELETE = "DELETE FROM VIAJES WHERE id_viaje = ?";
+        
+        PreparedStatement ps = null;
+        
+        try {
+            ps = con.prepareStatement(DELETE);
+            ps.setInt(1, id_viaje);
+            
+            // executeUpdate devuelve el número de filas afectadas
+            int filasAfectadas = ps.executeUpdate();
+            
+            if (filasAfectadas >= 1) {
+                System.out.println("Se borro el viaje correctamente");
+                return true;
+            } else {
+                return false;
+            }
+            // Si afectó al menos 1 fila, significa que se borró con éxito
+            
+        } catch (SQLException e) {
+            System.err.println("Error al intentar eliminar el viaje con ID " + id_viaje + ": " + e.getMessage());
+            return false;
+        }
     }
 }

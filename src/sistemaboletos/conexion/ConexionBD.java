@@ -18,7 +18,7 @@ public class ConexionBD {
         config.setPassword("");
         
         // Configuración del Pool 
-        config.setMaximumPoolSize(10); 
+        config.setMaximumPoolSize(20); 
         config.setMinimumIdle(2);     
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");

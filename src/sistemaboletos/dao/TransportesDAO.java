@@ -12,11 +12,11 @@ import sistemaboletos.modelo.Transporte;
 
 public class TransportesDAO {
     
-    public List<Transporte> obtener_Transportes(Connection con) throws SQLException {
+    public ArrayList<Transporte> obtener_Transportes(Connection con) throws SQLException {
         
         // Creacion de lista vacia para guardar los objetos
         
-        List<Transporte> listaTransportes = new ArrayList<>();
+        ArrayList<Transporte> listaTransportes = new ArrayList<>();
         
         // Consulta SQL
         String SELECCIONAR = "SELECT id_transporte, modelo, anio_vehiculo, matricula, tipo_combustible FROM TRANSPORTES;";

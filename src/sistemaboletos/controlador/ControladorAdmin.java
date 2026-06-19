@@ -73,7 +73,7 @@ public class ControladorAdmin implements ActionListener {
         ViajesDAO viajesDao = new ViajesDAO();
         UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
-        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios); 
+        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios, con); 
         vistaUsuarios.setLocationRelativeTo(null);
         vistaUsuarios.setVisible(true);
         System.out.println("Se entro a la ventana Usuarios");
@@ -90,7 +90,7 @@ public class ControladorAdmin implements ActionListener {
         ViajesDAO viajesDao = new ViajesDAO();
         UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
-        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas); 
+        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas, con); 
         vistaFacturas.setLocationRelativeTo(null);
         vistaFacturas.setVisible(true);
         System.out.println("Se entro a la ventana Facturas");

@@ -66,4 +66,9 @@ public class Transporte {
         this.tipo_combustible = tipo_combustible;
     }
     
+    @Override
+    public String toString() {
+        return matricula; 
+    }
+    
 }

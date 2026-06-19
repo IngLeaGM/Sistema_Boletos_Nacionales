@@ -26,9 +26,11 @@ import sistemaboletos.vista.FrameViajesProgramados;
 public class ControladorUsuarios implements ActionListener {
     
     private FrameUsuarios vista;
+    private Connection con;
     
-    public ControladorUsuarios(FrameUsuarios vista)  {
+    public ControladorUsuarios(FrameUsuarios vista, Connection con)  {
         this.vista = vista;
+        this.con = con;
         
         this.vista.getTbtnFacturas().addActionListener((ActionListener) this);
         this.vista.getTbtnViajes().addActionListener((ActionListener) this);
@@ -54,8 +56,6 @@ public class ControladorUsuarios implements ActionListener {
     
     private void abrirVentanaFacturas() throws SQLException {
         
-        Connection con = ConexionBD.getConexion();
-        
         vista.dispose();
         
         FrameFacturas vistaFacturas = new FrameFacturas();
@@ -63,15 +63,13 @@ public class ControladorUsuarios implements ActionListener {
         ViajesDAO viajesDao = new ViajesDAO();
         UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
-        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas); 
+        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas, this.con); 
         vistaFacturas.setLocationRelativeTo(null);
         vistaFacturas.setVisible(true);
         System.out.println("Se entro a la ventana Facturas");
     }
     
    private void abrirVentanaViajes() throws SQLException {
-        
-        Connection con = ConexionBD.getConexion();
         
         vista.dispose();
         

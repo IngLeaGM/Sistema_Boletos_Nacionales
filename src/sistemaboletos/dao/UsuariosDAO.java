@@ -224,8 +224,8 @@ public class UsuariosDAO {
             return false;
         }
         
-        try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
         
+        try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
             //Asignación segura de valores
             ps.setString(1, usuario.getUser());
             ps.setString(2, usuario.getEmail());

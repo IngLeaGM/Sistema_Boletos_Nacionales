@@ -120,7 +120,7 @@
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="tbtnUsuarios" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                      <Component id="jToggleButton3" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                      <Component id="tbtnFacturas" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                       <Component id="tbtnViajes" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="33" max="32767" attributes="0"/>
@@ -134,7 +134,7 @@
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   <Component id="tbtnUsuarios" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="jToggleButton3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="tbtnFacturas" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="tbtnViajes" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace pref="219" max="32767" attributes="0"/>
@@ -202,7 +202,7 @@
             <Property name="text" type="java.lang.String" value="Viajes Programados"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+        <Component class="javax.swing.JToggleButton" name="tbtnFacturas">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>
@@ -253,9 +253,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="357" max="32767" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="493" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -263,11 +261,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jPanel5" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -332,24 +327,30 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable1">
+                        <Component class="javax.swing.JTable" name="jtbFacturas">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="4" rowCount="40">
-                                <Column editable="true" title="Nombre De Usuario" type="java.lang.Object"/>
-                                <Column editable="true" title="Monto" type="java.lang.Object"/>
-                                <Column editable="true" title="Metodo De Pago" type="java.lang.Object"/>
-                                <Column editable="true" title="Fecha De Pago" type="java.lang.Object"/>
+                              <Table columnCount="5" rowCount="40">
+                                <Column editable="true" title="id_factura" type="java.lang.Object"/>
+                                <Column editable="false" title="Nombre De Usuario" type="java.lang.Object"/>
+                                <Column editable="false" title="Monto" type="java.lang.Object"/>
+                                <Column editable="false" title="Metodo De Pago" type="java.lang.Object"/>
+                                <Column editable="false" title="Fecha De Pago" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="0" minWidth="0" prefWidth="0" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -384,19 +385,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Facturas"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Buscar Por Fecha"/>
-                    <StringItem index="1" value="Buscar Por Nombre De Usuario"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

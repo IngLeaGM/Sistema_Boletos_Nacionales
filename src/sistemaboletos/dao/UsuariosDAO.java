@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import sistemaboletos.conexion.ConexionBD;
@@ -11,6 +14,16 @@ import sistemaboletos.modelo.Usuario;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class UsuariosDAO {
+    
+    // Lista de dominios que tu sistema va a aceptar
+    private static final List<String> DOMINIOS_PERMITIDOS = Arrays.asList(
+        "@gmail.com",
+        "@outlook.com",
+        "@hotmail.com",
+        "@yahoo.com",
+        "@hotmail.es",
+        "@outlook.es"
+    );
     
     public boolean RegistrarUsuario(Usuario usuario) throws SQLException {
         
@@ -20,6 +33,10 @@ public class UsuariosDAO {
         
         // Consulta SQL
         String INSERT = "INSERT into USUARIOS (user, email, pass, telf) values (?, ?, ?, ?)";
+        
+        if (!this.esDominioPermitido(usuario.getEmail())) {
+            return false;
+        }
         
         boolean verificacion = this.vericarDatos(con, usuario);
         
@@ -213,8 +230,6 @@ public class UsuariosDAO {
     
     public boolean actualizarDatos(Connection con, Usuario usuario) throws SQLException {
         
-        String hashed_pass = BCrypt.hashpw(usuario.getPass(), BCrypt.gensalt());
-        
         // Consulta SQL
         String ACTUALIZAR = "UPDATE USUARIOS SET user = ?, email = ?, telf = ? WHERE id_usuario = ?;";
         
@@ -269,9 +284,23 @@ public class UsuariosDAO {
         }
     }
     
-    //public boolean eliminaUsuario(Connection con, Usuario usuario) throws SQLException {
+    public boolean esDominioPermitido(String correo) {
+        if (correo == null || correo.trim().isEmpty()) {
+            return false;
+        }
         
-    //}
+        String correoLimpio = correo.trim().toLowerCase();
+        
+        // Buscamos si el correo termina con alguno de los dominios de nuestra lista
+        for (String dominio : DOMINIOS_PERMITIDOS) {
+            if (correoLimpio.endsWith(dominio)) {
+                return true; // Es válido
+            } else {
+                JOptionPane.showMessageDialog(null, "Email invalido");
+                return false;
+            }
+        }
+        
+        return false; // No pertenece a ningún dominio de la lista
+    }
 }
- 
-

@@ -30,6 +30,21 @@ public class Usuario {
         this.pass = pass;
         this.telf = telf;
     }
+
+    public Usuario(int id_usuario, String user, String email, String telf) {
+        this.id_usuario = id_usuario;
+        this.user = user;
+        this.email = email;
+        this.telf = telf;
+    }
+
+    public Usuario(String user, String email, String telf) {
+        this.user = user;
+        this.email = email;
+        this.telf = telf;
+    }
+
+    
     
     
     public int getId_usuario() {

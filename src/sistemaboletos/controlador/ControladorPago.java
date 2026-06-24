@@ -100,8 +100,7 @@ public class ControladorPago implements ActionListener {
         List<Viaje> listaViajes = viajesDao.obtener_Viajes(this.con);
         List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
         
-        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, ubicacionesDao,
-                                                                listaViajes, listaUbicaciones, usuarioLog, con); 
+        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);
         vistaComprar.setVisible(true);
         System.out.println("Se entro a la ventana comprar");

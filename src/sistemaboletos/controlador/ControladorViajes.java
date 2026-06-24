@@ -12,9 +12,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
+import sistemaboletos.dao.FacturasDAO;
 import sistemaboletos.dao.TransportesDAO;
 import sistemaboletos.dao.UbicacionesDAO;
 import sistemaboletos.dao.UsuariosDAO;
@@ -36,13 +38,16 @@ public class ControladorViajes implements ActionListener {
     private FrameViajesProgramados vista;
     private ViajesDAO viajesDao;
     private UbicacionesDAO ubicacionesDao;
+    private Usuario usuarioLog;
     private Connection con;
-    private  int viajeSeleccionado;
+    private int viajeSeleccionado;
     
-    public ControladorViajes(FrameViajesProgramados vista, ViajesDAO viajesDao, UbicacionesDAO ubicacionesDao, Connection con) throws SQLException  {
+    public ControladorViajes(FrameViajesProgramados vista, ViajesDAO viajesDao, UbicacionesDAO ubicacionesDao,
+                             Usuario usuarioLog, Connection con) throws SQLException  {
         this.vista = vista;
         this.viajesDao = viajesDao;
         this.ubicacionesDao = ubicacionesDao;
+        this.usuarioLog = usuarioLog;
         this.con = con;
         this.viajeSeleccionado = 0;
         
@@ -51,6 +56,7 @@ public class ControladorViajes implements ActionListener {
         this.vista.getBtnInsertar().addActionListener((ActionListener) this);
         this.vista.getBtnModificar().addActionListener((ActionListener) this);
         this.vista.getBtnEliminar().addActionListener((ActionListener) this);
+        this.vista.getBtnVolver().addActionListener((ActionListener) this);
         this.vista.getjCalendar().addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -145,6 +151,31 @@ public class ControladorViajes implements ActionListener {
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
+        } else if (e.getSource() == vista.getBtnVolver()) {
+            
+            try {
+                vista.dispose();
+
+
+                con.close();
+                
+                UsuariosDAO userDao = new UsuariosDAO();
+                
+                FrameMenu menuPrincipal = new FrameMenu();
+                ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, userDao, usuarioLog);
+                menuPrincipal.setLocationRelativeTo(null);
+                menuPrincipal.setVisible(true);
+            
+            } catch (Exception ex) {
+                System.out.println("Ocurrio un error: " + ex);
+            } finally {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControladorComprar.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
         }
     }
     
@@ -170,9 +201,7 @@ public class ControladorViajes implements ActionListener {
             System.out.println(viaje.getPrecio_x_asiento());
             
             modelo.addRow(fila);
-        }
-
-        
+        } 
     }
     
     public void seleccionarFila() {
@@ -288,9 +317,20 @@ public class ControladorViajes implements ActionListener {
     
     private void eliminarViaje() throws SQLException {
         
-        
-        viajesDao.eliminarViaje(con, viajeSeleccionado);
-        llenarTablaViajes();
+        int respuesta = JOptionPane.showConfirmDialog(
+                vista, 
+                "¿Seguro que deseas eliminar el viaje?", 
+                "Eliminar Viaje", 
+                JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (respuesta == JOptionPane.YES_OPTION) {
+                if(viajesDao.eliminarViaje(con, viajeSeleccionado)) {
+                    llenarTablaViajes();
+                } else {
+                    JOptionPane.showMessageDialog(vista, "No puedes eliminar un viaje con boletos asociados a el.", "Error al eliminar", JOptionPane.WARNING_MESSAGE);
+                }      
+        }   
     }
     
     private void abrirVentanaUsuarios() throws SQLException {
@@ -299,10 +339,10 @@ public class ControladorViajes implements ActionListener {
         
         FrameUsuarios vistaUsuarios = new FrameUsuarios();
         
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        UsuariosDAO usuariosDao = new UsuariosDAO();
         
-        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios, con); 
+        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios, usuariosDao, usuarioLog, con);
+       
         vistaUsuarios.setLocationRelativeTo(null);
         vistaUsuarios.setVisible(true);
         System.out.println("Se entro a la ventana Usuarios");
@@ -314,10 +354,9 @@ public class ControladorViajes implements ActionListener {
         
         FrameFacturas vistaFacturas = new FrameFacturas();
         
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        FacturasDAO facturasDao = new FacturasDAO();
         
-        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas, con); 
+        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas, facturasDao, usuarioLog, this.con); 
         vistaFacturas.setLocationRelativeTo(null);
         vistaFacturas.setVisible(true);
         System.out.println("Se entro a la ventana Facturas");

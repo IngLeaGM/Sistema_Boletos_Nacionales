@@ -6,9 +6,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
+import sistemaboletos.dao.FacturasDAO;
 import sistemaboletos.dao.UbicacionesDAO;
 import sistemaboletos.dao.UsuariosDAO;
 import sistemaboletos.dao.ViajesDAO;
@@ -29,7 +32,7 @@ public class ControladorAdmin implements ActionListener {
     private UsuariosDAO userDao;
     private Usuario usuarioLog;
     
-    public ControladorAdmin(FrameAdmin vista)  {
+    public ControladorAdmin(FrameAdmin vista,  Usuario usuarioLog)  {
         this.vista = vista;
         this.userDao = userDao;
         this.usuarioLog = usuarioLog;
@@ -37,6 +40,7 @@ public class ControladorAdmin implements ActionListener {
         this.vista.getTbtnUsuarios().addActionListener((ActionListener) this);
         this.vista.getTbtnFacturas().addActionListener((ActionListener) this);
         this.vista.getTbtnViajes().addActionListener((ActionListener) this);
+        this.vista.getBtnVolver().addActionListener((ActionListener) this);
         
     }
 
@@ -60,20 +64,27 @@ public class ControladorAdmin implements ActionListener {
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
+        } else if (e.getSource() == vista.getBtnVolver()) {
+            
+            vista.dispose();
+
+            FrameMenu menuPrincipal = new FrameMenu();
+            ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, userDao, usuarioLog);
+            menuPrincipal.setLocationRelativeTo(null);
+            menuPrincipal.setVisible(true);
         }
     }
     
     private void abrirVentanaUsuarios() throws SQLException {
-         Connection con = ConexionBD.getConexion();
+        Connection con = ConexionBD.getConexion();
         
         vista.dispose();
         
         FrameUsuarios vistaUsuarios = new FrameUsuarios();
         
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        UsuariosDAO usuariosDao = new UsuariosDAO();
         
-        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios, con); 
+        ControladorUsuarios ctrlUsuarios = new ControladorUsuarios(vistaUsuarios, usuariosDao, usuarioLog, con); 
         vistaUsuarios.setLocationRelativeTo(null);
         vistaUsuarios.setVisible(true);
         System.out.println("Se entro a la ventana Usuarios");
@@ -87,10 +98,10 @@ public class ControladorAdmin implements ActionListener {
         
         FrameFacturas vistaFacturas = new FrameFacturas();
         
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        FacturasDAO facturasDao = new FacturasDAO();
         
-        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas, con); 
+        ControladorFacturas ctrlFacturas = new ControladorFacturas(vistaFacturas, facturasDao, usuarioLog, con); 
+        
         vistaFacturas.setLocationRelativeTo(null);
         vistaFacturas.setVisible(true);
         System.out.println("Se entro a la ventana Facturas");
@@ -107,7 +118,7 @@ public class ControladorAdmin implements ActionListener {
         ViajesDAO viajesDao = new ViajesDAO();
         UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
-        ControladorViajes ctrlViajes = new ControladorViajes(vistaViajes, viajesDao, ubicacionesDao, con); 
+        ControladorViajes ctrlViajes = new ControladorViajes(vistaViajes, viajesDao, ubicacionesDao, usuarioLog, con); 
         vistaViajes.setLocationRelativeTo(null);
         vistaViajes.setVisible(true);
         System.out.println("Se entro a la ventana viajes");

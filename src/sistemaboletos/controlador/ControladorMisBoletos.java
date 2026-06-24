@@ -30,23 +30,15 @@ public class ControladorMisBoletos implements ActionListener {
     private FrameMisBoletos vista;
     private UsuariosDAO userDao;
     private ViajesDAO viajesDao;
-    private UbicacionesDAO ubicacionesDao;
     private BoletosDAO boletosDao;
-    private List<Viaje> listaViajes;
-    private List<Ubicacion> listaUbicaciones;
     private Usuario usuarioLog;
     private Connection con;
     
-    public ControladorMisBoletos(FrameMisBoletos vista, UsuariosDAO userDao, ViajesDAO viajesDao,
-                                UbicacionesDAO ubicacionesDao, BoletosDAO boletosDao, List<Viaje> listaViajes,
-                                List<Ubicacion> listaUbicaciones, Usuario usuarioLog, Connection con) throws SQLException  {
+    public ControladorMisBoletos(FrameMisBoletos vista, UsuariosDAO userDao, ViajesDAO viajesDao
+                                , BoletosDAO boletosDao, Usuario usuarioLog, Connection con) throws SQLException  {
         this.vista = vista;
         this.userDao = userDao;
-        this.viajesDao = viajesDao;
-        this.ubicacionesDao = ubicacionesDao;
         this.boletosDao = boletosDao;
-        this.listaViajes = listaViajes;
-        this.listaUbicaciones = listaUbicaciones;
         this.usuarioLog = usuarioLog;
         this.con = con;
         
@@ -173,8 +165,7 @@ public class ControladorMisBoletos implements ActionListener {
         
         FrameComprar vistaComprar = new FrameComprar();    
         
-        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, ubicacionesDao,
-                                                                listaViajes, listaUbicaciones, usuarioLog, con); 
+        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);
         vistaComprar.setVisible(true);
         System.out.println("Se entro a la ventana comprar");

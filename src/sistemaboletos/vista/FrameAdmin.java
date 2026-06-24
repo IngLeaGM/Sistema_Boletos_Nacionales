@@ -55,6 +55,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         tbtnViajes = new javax.swing.JToggleButton();
         tbtnFacturas = new javax.swing.JToggleButton();
+        btnVolver = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         menu1.setLabel("File");
@@ -81,7 +82,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
@@ -118,6 +118,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         tbtnFacturas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         tbtnFacturas.setText("Facturas");
 
+        btnVolver.setText("Volver al Menu");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,10 +127,11 @@ public class FrameAdmin extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tbtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbtnFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbtnViajes))
+                    .addComponent(tbtnViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -141,7 +144,9 @@ public class FrameAdmin extends javax.swing.JFrame {
                 .addComponent(tbtnFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(tbtnViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addComponent(btnVolver)
+                .addGap(23, 23, 23))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 204, 255, 125));
@@ -223,6 +228,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
@@ -250,4 +256,10 @@ public class FrameAdmin extends javax.swing.JFrame {
     public JToggleButton getTbtnViajes() {
         return tbtnViajes;
     }
+
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+    
+    
 }

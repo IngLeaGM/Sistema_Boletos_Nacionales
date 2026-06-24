@@ -45,6 +45,7 @@ public class ControladorLogin implements ActionListener {
     }
     
     private void ejecutarLogin() throws SQLException {
+        
         String email = vista.getTfEmail().getText().trim();
         String pass = new String(vista.getJpPass().getPassword());
         
@@ -52,6 +53,7 @@ public class ControladorLogin implements ActionListener {
             JOptionPane.showMessageDialog(vista, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
         Usuario usuarioIntento = new Usuario();
         usuarioIntento.setEmail(email);
         usuarioIntento.setPass(pass);

@@ -38,6 +38,11 @@ public class UsuariosDAO {
             return false;
         }
         
+        if (usuario.getTelf().length() != 11) {
+            JOptionPane.showMessageDialog(null, "Telefono invalido");
+            return false;
+        }
+        
         boolean verificacion = this.vericarDatos(con, usuario);
         
         if (!verificacion) {
@@ -167,7 +172,7 @@ public class UsuariosDAO {
     }
     
     public boolean vericarDatosUPDATE(Connection con, Usuario usuario) throws SQLException {
-        String SELECT = "SELECT COUNT(*) AS total FROM USUARIOS WHERE (user = ? OR email = ? OR telf = ?) AND id_usuario != ?;";
+        String SELECT = "SELECT user, email, telf FROM USUARIOS WHERE (user = ? OR email = ? OR telf = ?) AND id_usuario != ?;";
         
         try (PreparedStatement ps = con.prepareStatement(SELECT)) {
             
@@ -302,5 +307,63 @@ public class UsuariosDAO {
         }
         
         return false; // No pertenece a ningún dominio de la lista
+    }
+    
+    public List<Usuario> ObtenerUsuarios(Connection con) {
+    // Creacion de lista vacia para guardar los objetos
+        
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        
+        // Consulta SQL
+        String SELECCIONAR = "SELECT id_usuario, user, email, telf FROM USUARIOS;";
+        
+        try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
+           
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    // Se extraen los datos de MySql
+                    int id_usuario = rs.getInt("id_usuario");
+                    String user = rs.getString("user");
+                    String email = rs.getString("email");
+                    String telf = rs.getString("telf");
+                    
+                    // Se transforman los datos obtenidos en objetos
+                    Usuario usuario = new Usuario(id_usuario, user, email, telf);
+
+                    // Se añade el nuevo objeto a la lista
+                    listaUsuarios.add(usuario);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al selecionar tabla: "+e.getMessage());
+        }
+        return listaUsuarios;
+    }
+    
+    public boolean eliminarUsuario(Connection con, int id_usuario) {
+        
+        String DELETE = "DELETE FROM USUARIOS WHERE id_usuario = ?";
+        
+        PreparedStatement ps = null;
+        
+        try {
+            ps = con.prepareStatement(DELETE);
+            ps.setInt(1, id_usuario);
+            
+            // executeUpdate devuelve el número de filas afectadas
+            int filasAfectadas = ps.executeUpdate();
+            
+            if (filasAfectadas >= 1) {
+                System.out.println("Se borro el usuario correctamente");
+                return true;
+            } else {
+                return false;
+            }
+            // Si afectó al menos 1 fila, significa que se borró con éxito
+            
+        } catch (SQLException e) {
+            System.err.println("Error al intentar eliminar el usuario con ID " + id_usuario + ": " + e.getMessage());
+            return false;
+        }
     }
 }

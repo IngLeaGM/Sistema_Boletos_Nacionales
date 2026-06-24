@@ -37,23 +37,16 @@ public class ControladorComprar implements ActionListener {
     private FrameComprar vista;
     private UsuariosDAO userDao;
     private ViajesDAO viajesDao;
-    private UbicacionesDAO ubicacionesDao;
-    private List<Viaje> listaViajes;
-    private List<Ubicacion> listaUbicaciones;
     private Usuario usuarioLog;
     private Connection con;
     
     
     //Constructor
     public ControladorComprar(FrameComprar vista, UsuariosDAO userDao, ViajesDAO viajesDao,
-                                UbicacionesDAO ubicacionesDao, List<Viaje> listaViajes,
-                                List<Ubicacion> listaUbicaciones, Usuario usuarioLog, Connection con) throws SQLException  {
+                                 Usuario usuarioLog, Connection con) throws SQLException  {
         this.vista = vista;
         this.userDao = userDao;
         this.viajesDao = viajesDao;
-        this.ubicacionesDao = ubicacionesDao;
-        this.listaViajes = listaViajes;
-        this.listaUbicaciones = listaUbicaciones;
         this.usuarioLog = usuarioLog;
         this.con = con;
         
@@ -103,7 +96,7 @@ public class ControladorComprar implements ActionListener {
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
-        }else if (e.getSource() == vista.getBtnInicio()) {
+        } else if (e.getSource() == vista.getBtnInicio()) {
             
             try {
                 vista.dispose();
@@ -195,8 +188,8 @@ public class ControladorComprar implements ActionListener {
         
         BoletosDAO boletosDao = new BoletosDAO();
         
-        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao, ubicacionesDao,
-                                                                boletosDao, listaViajes, listaUbicaciones, usuarioLog, con); 
+        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao,
+                                                                boletosDao, usuarioLog, con); 
         
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);

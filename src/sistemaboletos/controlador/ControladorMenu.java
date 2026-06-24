@@ -85,8 +85,7 @@ public class ControladorMenu implements ActionListener {
         List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
         List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
         
-        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, ubicacionesDao,
-                                                                listaViajes, listaUbicaciones, usuarioLog, con); 
+        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);
         vistaComprar.setVisible(true);
         System.out.println("Se entro a la ventana comprar");
@@ -101,13 +100,9 @@ public class ControladorMenu implements ActionListener {
         
         BoletosDAO boletosDao = new BoletosDAO();
         ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
-        List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
-        List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
-        
-        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao, ubicacionesDao,
-                                                                boletosDao, listaViajes, listaUbicaciones, usuarioLog, con); 
+        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao,
+                                                                boletosDao, usuarioLog, con); 
         
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);
@@ -128,7 +123,7 @@ public class ControladorMenu implements ActionListener {
         List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
         List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
         
-        ControladorAdmin ctrladmin = new ControladorAdmin(vistaAdmin); 
+        ControladorAdmin ctrladmin = new ControladorAdmin(vistaAdmin, usuarioLog); 
         vistaAdmin.setLocationRelativeTo(null);
         vistaAdmin.setVisible(true);
         System.out.println("Se entro a la ventana comprar");

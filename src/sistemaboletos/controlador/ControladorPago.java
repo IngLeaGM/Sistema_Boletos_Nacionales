@@ -26,6 +26,7 @@ import sistemaboletos.modelo.ViajeInformacion;
 import sistemaboletos.servicio.ServicioFactura;
 import sistemaboletos.vista.FrameCompletarPago;
 import sistemaboletos.vista.FrameComprar;
+import sistemaboletos.vista.FramePagoCompletado;
 
 public class ControladorPago implements ActionListener {
     
@@ -146,9 +147,20 @@ public class ControladorPago implements ActionListener {
         if (boletosDao.insertarBoletos(con, asientosSeleccionados)) {
             ServicioFactura facturacion = new ServicioFactura();
         
-            facturacion.generarFacturaPDF(factura, viajeInformacion, monto_total, asientosSeleccionados);
-            ejecutarRegreso(con);
+            String rutaPDF = facturacion.generarFacturaPDF(factura, viajeInformacion, monto_total, asientosSeleccionados);
+            pagoCompletado(rutaPDF);
         }
-
+    }
+    
+    private void pagoCompletado(String rutaPDF) {
+        
+        vista.dispose();
+        
+        FramePagoCompletado vistaPagado = new FramePagoCompletado();
+          
+        ControladorPagado ctrlPagado = new ControladorPagado(vistaPagado, usuarioLog, userDao, rutaPDF, con); 
+        vistaPagado.setLocationRelativeTo(null);
+        vistaPagado.setVisible(true);
+        System.out.println("Se entro a la ventana de Pago Completado");
     }
 }

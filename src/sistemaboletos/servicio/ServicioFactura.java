@@ -13,7 +13,8 @@ import sistemaboletos.modelo.Factura;
 import sistemaboletos.modelo.ViajeInformacion;
 
 public class ServicioFactura {
-    public void generarFacturaPDF(Factura factura,ViajeInformacion viajeInformacion, double montoTotal, ArrayList<Boleto> listaBoletos) {
+    
+    public String generarFacturaPDF(Factura factura,ViajeInformacion viajeInformacion, double montoTotal, ArrayList<Boleto> listaBoletos) {
         
         int idFactura = factura.getId_factura();
         String f_fecha = factura.getFecha();
@@ -100,11 +101,15 @@ public class ServicioFactura {
             }
 
             // Cierre e instrucciones de éxito
+            
             documento.close();
+
             System.out.println("Factura PDF creada con éxito.");
+            return rutaPdf; // Retorna la ruta deñ pdf para despues poder ubicarla y abrirla.
 
         } catch (Exception e) {
             System.err.println("Error al estructurar el PDF: " + e.getMessage());
         }
+        return null;
     }
 }

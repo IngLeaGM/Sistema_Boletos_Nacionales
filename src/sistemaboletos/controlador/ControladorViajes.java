@@ -398,8 +398,6 @@ public class ControladorViajes implements ActionListener {
         
         FrameUbicaciones vistaUbicaciones = new FrameUbicaciones();
         
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
-        
         ControladorUbicaciones ctrlUbicaciones = new ControladorUbicaciones(vistaUbicaciones, ubicacionesDao, usuarioLog, this.con); 
         vistaUbicaciones.setLocationRelativeTo(null);
         vistaUbicaciones.setVisible(true);

@@ -80,10 +80,6 @@ public class ControladorMenu implements ActionListener {
         FrameComprar vistaComprar = new FrameComprar();
         
         ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
-        
-        List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
-        List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
         
         ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);
@@ -116,13 +112,7 @@ public class ControladorMenu implements ActionListener {
         vista.dispose();
         
         FrameAdmin vistaAdmin = new FrameAdmin();
-        
-        ViajesDAO viajesDao = new ViajesDAO();
-        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
-        
-        List<Viaje> listaViajes = viajesDao.obtener_Viajes(con);
-        List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
-        
+             
         ControladorAdmin ctrladmin = new ControladorAdmin(vistaAdmin, usuarioLog); 
         vistaAdmin.setLocationRelativeTo(null);
         vistaAdmin.setVisible(true);

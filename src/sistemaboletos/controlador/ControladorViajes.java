@@ -30,6 +30,7 @@ import sistemaboletos.modelo.ViajeInformacion;
 import sistemaboletos.vista.FrameFacturas;
 import sistemaboletos.vista.FrameMenu;
 import sistemaboletos.vista.FrameMisBoletos;
+import sistemaboletos.vista.FrameUbicaciones;
 import sistemaboletos.vista.FrameUsuarios;
 import sistemaboletos.vista.FrameVehiculos;
 import sistemaboletos.vista.FrameViajesProgramados;
@@ -59,6 +60,7 @@ public class ControladorViajes implements ActionListener {
         this.vista.getBtnEliminar().addActionListener((ActionListener) this);
         this.vista.getBtnVolver().addActionListener((ActionListener) this);
         this.vista.getBtnVehiculos().addActionListener((ActionListener) this);
+        this.vista.getBtnUbicaciones().addActionListener((ActionListener) this);
         this.vista.getjCalendar().addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -138,6 +140,12 @@ public class ControladorViajes implements ActionListener {
         } else if (e.getSource() == vista.getBtnVehiculos()) {
             try {
                 abrirVentanaVehiculos();
+            } catch (Exception ex) {
+                System.out.println("Ocurrio un error: " + ex);
+            } 
+        } else if (e.getSource() == vista.getBtnUbicaciones()) {
+            try {
+                abrirVentanaUbicaciones();
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
@@ -381,6 +389,20 @@ public class ControladorViajes implements ActionListener {
         ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(vistaVehiculos, transportesDao, usuarioLog, this.con); 
         vistaVehiculos.setLocationRelativeTo(null);
         vistaVehiculos.setVisible(true);
+        System.out.println("Se entro a la ventana Vehiculos");
+    }
+    
+    private void abrirVentanaUbicaciones() throws SQLException {
+        
+        vista.dispose();
+        
+        FrameUbicaciones vistaUbicaciones = new FrameUbicaciones();
+        
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        ControladorUbicaciones ctrlUbicaciones = new ControladorUbicaciones(vistaUbicaciones, ubicacionesDao, usuarioLog, this.con); 
+        vistaUbicaciones.setLocationRelativeTo(null);
+        vistaUbicaciones.setVisible(true);
         System.out.println("Se entro a la ventana Vehiculos");
     }
 }

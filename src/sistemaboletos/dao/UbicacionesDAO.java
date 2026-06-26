@@ -67,4 +67,30 @@ public class UbicacionesDAO {
         }
     }
 
+    public boolean eliminarUbicacion(Connection con, int id_ubicacion) {
+        
+        String DELETE = "DELETE FROM UBICACIONES WHERE id_ubicacion = ?";
+        
+        PreparedStatement ps = null;
+        
+        try {
+            ps = con.prepareStatement(DELETE);
+            ps.setInt(1, id_ubicacion);
+            
+            // executeUpdate devuelve el número de filas afectadas
+            int filasAfectadas = ps.executeUpdate();
+            
+            if (filasAfectadas >= 1) {
+                System.out.println("Se borro la ubicacion correctamente");
+                return true;
+            } else {
+                return false;
+            }
+            // Si afectó al menos 1 fila, significa que se borró con éxito
+            
+        } catch (SQLException e) {
+            System.err.println("Error al intentar eliminar la ubicacion con ID " + id_ubicacion + ": " + e.getMessage());
+            return false;
+        }
+    }
 }

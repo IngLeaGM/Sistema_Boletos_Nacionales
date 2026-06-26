@@ -103,7 +103,7 @@ public class FrameCompletarPago extends javax.swing.JFrame {
         });
 
         tfTelf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        tfTelf.setDocument(new JTextFieldLimitador(9));
+        tfTelf.setDocument(new JTextFieldLimitador(11));
 
         tfTelf.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {

@@ -6,9 +6,7 @@ import com.itextpdf.text.pdf.*;
 import java.io.FileOutputStream;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 import sistemaboletos.modelo.Boleto;
-import sistemaboletos.modelo.BoletoInformacion;
 import sistemaboletos.modelo.Factura;
 import sistemaboletos.modelo.ViajeInformacion;
 

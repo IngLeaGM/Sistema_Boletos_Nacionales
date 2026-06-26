@@ -76,7 +76,7 @@ public class TransportesDAO {
     public boolean actualizarDatos(Connection con, Transporte transporte) throws SQLException {
         
         // Consulta SQL
-        String ACTUALIZAR = "UPDATE TRANSPORTES SET modelo = ?, anio = ?, matricula = ?, combustible = ? WHERE id_transporte = ?;";
+        String ACTUALIZAR = "UPDATE TRANSPORTES SET modelo = ?, anio_vehiculo = ?, matricula = ?, tipo_combustible = ? WHERE id_transporte = ?;";
         
         try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
         

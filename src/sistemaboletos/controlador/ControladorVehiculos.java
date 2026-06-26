@@ -236,7 +236,7 @@ public class ControladorVehiculos implements ActionListener {
         }
         
         String modelo = String.valueOf(vista.getJcbModelo().getSelectedItem());
-        int anio = Integer.parseInt((String)vista.getJcbModelo().getSelectedItem());
+        int anio = Integer.parseInt((String) vista.getJcbAnio().getSelectedItem()) ;
         String matricula = vista.getTfMatricula().getText();
         String combustible = String.valueOf(vista.getJcbCombustible().getSelectedItem());
              

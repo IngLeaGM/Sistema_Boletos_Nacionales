@@ -1,4 +1,3 @@
-
 package sistemaboletos.vista;
 
 import javax.swing.JButton;

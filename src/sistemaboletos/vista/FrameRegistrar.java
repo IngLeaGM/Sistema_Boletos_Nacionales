@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemaboletos.vista;
 
 import javax.swing.JButton;
@@ -14,15 +9,9 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 import sistemaboletos.vista.imagenes.*;
 
-/**
- *
- * @author LeaGM
- */
+
 public class FrameRegistrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FramePrincipal
-     */
     public FrameRegistrar() {
      
         PanelFondo fondo = new PanelFondo("/sistemaboletos/vista/imagenes/ImagenFondo.png");

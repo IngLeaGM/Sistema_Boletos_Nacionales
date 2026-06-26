@@ -1,35 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemaboletos.vista;
 
 import sistemaboletos.vista.imagenes.*;
-import sistemaboletos.vista.FondoBus.*;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
 
-/**
- *
- * @author LeaGM
- */
 public class FrameComprar extends javax.swing.JFrame {
 
     /**
      * Creates new form FramePrincipal
      */
     public FrameComprar() {
-        // 1. Creamos nuestro panel enviando la ruta de la imagen
-        // ¡Asegúrate de poner la barra diagonal '/' al inicio!
         PanelFondo fondo = new PanelFondo("/sistemaboletos/vista/imagenes/imagendecompra.png");
-
-        // 2. Le decimos al JFrame que use este panel como contenedor principal
+        
         this.setContentPane(fondo);
-    
-        // 3. ¡MUY IMPORTANTE! Esto debe ir DESPUÉS de setContentPane
+   
         initComponents();
     }
 

@@ -1,12 +1,6 @@
-
 package sistemaboletos.main;
 
-import java.sql.SQLException;
-import java.util.List;
 import sistemaboletos.controlador.ControladorLogin;
-import sistemaboletos.dao.BoletosDAO;
-import sistemaboletos.modelo.Boleto;
-import sistemaboletos.modelo.Usuario;
 import sistemaboletos.dao.UsuariosDAO;
 import sistemaboletos.vista.FrameLogin;
 

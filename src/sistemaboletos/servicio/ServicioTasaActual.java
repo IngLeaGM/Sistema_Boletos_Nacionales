@@ -52,6 +52,6 @@ public class ServicioTasaActual {
         // 5. TASA DE RESPALDO (Fallback): 
         // Si el cliente no tiene internet en la terminal, no podemos detener el sistema.
         // Retornamos esta tasa manual por defecto. ¡Asegúrate de actualizar este número a mano de vez en cuando!
-        return 36.50;
+        return 622.21;
     }
 }

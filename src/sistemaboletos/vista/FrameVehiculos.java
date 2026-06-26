@@ -109,6 +109,7 @@ public class FrameVehiculos extends javax.swing.JFrame {
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
@@ -173,7 +174,7 @@ public class FrameVehiculos extends javax.swing.JFrame {
                 .addComponent(tbtnViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVolver)
-                .addContainerGap())
+                .addGap(28, 28, 28))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 204, 255, 125));

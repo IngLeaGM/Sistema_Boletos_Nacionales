@@ -51,6 +51,7 @@ public class FrameLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255, 125));

@@ -89,6 +89,7 @@ public class FrameComprar extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
@@ -156,7 +157,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255, 125));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 255, 180));
 

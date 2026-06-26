@@ -65,6 +65,7 @@ public class FrameCompletarPago extends javax.swing.JFrame {
         btnRegresar = new sistemaboletos.vista.BotonRedondeado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255, 125));
 

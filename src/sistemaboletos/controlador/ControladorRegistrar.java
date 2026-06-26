@@ -43,7 +43,7 @@ public class ControladorRegistrar implements ActionListener {
     
     public void ejecutarRegistro() throws SQLException {
         String user = vista.getTfUsuario().getText().trim();
-        String email = vista.getTfEmail().getText().trim();
+        String email = vista.getTfEmail().getText().trim().toLowerCase();
         String telf1 = String.valueOf(vista.getJcTelefono().getSelectedItem());
         String telf2 = vista.getTfTelefono().getText().trim();
         String telf = telf1 + telf2;

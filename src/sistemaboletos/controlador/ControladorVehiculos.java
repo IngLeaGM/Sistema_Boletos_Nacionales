@@ -1,4 +1,3 @@
-
 package sistemaboletos.controlador;
 
 import java.awt.event.ActionEvent;
@@ -31,60 +30,35 @@ import sistemaboletos.vista.FrameFacturas;
 import sistemaboletos.vista.FrameMenu;
 import sistemaboletos.vista.FrameMisBoletos;
 import sistemaboletos.vista.FrameUsuarios;
+import sistemaboletos.vista.FrameVehiculos;
 import sistemaboletos.vista.FrameViajesProgramados;
 
 
-public class ControladorViajes implements ActionListener {
-    private FrameViajesProgramados vista;
-    private ViajesDAO viajesDao;
-    private UbicacionesDAO ubicacionesDao;
+public class ControladorVehiculos implements ActionListener {
+    private FrameVehiculos vista;
+    private TransportesDAO transportesDao;
     private Usuario usuarioLog;
     private Connection con;
-    private int viajeSeleccionado;
+    private int vehiculoSeleccionado;
     
-    public ControladorViajes(FrameViajesProgramados vista, ViajesDAO viajesDao, UbicacionesDAO ubicacionesDao,
+    public ControladorVehiculos(FrameVehiculos vista, TransportesDAO transportesDao,
                              Usuario usuarioLog, Connection con) throws SQLException  {
         this.vista = vista;
-        this.viajesDao = viajesDao;
-        this.ubicacionesDao = ubicacionesDao;
+        this.transportesDao = transportesDao;
         this.usuarioLog = usuarioLog;
         this.con = con;
-        this.viajeSeleccionado = 0;
+        this.vehiculoSeleccionado = 0;
         
         this.vista.getTbtnUsuarios().addActionListener((ActionListener) this);
         this.vista.getTbtnFacturas().addActionListener((ActionListener) this);
-        this.vista.getBtnInsertar().addActionListener((ActionListener) this);
+        this.vista.getBtnAgregar().addActionListener((ActionListener) this);
         this.vista.getBtnModificar().addActionListener((ActionListener) this);
         this.vista.getBtnEliminar().addActionListener((ActionListener) this);
         this.vista.getBtnVolver().addActionListener((ActionListener) this);
-        this.vista.getjCalendar().addMouseListener(new java.awt.event.MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-               
-            }
-        });
+        this.vista.getTbtnViajes().addActionListener((ActionListener) this);  
+        this.vista.getBtnViajes().addActionListener((ActionListener) this);
            
-        this.vista.getTbViajes().addMouseListener(new java.awt.event.MouseListener() {
+        this.vista.getTbVehiculos().addMouseListener(new java.awt.event.MouseListener() {
            
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -114,9 +88,8 @@ public class ControladorViajes implements ActionListener {
             }
         });
         
-        this.vista.getTbViajes().removeColumn(this.vista.getTbViajes().getColumnModel().getColumn(0));
-        llenarTablaViajes();
-        cargarCombos(this.con);
+        this.vista.getTbVehiculos().removeColumn(this.vista.getTbVehiculos().getColumnModel().getColumn(0));
+        llenarTablaVehiculos();
     }
     
     @Override
@@ -133,21 +106,21 @@ public class ControladorViajes implements ActionListener {
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
-        } else if (e.getSource() == vista.getBtnInsertar()) {
+        } else if (e.getSource() == vista.getBtnAgregar()) {
             try {
-                insertarViaje();
+                agregarVehiculo();
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
         } else if (e.getSource() == vista.getBtnModificar()) {
             try {
-                modificarViaje();
+                modificarVehiculo();
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
         } else if (e.getSource() == vista.getBtnEliminar()) {
             try {
-                eliminarViaje();
+                eliminarVehiculo();
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
@@ -176,29 +149,39 @@ public class ControladorViajes implements ActionListener {
                 }
             }
             
+        } else if (e.getSource() == vista.getTbtnViajes()) {
+            try {
+                abrirVentanaViajes();
+            } catch (Exception ex) {
+                System.out.println("Ocurrio un error: " + ex);
+            } 
+        } else if (e.getSource() == vista.getBtnViajes()) {
+            try {
+                abrirVentanaViajes();
+            } catch (Exception ex) {
+                System.out.println("Ocurrio un error: " + ex);
+            } 
         }
     }
     
-    private void llenarTablaViajes() throws SQLException {
+    private void llenarTablaVehiculos() throws SQLException {
         System.out.println("Se ejecuto LlenarTabla");
         
-        DefaultTableModel modelo = (DefaultTableModel) vista.getTbViajes().getModel();
+        DefaultTableModel modelo = (DefaultTableModel) vista.getTbVehiculos().getModel();
         
         modelo.setRowCount(0);
         
-        List<ViajeInformacion> viajesInformacion = viajesDao.ObtenerViajesInformacion(this.con);
+        List<Transporte> listaVehiculos = transportesDao.obtener_Transportes(this.con);
         
-        for (ViajeInformacion viaje : viajesInformacion) {
+        for (Transporte vehiculo : listaVehiculos) {
             
-            Object[] fila = new Object[6];
-            fila[0] = viaje.getId_viaje();
+            Object[] fila = new Object[5];
+            fila[0] = vehiculo.getId_transporte();
             System.out.println("Id: " + fila[0]);
-            fila[1] = viaje.getCiudad_salida();
-            fila[2] = viaje.getCiudad_destino();
-            fila[3] = viaje.getFecha();
-            fila[4] = viaje.getPrecio_x_asiento() + "$";
-            fila[5] = viaje.getMatricula();
-            System.out.println(viaje.getPrecio_x_asiento());
+            fila[1] = vehiculo.getModelo();
+            fila[2] = vehiculo.getAnio_vehiculo();
+            fila[3] = vehiculo.getMatricula();
+            fila[4] = vehiculo.getTipo_combustible();
             
             modelo.addRow(fila);
         } 
@@ -206,129 +189,74 @@ public class ControladorViajes implements ActionListener {
     
     public void seleccionarFila() {
         
-        int fila = vista.getTbViajes().getSelectedRow();
+        int fila = vista.getTbVehiculos().getSelectedRow();
         
         if (fila != -1) {
-            int filaModelo = vista.getTbViajes().convertRowIndexToModel(fila);
+            int filaModelo = vista.getTbVehiculos().convertRowIndexToModel(fila);
         
-            int id_Viaje = Integer.parseInt(vista.getTbViajes().getModel().getValueAt(filaModelo, 0).toString());
+            int id_transporte = Integer.parseInt(vista.getTbVehiculos().getModel().getValueAt(filaModelo, 0).toString());
 
-            System.out.println("El usuario seleccionó la fila completa del viaje ID: " + id_Viaje);
-            this.viajeSeleccionado = id_Viaje;
+            System.out.println("El usuario seleccionó la fila completa del viaje ID: " + id_transporte);
+            this.vehiculoSeleccionado = id_transporte;
         } else {
-            this.viajeSeleccionado = 0;
+            this.vehiculoSeleccionado = 0;
         }
 
     }
-    
-    private void cargarCombos(Connection con) throws SQLException {
+     
+    private void agregarVehiculo() throws SQLException {
+        String modelo = String.valueOf(vista.getJcbModelo().getSelectedItem());
+        int anio = Integer.parseInt((String) vista.getJcbAnio().getSelectedItem()) ;
+        String matricula = vista.getTfMatricula().getText();
+        String combustible = String.valueOf(vista.getJcbCombustible().getSelectedItem());
+             
         
-        TransportesDAO transportesDao = new TransportesDAO();
+        Transporte vehiculo = new Transporte(modelo, anio, matricula, combustible);
         
-        vista.getJcbDesde().removeAllItems(); // Limpiamos el combo por si hay items basura
-        vista.getJcbHasta().removeAllItems();
-        ArrayList<Ubicacion> ubicacionesDisponibles = this.ubicacionesDao.obtener_ubicaciones(this.con);
-        ArrayList<Transporte> transportesDisponibles = transportesDao.obtener_Transportes(con);
-        
-        
-        for (Ubicacion ubObtenida : ubicacionesDisponibles) {
-            vista.getJcbDesde().addItem(ubObtenida);
-            vista.getJcbHasta().addItem(ubObtenida);
-        }
-        
-        for (Transporte tpObtenido : transportesDisponibles) {
-            vista.getJcbMatricula().addItem(tpObtenido);
-        }
-
-    }
-    
-    public String seleccionarFecha() {
-        Date fechaSeleccionada = vista.getjCalendar().getDate();
-        
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        String fechaTexto = formato.format(fechaSeleccionada);
-        
-        return fechaTexto;
-    }
-    
-    
-    private void insertarViaje() throws SQLException {
-        Ubicacion u_salida = (Ubicacion) vista.getJcbDesde().getSelectedItem();
-        Ubicacion u_destino = (Ubicacion) vista.getJcbHasta().getSelectedItem();
-        
-        Transporte transporte = (Transporte) vista.getJcbMatricula().getSelectedItem();
-        
-        int id_salida = u_salida.getId_ubicacion();
-        int id_destino = u_destino.getId_ubicacion();
-        int id_transporte = transporte.getId_transporte();
-        
-        String fecha = seleccionarFecha();
-        
-        Date hora_date = (Date) vista.getJspHora().getValue();
-        
-        SimpleDateFormat formato = new SimpleDateFormat("HH:mm");
-        String hora = formato.format(hora_date);
-        String fecha_completa = fecha + " " + hora;
-        
-        double precio = Double.parseDouble(vista.getTfPrecio().getText());
-        Viaje viaje = new Viaje(id_salida, id_destino, id_transporte, fecha_completa, precio);
-        
-        if (viajesDao.insertar_Viaje(con, viaje)) {
-            System.out.println("Viaje insertado con exito");
-            llenarTablaViajes();
+        if (transportesDao.insertar_Transporte(con, vehiculo)) {
+            System.out.println("Transporte insertado con exito");
+            llenarTablaVehiculos();
         } else {
             System.out.println("error");
         }
     }
     
-    private void modificarViaje() throws SQLException {
+    private void modificarVehiculo() throws SQLException {
         
-        if (viajeSeleccionado <= 0) {
+        if (vehiculoSeleccionado <= 0) {
             return;
         }
         
-        Ubicacion u_salida = (Ubicacion) vista.getJcbDesde().getSelectedItem();
-        Ubicacion u_destino = (Ubicacion) vista.getJcbHasta().getSelectedItem();
+        String modelo = String.valueOf(vista.getJcbModelo().getSelectedItem());
+        int anio = Integer.parseInt((String)vista.getJcbModelo().getSelectedItem());
+        String matricula = vista.getTfMatricula().getText();
+        String combustible = String.valueOf(vista.getJcbCombustible().getSelectedItem());
+             
         
-        Transporte transporte = (Transporte) vista.getJcbMatricula().getSelectedItem();
+        Transporte vehiculo = new Transporte(this.vehiculoSeleccionado, modelo, anio, matricula, combustible);
         
-        int id_salida = u_salida.getId_ubicacion();
-        int id_destino = u_destino.getId_ubicacion();
-        int id_transporte = transporte.getId_transporte();
-        
-        String fecha = seleccionarFecha();
-        
-        Date hora_date = (Date) vista.getJspHora().getValue();
-        
-        SimpleDateFormat formato = new SimpleDateFormat("HH:mm");
-        String hora = formato.format(hora_date);
-        String fecha_completa = fecha + " " + hora;
-        
-        double precio = Double.parseDouble(vista.getTfPrecio().getText());
-        Viaje viaje = new Viaje(this.viajeSeleccionado, id_salida, id_destino, id_transporte, fecha_completa, precio);
-        
-        if (viajesDao.actualizarDatos(con, viaje)) {
-            System.out.println("Viaje modificado con exito");
-            llenarTablaViajes();
+        if (transportesDao.actualizarDatos(con, vehiculo)) {
+            System.out.println("Vehiculo modificado con exito");
+            llenarTablaVehiculos();
         } else {
             System.out.println("Error");
         }
     }
     
-    private void eliminarViaje() throws SQLException {
+    private void eliminarVehiculo() throws SQLException {
         
         int respuesta = JOptionPane.showConfirmDialog(
                 vista, 
-                "¿Seguro que deseas eliminar el viaje?", 
-                "Eliminar Viaje", 
+                "¿Seguro que deseas eliminar el vehiculo?", 
+                "Eliminar Vehiculo", 
                 JOptionPane.YES_NO_OPTION, 
                 JOptionPane.QUESTION_MESSAGE);
 
         if (respuesta == JOptionPane.YES_OPTION) {
-                if(viajesDao.eliminarViaje(con, viajeSeleccionado)) {
-                    llenarTablaViajes();
+                if(transportesDao.eliminarTransporte(con, vehiculoSeleccionado)) {
+                    llenarTablaVehiculos();
                 } else {
-                    JOptionPane.showMessageDialog(vista, "No puedes eliminar un viaje con boletos asociados a el.", "Error al eliminar", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(vista, "No puedes eliminar un vehiculo con viajes asociados a el.", "Error al eliminar", JOptionPane.WARNING_MESSAGE);
                 }      
         }   
     }
@@ -360,5 +288,20 @@ public class ControladorViajes implements ActionListener {
         vistaFacturas.setLocationRelativeTo(null);
         vistaFacturas.setVisible(true);
         System.out.println("Se entro a la ventana Facturas");
+    }
+    
+    private void abrirVentanaViajes() throws SQLException {
+        
+        vista.dispose();
+        
+        FrameViajesProgramados vistaViajes = new FrameViajesProgramados();
+        
+        ViajesDAO viajesDao = new ViajesDAO();
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        ControladorViajes ctrlViajes = new ControladorViajes(vistaViajes, viajesDao, ubicacionesDao, usuarioLog, con); 
+        vistaViajes.setLocationRelativeTo(null);
+        vistaViajes.setVisible(true);
+        System.out.println("Se entro a la ventana viajes");
     }
 }

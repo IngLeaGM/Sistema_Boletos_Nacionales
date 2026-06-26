@@ -178,6 +178,9 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tfCedula.setDocument(new JTextFieldLimitador(9));&#xa;&#xa;tfCedula.addKeyListener(new java.awt.event.KeyAdapter() {&#xa;    public void keyTyped(java.awt.event.KeyEvent evt) {&#xa;        char c = evt.getKeyChar();&#xa;        if (!Character.isDigit(c)) {&#xa;            evt.consume(); // Ignora si no es un n&#xfa;mero&#xa;        }&#xa;    }&#xa;});"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="tfTelf">
           <Properties>
@@ -185,6 +188,9 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tfTelf.setDocument(new JTextFieldLimitador(9));&#xa;&#xa;tfTelf.addKeyListener(new java.awt.event.KeyAdapter() {&#xa;    public void keyTyped(java.awt.event.KeyEvent evt) {&#xa;        char c = evt.getKeyChar();&#xa;        if (!Character.isDigit(c)) {&#xa;            evt.consume(); // Ignora si no es un n&#xfa;mero&#xa;        }&#xa;    }&#xa;});"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="tfClave">
           <Properties>

@@ -9,6 +9,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 import sistemaboletos.vista.imagenes.*;
 
 /**
@@ -88,8 +91,28 @@ public class FrameCompletarPago extends javax.swing.JFrame {
         );
 
         tfCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfCedula.setDocument(new JTextFieldLimitador(9));
+
+        tfCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    evt.consume(); // Ignora si no es un número
+                }
+            }
+        });
 
         tfTelf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tfTelf.setDocument(new JTextFieldLimitador(9));
+
+        tfTelf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    evt.consume(); // Ignora si no es un número
+                }
+            }
+        });
 
         tfClave.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
@@ -260,6 +283,23 @@ public class FrameCompletarPago extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public class JTextFieldLimitador extends PlainDocument {
+        private int limit;
+
+        public JTextFieldLimitador(int limit) {
+            super();
+            this.limit = limit;
+        }
+
+        public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
+            if (str == null) return;
+
+            // Solo permite insertar si la longitud total no supera el límite
+            if ((getLength() + str.length()) <= limit) {
+                super.insertString(offset, str, attr);
+            }
+        }
+    }
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegresarActionPerformed

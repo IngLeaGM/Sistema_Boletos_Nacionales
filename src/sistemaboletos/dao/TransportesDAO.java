@@ -72,4 +72,57 @@ public class TransportesDAO {
             return false;
         }
     }
+    
+    public boolean actualizarDatos(Connection con, Transporte transporte) throws SQLException {
+        
+        // Consulta SQL
+        String ACTUALIZAR = "UPDATE TRANSPORTES SET modelo = ?, anio = ?, matricula = ?, combustible = ? WHERE id_transporte = ?;";
+        
+        try (PreparedStatement ps = con.prepareStatement(ACTUALIZAR)) {
+        
+            //Asignación segura de valores
+            ps.setString(1, transporte.getModelo());
+            ps.setInt(2, transporte.getAnio_vehiculo());
+            ps.setString(3, transporte.getMatricula());
+            ps.setString(4, transporte.getTipo_combustible());
+            ps.setInt(5, transporte.getId_transporte());
+
+            // Ejecutar la actualización
+            ps.executeUpdate();
+            
+            return true;
+        
+        } catch (SQLException e) {
+         
+        System.err.println("Error al actulizar datos de Transporte: " + e.getMessage());
+        return false;
+        }
+    }
+    
+    public boolean eliminarTransporte(Connection con, int id_transporte) {
+        
+        String DELETE = "DELETE FROM TRANSPORTES WHERE id_transporte = ?";
+        
+        PreparedStatement ps = null;
+        
+        try {
+            ps = con.prepareStatement(DELETE);
+            ps.setInt(1, id_transporte);
+            
+            // executeUpdate devuelve el número de filas afectadas
+            int filasAfectadas = ps.executeUpdate();
+            
+            if (filasAfectadas >= 1) {
+                System.out.println("Se borro el transporte correctamente");
+                return true;
+            } else {
+                return false;
+            }
+            // Si afectó al menos 1 fila, significa que se borró con éxito
+            
+        } catch (SQLException e) {
+            System.err.println("Error al intentar eliminar el transporte con ID " + id_transporte + ": " + e.getMessage());
+            return false;
+        }
+    }
 }

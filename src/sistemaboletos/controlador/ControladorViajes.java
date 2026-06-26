@@ -31,6 +31,7 @@ import sistemaboletos.vista.FrameFacturas;
 import sistemaboletos.vista.FrameMenu;
 import sistemaboletos.vista.FrameMisBoletos;
 import sistemaboletos.vista.FrameUsuarios;
+import sistemaboletos.vista.FrameVehiculos;
 import sistemaboletos.vista.FrameViajesProgramados;
 
 
@@ -57,6 +58,7 @@ public class ControladorViajes implements ActionListener {
         this.vista.getBtnModificar().addActionListener((ActionListener) this);
         this.vista.getBtnEliminar().addActionListener((ActionListener) this);
         this.vista.getBtnVolver().addActionListener((ActionListener) this);
+        this.vista.getBtnVehiculos().addActionListener((ActionListener) this);
         this.vista.getjCalendar().addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -130,6 +132,12 @@ public class ControladorViajes implements ActionListener {
         } else if (e.getSource() == vista.getTbtnFacturas()) {
             try {
                 abrirVentanaFacturas();
+            } catch (Exception ex) {
+                System.out.println("Ocurrio un error: " + ex);
+            } 
+        } else if (e.getSource() == vista.getBtnVehiculos()) {
+            try {
+                abrirVentanaVehiculos();
             } catch (Exception ex) {
                 System.out.println("Ocurrio un error: " + ex);
             } 
@@ -360,5 +368,19 @@ public class ControladorViajes implements ActionListener {
         vistaFacturas.setLocationRelativeTo(null);
         vistaFacturas.setVisible(true);
         System.out.println("Se entro a la ventana Facturas");
+    }
+    
+    private void abrirVentanaVehiculos() throws SQLException {
+        
+        vista.dispose();
+        
+        FrameVehiculos vistaVehiculos = new FrameVehiculos();
+        
+        TransportesDAO transportesDao = new TransportesDAO();
+        
+        ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(vistaVehiculos, transportesDao, usuarioLog, this.con); 
+        vistaVehiculos.setLocationRelativeTo(null);
+        vistaVehiculos.setVisible(true);
+        System.out.println("Se entro a la ventana Vehiculos");
     }
 }

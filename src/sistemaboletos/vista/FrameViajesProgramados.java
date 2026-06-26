@@ -105,8 +105,8 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
         jspHora = new javax.swing.JSpinner(modeloHora);
         jScrollPane1 = new javax.swing.JScrollPane();
         tbViajes = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnVehiculos = new javax.swing.JButton();
+        btnUbicaciones = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
         menu1.setLabel("File");
@@ -442,11 +442,11 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton4.setText("Vehiculos");
+        btnVehiculos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnVehiculos.setText("Vehiculos");
 
-        jButton5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton5.setText("Ubicaciones");
+        btnUbicaciones.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnUbicaciones.setText("Ubicaciones");
 
         jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton6.setText("Viajes");
@@ -458,9 +458,9 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton4)
+                .addComponent(btnVehiculos)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(btnUbicaciones)
                 .addGap(18, 18, 18)
                 .addComponent(jButton6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -471,8 +471,8 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUbicaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -569,9 +569,9 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnUbicaciones;
+    private javax.swing.JButton btnVehiculos;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private com.toedter.calendar.JCalendar jCalendar;
     private javax.swing.JFrame jFrame1;
@@ -658,5 +658,15 @@ public class FrameViajesProgramados extends javax.swing.JFrame {
     public JButton getBtnVolver() {
         return btnVolver;
     }
+
+    public JButton getBtnVehiculos() {
+        return btnVehiculos;
+    }
+
+    public JButton getBtnUbicaciones() {
+        return btnUbicaciones;
+    }
+    
+    
     
 }

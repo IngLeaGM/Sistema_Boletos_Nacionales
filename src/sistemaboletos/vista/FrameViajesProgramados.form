@@ -260,9 +260,9 @@
                   <Component id="jPanel5" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnVehiculos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnUbicaciones" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -275,8 +275,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton4" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jButton5" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="btnVehiculos" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="btnUbicaciones" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jButton6" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
@@ -635,7 +635,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="btnVehiculos">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="12" style="1"/>
@@ -643,7 +643,7 @@
                 <Property name="text" type="java.lang.String" value="Vehiculos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="btnUbicaciones">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="12" style="1"/>

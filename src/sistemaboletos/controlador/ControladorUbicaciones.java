@@ -270,6 +270,7 @@ public class ControladorUbicaciones implements ActionListener {
         FrameViajesProgramados vistaViajes = new FrameViajesProgramados();
         
         ViajesDAO viajesDao = new ViajesDAO();
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
         
         ControladorViajes ctrlViajes = new ControladorViajes(vistaViajes, viajesDao, ubicacionesDao, usuarioLog, con); 
         vistaViajes.setLocationRelativeTo(null);

@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
@@ -199,22 +198,17 @@ public class ControladorComprar implements ActionListener {
     
     private void abrirVentanaPagar(HashMap<String, Boleto> asientosSeleccionados) {
         
-        if (asientosSeleccionados.isEmpty()) {
-            JOptionPane.showMessageDialog(vista, "No selecciono ningun asiento.", "ASIENTOS NO SELECCIONADOS", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
         try {
             ArrayList<Boleto> listaBoletos = new ArrayList<>(asientosSeleccionados.values());
             Viaje viajeObtenido = (Viaje) this.vista.getJcbFecha().getSelectedItem();
            
-            Viaje viaje = viajesDao.obtener_viajeCompra(con, viajeObtenido);
+            Viaje viaje = this.viajesDao.obtener_viajeCompra(con, viajeObtenido);
             System.out.println(viaje.getId_viaje());
 
             vista.dispose();
 
             FrameCompletarPago vistaPago = new FrameCompletarPago();
-            ControladorPago ctrlPago = new ControladorPago(vistaPago, usuarioLog, userDao, viaje, listaBoletos, con);
+            ControladorPago ctrlPago = new ControladorPago(vistaPago, usuarioLog, userDao, viaje, listaBoletos, this.con);
             vistaPago.setLocationRelativeTo(null);
             vistaPago.setVisible(true);
             

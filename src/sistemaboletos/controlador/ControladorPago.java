@@ -24,7 +24,6 @@ import sistemaboletos.modelo.Usuario;
 import sistemaboletos.modelo.Viaje;
 import sistemaboletos.modelo.ViajeInformacion;
 import sistemaboletos.servicio.ServicioFactura;
-import sistemaboletos.servicio.ServicioTasaActual;
 import sistemaboletos.vista.FrameCompletarPago;
 import sistemaboletos.vista.FrameComprar;
 import sistemaboletos.vista.FramePagoCompletado;
@@ -71,7 +70,7 @@ public class ControladorPago implements ActionListener {
         } else if (e.getSource() == vista.getBtnRegresar()) {
             
             try {
-                ejecutarRegreso();
+                ejecutarRegreso(con);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -79,36 +78,38 @@ public class ControladorPago implements ActionListener {
 
     }
     public void cargarMontos(ArrayList<Boleto> asientosSeleccionados) {
-        final double tasa_dolares = sistemaboletos.servicio.ServicioTasaActual.obtenerTasaBCV();
+        final double tasa_dolares = 580;
         double montoDolares = 0;
         double montoBolivares = 0;
         
-        montoDolares = (asientosSeleccionados.size() * viaje.getPrecio_x_asiento());
+        montoDolares = (asientosSeleccionados.size() * this.viaje.getPrecio_x_asiento());
         montoBolivares = tasa_dolares * montoDolares;
         
         this.vista.getLbDolares().setText(String.valueOf(montoDolares + "$"));
         this.vista.getLbBolivares().setText(String.valueOf(montoBolivares + " Bs."));
     }
     
-    private void ejecutarRegreso() throws SQLException {
-        
-        this.con.close();
-        
-        Connection nuevaCon = ConexionBD.getConexion();
+    private void ejecutarRegreso(Connection con) throws SQLException {
         
         vista.dispose();
         
         FrameComprar vistaComprar = new FrameComprar();
         
         ViajesDAO viajesDao = new ViajesDAO();
-               
-        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, nuevaCon); 
+        UbicacionesDAO ubicacionesDao = new UbicacionesDAO();
+        
+        List<Viaje> listaViajes = viajesDao.obtener_Viajes(this.con);
+        List<Ubicacion> listaUbicaciones = ubicacionesDao.obtener_ubicaciones(con);
+        
+        ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);
         vistaComprar.setVisible(true);
         System.out.println("Se entro a la ventana comprar");
     }
     
     private void completarPago(Usuario usuarioLog, ArrayList<Boleto> asientosSeleccionados) throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
         
         String cedula = vista.getTfCedula().getText();
         String telf = vista.getTfTelf().getText();
@@ -118,11 +119,6 @@ public class ControladorPago implements ActionListener {
                 JOptionPane.showMessageDialog(vista, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-           
-        this.con.close();
-        
-        Connection nuevaCon = ConexionBD.getConexion();
-        
         FacturasDAO facturaDao = new FacturasDAO();
         BoletosDAO boletosDao = new BoletosDAO();
         ViajesDAO viajeDao = new ViajesDAO();
@@ -134,13 +130,13 @@ public class ControladorPago implements ActionListener {
         factura.setMonto_total(Double.valueOf(this.vista.getLbDolares().getText().replace("$", "").trim()));
         factura.setMetodo_pago("Pago Movil");
         
-        ViajeInformacion viajeInformacion = viajeDao.obtenerViajeInformacion(nuevaCon, this.viaje);
+        ViajeInformacion viajeInformacion = viajeDao.obtenerViajeInformacion(con, this.viaje);
         int id_viaje = viajeInformacion.getId_viaje();
         Double monto_total = factura.getMonto_total();
         
-        int id_factura = facturaDao.insertar_factura(nuevaCon, factura);
+        int id_factura = facturaDao.insertar_factura(con, factura);
         
-        factura = facturaDao.obtener_Factura(nuevaCon, id_factura);
+        factura = facturaDao.obtener_Factura(con, id_factura);
         
                 
         for (Boleto b : asientosSeleccionados) {
@@ -148,7 +144,7 @@ public class ControladorPago implements ActionListener {
             b.setId_factura(id_factura);
         }
         
-        if (boletosDao.insertarBoletos(nuevaCon, asientosSeleccionados)) {
+        if (boletosDao.insertarBoletos(con, asientosSeleccionados)) {
             ServicioFactura facturacion = new ServicioFactura();
         
             String rutaPDF = facturacion.generarFacturaPDF(factura, viajeInformacion, monto_total, asientosSeleccionados);

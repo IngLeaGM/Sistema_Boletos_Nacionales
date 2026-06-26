@@ -97,10 +97,8 @@ public class ControladorMenu implements ActionListener {
         FrameMisBoletos vistaBoletos = new FrameMisBoletos();
         
         BoletosDAO boletosDao = new BoletosDAO();
-        ViajesDAO viajesDao = new ViajesDAO();
         
-        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao,
-                                                                boletosDao, usuarioLog, con); 
+        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, boletosDao, usuarioLog, con); 
         
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);

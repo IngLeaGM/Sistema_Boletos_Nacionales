@@ -3,21 +3,16 @@ package sistemaboletos.controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
-import sistemaboletos.conexion.ConexionBD;
 import sistemaboletos.dao.BoletosDAO;
-import sistemaboletos.dao.UbicacionesDAO;
 import sistemaboletos.dao.UsuariosDAO;
 import sistemaboletos.dao.ViajesDAO;
 import sistemaboletos.modelo.Boleto;
@@ -59,15 +54,13 @@ public class ControladorComprar implements ActionListener {
         this.vista.getJcbFecha().addActionListener(this);
         this.vista.getBtnMisBoletos().addActionListener(this);
         this.vista.getBtnPagar().addActionListener(this);
-        
-        cargarViajes(con);
-        
+             
         // Logica de selecion de asientos
         for(int i = 1; i <= 22; i++) {
             addActionListener(this.vista.getBtnV(i));
         }
         
-        
+        cargarViajes();
     }
     
     @Override
@@ -77,7 +70,7 @@ public class ControladorComprar implements ActionListener {
                 Object item = vista.getJcbDesde().getSelectedItem();
                 if (item == null) return;
 
-                cargarDestinos(con);
+                cargarDestinos();
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
@@ -86,7 +79,7 @@ public class ControladorComprar implements ActionListener {
                 Object item = vista.getJcbHasta().getSelectedItem();
                 if (item == null) return;
 
-                cargarFechas(con);
+                cargarFechas();
             } catch (Exception ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
@@ -105,7 +98,6 @@ public class ControladorComprar implements ActionListener {
                 vista.dispose();
 
 
-                con.close();
                 FrameMenu menuPrincipal = new FrameMenu();
                 ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, userDao, usuarioLog);
                 menuPrincipal.setLocationRelativeTo(null);
@@ -116,6 +108,7 @@ public class ControladorComprar implements ActionListener {
             } finally {
                 try {
                     con.close();
+                    System.out.println("Se cerro la conexio");
                 } catch (SQLException ex) {
                     Logger.getLogger(ControladorComprar.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -136,20 +129,21 @@ public class ControladorComprar implements ActionListener {
         }
     }
     
-    public void cargarViajes(Connection con) throws SQLException {
+    public void cargarViajes() throws SQLException {
         vista.getJcbDesde().removeAllItems(); // Limpiamos el combo por si hay items basura
         vista.getJcbHasta().removeAllItems();
-        ArrayList<Ubicacion> salidasDisponibles = this.viajesDao.listaUbicacionesDisponibles(con);
+        ArrayList<Ubicacion> salidasDisponibles = viajesDao.listaUbicacionesDisponibles(con);
+        System.out.println("Salidas disponibles");
         
         
         for (Ubicacion ubObtenida : salidasDisponibles) {
             vista.getJcbDesde().addItem(ubObtenida);
         }
-        
-         cargarDestinos(con);
+        System.out.println("bucle for");
+         cargarDestinos();
     }
     
-    public void cargarDestinos(Connection con) throws SQLException {
+    public void cargarDestinos() throws SQLException {
         vista.getJcbHasta().removeAllItems();
         Ubicacion ubiSalida = (Ubicacion) vista.getJcbDesde().getSelectedItem();
         System.out.println(ubiSalida.getId_ubicacion());
@@ -161,11 +155,11 @@ public class ControladorComprar implements ActionListener {
             vista.getJcbHasta().addItem(ubObtenida);
         }
         
-        cargarFechas(con);
+        cargarFechas();
         
     }
     
-    public void cargarFechas(Connection con) throws SQLException {
+    public void cargarFechas() throws SQLException {
         vista.getJcbFecha().removeAllItems();
         Ubicacion ubiSalida = (Ubicacion) vista.getJcbDesde().getSelectedItem();
         Ubicacion ubiDestino = (Ubicacion) vista.getJcbHasta().getSelectedItem();
@@ -193,8 +187,7 @@ public class ControladorComprar implements ActionListener {
         
         BoletosDAO boletosDao = new BoletosDAO();
         
-        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, userDao, viajesDao,
-                                                                boletosDao, usuarioLog, con); 
+        ControladorMisBoletos ctrlBoletos = new ControladorMisBoletos(vistaBoletos, boletosDao, usuarioLog, con); 
         
         vistaBoletos.setLocationRelativeTo(null);
         vistaBoletos.setVisible(true);

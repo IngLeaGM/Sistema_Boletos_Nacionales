@@ -28,16 +28,12 @@ public class ControladorMisBoletos implements ActionListener {
     
     // Atributos
     private FrameMisBoletos vista;
-    private UsuariosDAO userDao;
-    private ViajesDAO viajesDao;
     private BoletosDAO boletosDao;
     private Usuario usuarioLog;
     private Connection con;
     
-    public ControladorMisBoletos(FrameMisBoletos vista, UsuariosDAO userDao, ViajesDAO viajesDao
-                                , BoletosDAO boletosDao, Usuario usuarioLog, Connection con) throws SQLException  {
+    public ControladorMisBoletos(FrameMisBoletos vista, BoletosDAO boletosDao, Usuario usuarioLog, Connection con) throws SQLException  {
         this.vista = vista;
-        this.userDao = userDao;
         this.boletosDao = boletosDao;
         this.usuarioLog = usuarioLog;
         this.con = con;
@@ -116,7 +112,7 @@ public class ControladorMisBoletos implements ActionListener {
             int idBoletoSeleccionado = Integer.parseInt(vista.getTbBoletos().getModel().getValueAt(filaModelo, 0).toString());
 
             System.out.println("El usuario seleccionó la fila completa del viaje ID: " + idBoletoSeleccionado);
-            cargarInformacion(this.con, idBoletoSeleccionado, boletosDao);
+            cargarInformacion(con, idBoletoSeleccionado, boletosDao);
         }
 
     }
@@ -136,7 +132,7 @@ public class ControladorMisBoletos implements ActionListener {
          if (e.getSource() == vista.getBtnComprar()) {
             try {
                 abrirVentanaComprar();
-            } catch (Exception ex) {
+            } catch (SQLException ex) {
                 System.err.print("Ocurrio un error: " + ex);
             }
         } else if (e.getSource() == vista.getBtnInicio()) {
@@ -145,6 +141,8 @@ public class ControladorMisBoletos implements ActionListener {
 
                 con.close();
                 FrameMenu menuPrincipal = new FrameMenu();
+                UsuariosDAO userDao = new UsuariosDAO();
+                
                 ControladorMenu ctrlMenu = new ControladorMenu(menuPrincipal, userDao, usuarioLog);
                 menuPrincipal.setLocationRelativeTo(null);
                 menuPrincipal.setVisible(true);
@@ -162,10 +160,12 @@ public class ControladorMisBoletos implements ActionListener {
     }
     
     private void abrirVentanaComprar() throws SQLException {
-          
+                
         vista.dispose();
         
-        FrameComprar vistaComprar = new FrameComprar();    
+        FrameComprar vistaComprar = new FrameComprar();
+        ViajesDAO viajesDao = new ViajesDAO();
+        UsuariosDAO userDao = new UsuariosDAO();
         
         ControladorComprar ctrlComprar = new ControladorComprar(vistaComprar, userDao, viajesDao, usuarioLog, con); 
         vistaComprar.setLocationRelativeTo(null);

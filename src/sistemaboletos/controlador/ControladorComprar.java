@@ -51,6 +51,8 @@ public class ControladorComprar implements ActionListener {
         this.usuarioLog = usuarioLog;
         this.con = con;
         
+        this.vista.getLabelUser().setText(usuarioLog.getUser());
+        
         this.vista.getBtnInicio().addActionListener(this);
         this.vista.getJcbDesde().addActionListener(this);
         this.vista.getJcbHasta().addActionListener(this);

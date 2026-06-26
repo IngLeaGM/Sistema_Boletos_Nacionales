@@ -40,7 +40,7 @@ public class ServicioTasaActual {
                 
                 String[] partes = json.split("\"promedio\":");
                 if (partes.length > 1) {
-                    // Limpiamos el texto para quedarnos solo con el número (ej. "36.42")
+                    // Limpiamos el texto para quedarnos solo con el número Double
                     String valorString = partes[1].split(",")[0].trim();
                     return Double.parseDouble(valorString);
                 }
@@ -49,7 +49,7 @@ public class ServicioTasaActual {
             System.err.println("Sin internet o error en la API. Usando tasa de respaldo. Detalle: " + e.getMessage());
         }
         
-        // 5. TASA DE RESPALDO (Fallback): 
+        // TASA DE RESPALDO (Fallback): 
         // Si el cliente no tiene internet en la terminal, no podemos detener el sistema.
         // Retornamos esta tasa manual por defecto. ¡Asegúrate de actualizar este número a mano de vez en cuando!
         return 622.21;

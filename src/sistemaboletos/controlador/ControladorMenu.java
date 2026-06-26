@@ -38,6 +38,8 @@ public class ControladorMenu implements ActionListener {
         this.vista.getBtnSalir().addActionListener((ActionListener) this);
         this.vista.getBtnAdmin().addActionListener((ActionListener) this);
         
+        this.vista.getLabelUser().setText(usuarioLog.getUser());
+        
         if(usuarioLog.getId_usuario() == 1) {
             vista.getBtnAdmin().setVisible(true);
         } else {

@@ -90,6 +90,7 @@ public class UsuariosDAO {
 
                     if(BCrypt.checkpw(usuario.getPass(), hashed_pass)) {
                         System.out.println("Inicio de sesion exitoso");
+                        con.close();
                         return true;
                     } else {
                         System.out.println("Usuario o contraseña incorrecto");
@@ -97,26 +98,30 @@ public class UsuariosDAO {
                 
                 } else {
                     System.out.println("Usuario o contraseña incorrecto");
-                        return false;
+                    return false;
                 }
             }
         } catch (SQLException e) {
             System.err.println("Error al intentar iniciar sesion: "+e.getMessage());
+            con.close();
             return false;
         }
+        con.close();
         return false;
     }
     
-    public Usuario obtener_usuario(Connection con, int idBuscado) throws SQLException {
+    public Usuario obtener_usuario(Usuario usuario) throws SQLException {
+        
+        Connection con = ConexionBD.getConexion();
         
         Usuario usuarioExtraido = new Usuario(0, "none", "none", "none", "none");
         // Consulta SQL
-        String SELECCIONAR = "SELECT id_usuario, user, email, telf FROM USUARIOS WHERE id_usuario = ?;";
+        String SELECCIONAR = "SELECT id_usuario, user, email, telf FROM USUARIOS WHERE email = ?;";
         
         
         try (PreparedStatement ps = con.prepareStatement(SELECCIONAR)) {
             
-                ps.setInt(1, idBuscado);
+                ps.setString(1, usuario.getEmail());
                 
                 try (ResultSet rs = ps.executeQuery()) {
                     
@@ -127,11 +132,13 @@ public class UsuariosDAO {
                         String telf = rs.getString("telf");
                         
                          usuarioExtraido = new Usuario(id_usuario, user, "none", email, telf);
+                         con.close();
                     }
 
                 }
         } catch (SQLException e) {
             System.err.println("Error al selecionar tabla: "+e.getMessage());
+            con.close();
         }
         return usuarioExtraido;
     }

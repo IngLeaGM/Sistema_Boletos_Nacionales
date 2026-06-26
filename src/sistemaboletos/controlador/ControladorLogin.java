@@ -46,7 +46,7 @@ public class ControladorLogin implements ActionListener {
     
     private void ejecutarLogin() throws SQLException {
         
-        String email = vista.getTfEmail().getText().trim();
+        String email = vista.getTfEmail().getText().trim().toLowerCase();
         String pass = new String(vista.getJpPass().getPassword());
         
         if (email.isEmpty() || pass.isEmpty()) {
@@ -63,7 +63,7 @@ public class ControladorLogin implements ActionListener {
             boolean loginExitoso = dao.LoginUsuario(usuarioIntento);
             
             if (loginExitoso) {
-                usuarioIntento = dao.obtenerId_usuario(usuarioIntento);
+                usuarioIntento = dao.obtener_usuario(usuarioIntento);
                 System.out.println("¡Inicio de sesión exitoso! Bienvenido.");
                
                 vista.dispose(); // Cierra y destruye la ventana de Login actual

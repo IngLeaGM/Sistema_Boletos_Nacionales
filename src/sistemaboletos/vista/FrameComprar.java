@@ -9,6 +9,7 @@ import sistemaboletos.vista.imagenes.*;
 import sistemaboletos.vista.FondoBus.*;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JToggleButton;
 
 /**
@@ -45,7 +46,7 @@ public class FrameComprar extends javax.swing.JFrame {
         btnInicio = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         btnMisBoletos = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelUser = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -123,9 +124,9 @@ public class FrameComprar extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(153, 204, 255, 125));
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("Usuario");
+        labelUser.setBackground(new java.awt.Color(153, 204, 255, 125));
+        labelUser.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        labelUser.setText("Usuario");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -139,7 +140,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnMisBoletos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 574, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
         jPanel2Layout.setVerticalGroup(
@@ -147,7 +148,7 @@ public class FrameComprar extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnInicio)
                         .addComponent(jButton5)
@@ -693,7 +694,6 @@ public class FrameComprar extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnV21;
     private javax.swing.JToggleButton btnV22;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -712,6 +712,7 @@ public class FrameComprar extends javax.swing.JFrame {
     private javax.swing.JComboBox jcbDesde;
     private javax.swing.JComboBox jcbFecha;
     private javax.swing.JComboBox jcbHasta;
+    private javax.swing.JLabel labelUser;
     // End of variables declaration//GEN-END:variables
 
     public JComboBox getJcbDesde() {
@@ -740,6 +741,10 @@ public class FrameComprar extends javax.swing.JFrame {
 
     public JButton getBtnPagar() {
         return btnPagar;
+    }
+
+    public JLabel getLabelUser() {
+        return labelUser;
     }
 
     public JToggleButton getBtnV(int numero) {

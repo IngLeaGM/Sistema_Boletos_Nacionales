@@ -42,6 +42,8 @@ public class ControladorMisBoletos implements ActionListener {
         this.usuarioLog = usuarioLog;
         this.con = con;
         
+        this.vista.getLabelUser().setText(usuarioLog.getUser());
+        
         this.vista.getBtnInicio().addActionListener(this);
         this.vista.getBtnComprar().addActionListener(this);
         this.vista.getTbBoletos().addMouseListener(new java.awt.event.MouseListener() {
@@ -126,7 +128,7 @@ public class ControladorMisBoletos implements ActionListener {
         vista.getTfCedula().setText(informacion.getCedula());
         vista.getTfSalida().setText(informacion.getCiudad_salida());
         vista.getTfHasta().setText(informacion.getCiudad_destino());
-        vista.getTfDatos().setText(String.valueOf(informacion.getDatos_transaccion()));
+        vista.getTfDatos().setText(String.valueOf(informacion.getDatos_transaccion() + "$"));
     }
 
     @Override

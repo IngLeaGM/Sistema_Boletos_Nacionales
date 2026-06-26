@@ -177,6 +177,8 @@ public class ControladorComprar implements ActionListener {
             vista.getJcbFecha().addItem(viajeObtenido);
         }
         
+        this.asientosSeleccionados.clear();
+        
         estadoAsientos(con);
         
     }
